@@ -18,4 +18,11 @@ Partial Class Ingresos_formIngreso
     End Sub
 
 
+    Protected Sub LinkButtonVolver_Click(sender As Object, e As EventArgs)
+        Response.Redirect("gestionIngresos.aspx")
+    End Sub
+
+    Protected Sub InsertCancelButton_Click(sender As Object, e As System.EventArgs)
+        Response.Redirect("gestionIngresos.aspx")
+    End Sub
 End Class
