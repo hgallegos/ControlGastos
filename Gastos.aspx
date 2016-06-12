@@ -7,11 +7,11 @@
       <asp:GridView ID="GridViewGastos" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSourceGastos" Width="842px" DataKeyNames="idGasto" AllowSorting="True" CellPadding="4" ForeColor="#333333" GridLines="None">
           <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
           <Columns>
-              <asp:BoundField DataField="idGasto" SortExpression="idGasto" InsertVisible="False" ReadOnly="True" />
+              <asp:BoundField DataField="idGasto" HeaderText="idGasto" SortExpression="idGasto" InsertVisible="False" ReadOnly="True" />
               <asp:BoundField DataField="monto" HeaderText="monto" SortExpression="monto" />
               <asp:BoundField DataField="fecha" HeaderText="fecha" SortExpression="fecha" />
-              <asp:BoundField DataField="idSubcategoria" HeaderText="Subcategoria" SortExpression="idSubcategoria" />
-              <asp:CommandField SelectText="Detalle" ShowSelectButton="True" />
+              <asp:BoundField DataField="nombre" HeaderText="SubCategoria" SortExpression="nombre" />
+              <asp:BoundField DataField="Expr1" HeaderText="Categoria" SortExpression="Expr1" />
           </Columns>
           <EditRowStyle BackColor="#999999" />
           <EmptyDataTemplate>
@@ -27,7 +27,7 @@
           <SortedDescendingCellStyle BackColor="#FFFDF8" />
           <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
       </asp:GridView>
-      <asp:SqlDataSource ID="SqlDataSourceGastos" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString %>" SelectCommand="SELECT [idGasto], [monto], [fecha], [idSubcategoria] FROM [Gasto] ORDER BY [fecha] DESC"></asp:SqlDataSource>
+      <asp:SqlDataSource ID="SqlDataSourceGastos" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString %>" SelectCommand="SELECT Gasto.idGasto, Gasto.monto, Gasto.fecha, Gasto.idSubcategoria, Subcategoria.nombre, Categoria.nombre AS Expr1 FROM Gasto INNER JOIN Subcategoria ON Gasto.idSubcategoria = Subcategoria.idSubcategoria INNER JOIN Categoria ON Subcategoria.idCategoria = Categoria.idCategoria ORDER BY Gasto.fecha DESC"></asp:SqlDataSource>
 </h3>
    
    
