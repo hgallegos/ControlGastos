@@ -52,13 +52,13 @@
                 <tr>
                     <td><strong>Descripción</strong>:</td>
                     <td><asp:TextBox ID="descripcionTextBox" runat="server" Text='<%# Bind("descripcion") %>' Height="28px" Width="217px" /></td>
-                    <td><asp:RequiredFieldValidator ID="RequiredFieldValidatorDescripcion" runat="server" ControlToValidate="descripcionTextBox" ErrorMessage="Debes ingresar una descripción."></asp:RequiredFieldValidator>
+                    <td style="width: 346px"><asp:RequiredFieldValidator ID="RequiredFieldValidatorDescripcion" runat="server" ControlToValidate="descripcionTextBox" ErrorMessage="Debes ingresar una descripción."></asp:RequiredFieldValidator>
             </td>
                 </tr>
                 <tr>
                     <td><strong>Fecha:</strong></td>
                     <td>
-                        <asp:Calendar ID="Calendar2" runat="server" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="108px" NextPrevFormat="FullMonth" SelectedDate='<%# Bind("fecha") %>' Width="221px">
+                        <asp:Calendar ID="Calendar2" runat="server" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="28px" NextPrevFormat="FullMonth" SelectedDate='<%# Bind("fecha") %>' Width="221px">
                             <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
                             <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" />
                             <OtherMonthDayStyle ForeColor="#999999" />
@@ -67,17 +67,17 @@
                             <TodayDayStyle BackColor="#CCCCCC" />
                         </asp:Calendar>
                     </td>
-                    <td>&nbsp;</td>
+                    <td style="width: 346px">&nbsp;</td>
                 </tr>
                 <tr>
                     <td><strong>Cantidad:</strong></td>
                     <td><asp:TextBox ID="cantidadTextBox" runat="server" Text='<%# Bind("cantidad") %>' Height="28px" Width="226px" /></td>
-                    <td><asp:RequiredFieldValidator ID="RequiredFieldValidatorCantidad" runat="server" ControlToValidate="cantidadTextBox" ErrorMessage="Debes ingresar una cantidad de dinero."></asp:RequiredFieldValidator>
+                    <td style="width: 346px"><asp:RequiredFieldValidator ID="RequiredFieldValidatorCantidad" runat="server" ControlToValidate="cantidadTextBox" ErrorMessage="Debes ingresar una cantidad de dinero."></asp:RequiredFieldValidator>
             </td>
                 </tr>
                 <tr>
                     <td>  <strong>Usuario</strong>:</td>
-                    <td><asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSourceUsuarios" DataTextField="nombre" DataValueField="idUsuario" SelectedValue='<%# Bind("idUsuario") %>' Height="28px" Width="227px"></asp:DropDownList></td>
+                    <td><asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSourceUsuarios" DataTextField="nombre" DataValueField="idUsuario" SelectedValue='<%# Bind("idUsuario") %>' Height="28px"></asp:DropDownList></td>
                 </tr>
             </table>
             

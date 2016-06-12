@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
     
    <h2>Nuevo Gasto</h2>
-    <asp:FormView ID="FormViewGastos" runat="server" DataKeyNames="idGasto" DataSourceID="SqlDataSourceGastos" Width="289px">
+    <asp:FormView ID="FormViewGastos" runat="server" DataKeyNames="idGasto" DataSourceID="SqlDataSourceGastos" Width="674px">
         <EditItemTemplate>
             idGasto:
             <asp:Label ID="idGastoLabel1" runat="server" Text='<%# Eval("idGasto") %>' />
@@ -33,34 +33,45 @@
             <table class="tabla_formulario">
                 <tr>
                      <td>Monto:</td>
-                     <td style="width: 130px"><asp:TextBox ID="montoTextBox" runat="server" Text='<%# Bind("monto") %>' /></td>
-                </tr>
+                     <td style="width: 129px"><asp:TextBox ID="montoTextBox" runat="server" Text='<%# Bind("monto") %>' Height="28px" Width="217px" /></td>
+                     <td style="width: 584px">
+                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorMonto" runat="server" ControlToValidate="montoTextBox" ErrorMessage="Debe ingresar un monto"></asp:RequiredFieldValidator></td>
+                     </tr>
                 <tr>
+                  
                     <td>Fecha:</td>
-                    <td style="width: 130px">
-                        <asp:Calendar ID="Calendar1" runat="server" SelectedDate='<%# Bind("fecha") %>'></asp:Calendar>
+                    <td style="width: 129px">
+                        <asp:Calendar ID="Calendar1" runat="server" SelectedDate='<%# Bind("fecha") %>' CellPadding="0" Width="217px"></asp:Calendar>
                     </td>
+                      <td></td>
                 </tr>
                 <tr>
                     <td>idUsuario:</td>
-                    <td style="width: 130px"><asp:TextBox ID="idUsuarioTextBox" runat="server" Text='<%# Bind("idUsuario") %>' /></td>
+                    <td style="width: 129px"><asp:TextBox ID="idUsuarioTextBox" runat="server" Text='<%# Bind("idUsuario") %>' Height="28px" Width="217px" /></td>
+                    <td style="width: 584px"> <asp:RequiredFieldValidator ID="RequiredFieldValidatorIdUsuario" runat="server" ControlToValidate="idUsuarioTextBox" ErrorMessage="Debe ingresar un idUsuario"></asp:RequiredFieldValidator></td>
+                     </tr>
                 </tr>
                 <tr>
                     <td>Subcategoria:</td>
-                    <td style="width: 130px">
-                        <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSourceSubcategorias" DataTextField="nombre" DataValueField="idSubcategoria" Height="26px" SelectedIndex='<%# Bind("idSubcategoria") %>' SelectedValue='<%# bind("idSubcategoria") %>' Width="131px">
+                    <td style="width: 129px">
+                        <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSourceSubcategorias" DataTextField="nombre" DataValueField="idSubcategoria" Height="28px" SelectedIndex='<%# Bind("idSubcategoria") %>' SelectedValue='<%# bind("idSubcategoria") %>' Width="217px">
                         </asp:DropDownList>
                         <asp:SqlDataSource ID="SqlDataSourceSubcategorias" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString %>" SelectCommand="SELECT [nombre], [idSubcategoria] FROM [Subcategoria] ORDER BY [nombre] DESC"></asp:SqlDataSource>
                     </td>
+                      <td></td>
                 </tr>
                 <tr>
                     <td>Nombre:</td>
-                    <td style="width: 130px"><asp:TextBox ID="nombreTextBox" runat="server" Text='<%# Bind("nombre") %>' /></td>
+                    <td style="width: 129px"><asp:TextBox ID="nombreTextBox" runat="server" Text='<%# Bind("nombre") %>' Height="28px" Width="217px" /></td>
+                    <td style="width: 584px"><asp:RequiredFieldValidator ID="RequiredFieldValidatorNombre" runat="server" ControlToValidate="nombreTextBox" ErrorMessage="Debe ingresar un nombre"></asp:RequiredFieldValidator></td>
+                   </tr>
+
                 </tr>
                 <tr>
                     <td>Descripcion:</td>
 
-                    <td style="width: 130px"><asp:TextBox ID="descripcionTextBox" runat="server" Text='<%# Bind("descripcion") %>' /></td>
+                    <td style="width: 129px"><asp:TextBox ID="descripcionTextBox" runat="server" Text='<%# Bind("descripcion") %>' Height="28px" Width="217px" /></td>
+                   <td style="width: 584px"> <asp:RequiredFieldValidator ID="RequiredFieldValidatorDescripcion" runat="server" ControlToValidate="descripcionTextBox" ErrorMessage="Debe ingresar una descripción"></asp:RequiredFieldValidator></td>
                 </tr>
   
             </table>
