@@ -1,17 +1,18 @@
 ﻿<%@ Page Title="" Language="VB" MasterPageFile="~/Site.master" AutoEventWireup="false" CodeFile="Gastos.aspx.vb" Inherits="ingresos" %>
 
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
-    <h2>Gestion de gastos
-    </h2>
+
+    <h2>Gestion de gastos</h2>
   <h3><asp:Label ID="Label1" runat="server" Text=""></asp:Label> 
-      <asp:GridView ID="GridViewGastos" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSourceGastos" Width="842px" DataKeyNames="idGasto" AllowSorting="True" CellPadding="4" ForeColor="#333333" GridLines="None">
+      <asp:GridView ID="GridViewGastos" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSourceGastos" Width="1024px" DataKeyNames="idGasto" AllowSorting="True" CellPadding="4" ForeColor="#333333" GridLines="None">
           <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
           <Columns>
-              <asp:BoundField DataField="idGasto" HeaderText="idGasto" SortExpression="idGasto" InsertVisible="False" ReadOnly="True" />
               <asp:BoundField DataField="monto" HeaderText="monto" SortExpression="monto" />
               <asp:BoundField DataField="fecha" HeaderText="fecha" SortExpression="fecha" />
               <asp:BoundField DataField="nombre" HeaderText="SubCategoria" SortExpression="nombre" />
               <asp:BoundField DataField="Expr1" HeaderText="Categoria" SortExpression="Expr1" />
+              <asp:CommandField SelectText="Ver Detalles" ShowSelectButton="True" />
           </Columns>
           <EditRowStyle BackColor="#999999" />
           <EmptyDataTemplate>
