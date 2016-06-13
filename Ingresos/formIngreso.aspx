@@ -2,8 +2,8 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
 
-    <h2>Formulario de ingresos de dinero</h2>
-    <h3><asp:Label ID="LabelMensaje" runat="server" Text=""></asp:Label></h3>
+    <h2 style="text-align: center">Formulario de ingresos de dinero</h2>
+    <h3 style="text-align: center"><asp:Label ID="LabelMensaje" runat="server" Text=""></asp:Label></h3>
 
     <asp:FormView ID="FormViewIngresos" runat="server" DataKeyNames="idIngreso" DataSourceID="SqlDataSourceIngresos" Width="688px">
         <EditItemTemplate>
@@ -42,10 +42,17 @@
                 </tr>
             </table>
  
-            <asp:SqlDataSource ID="SqlDataSourceUsuarios" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString2 %>" SelectCommand="SELECT * FROM [Usuario]"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSourceUsuarios" runat="server" 
+                ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString2 %>" 
+                SelectCommand="SELECT * FROM [Usuario]"></asp:SqlDataSource>
             <br />
-            <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Actualizar" />
-            &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar"  />
+
+            <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True"
+                 CommandName="Update" Text="Actualizar" />
+
+            &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" 
+                CommandName="Cancel" Text="Cancelar"  />
+
         </EditItemTemplate>
         <InsertItemTemplate>
             <table>
@@ -113,14 +120,19 @@
             </table>
    
            
-            <asp:LinkButton ID="LinkButton1" runat="server">Editar</asp:LinkButton>&nbsp;
+            <asp:LinkButton ID="EditButton" runat="server" CausesValidation="False" CommandName="Edit" Text="Editar" />
             <asp:LinkButton ID="LinkButtonVolver" runat="server" OnClick="LinkButtonVolver_Click">Volver</asp:LinkButton>
 
             <br />
 
         </ItemTemplate>
     </asp:FormView>
-    <asp:SqlDataSource ID="SqlDataSourceIngresos" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString2 %>" InsertCommand="INSERT INTO [Ingreso] ([descripcion], [fecha], [cantidad], [idUsuario]) VALUES (@descripcion, @fecha, @cantidad, @idUsuario)" SelectCommand="SELECT [idIngreso], [descripcion], [fecha], [cantidad], [idUsuario] FROM [Ingreso] WHERE ([idIngreso] = @idIngreso)" DeleteCommand="DELETE FROM [Ingreso] WHERE [idIngreso] = @idIngreso" UpdateCommand="UPDATE [Ingreso] SET [descripcion] = @descripcion, [fecha] = @fecha, [cantidad] = @cantidad, [idUsuario] = @idUsuario WHERE [idIngreso] = @idIngreso">
+    <asp:SqlDataSource ID="SqlDataSourceIngresos" runat="server" 
+        ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString2 %>" 
+        InsertCommand="INSERT INTO [Ingreso] ([descripcion], [fecha], [cantidad], [idUsuario]) VALUES (@descripcion, @fecha, @cantidad, @idUsuario)" 
+        SelectCommand="SELECT [idIngreso], [descripcion], [fecha], [cantidad], [idUsuario] FROM [Ingreso] WHERE ([idIngreso] = @idIngreso)" 
+        DeleteCommand="DELETE FROM [Ingreso] WHERE [idIngreso] = @idIngreso" 
+        UpdateCommand="UPDATE [Ingreso] SET [descripcion] = @descripcion, [fecha] = @fecha, [cantidad] = @cantidad, [idUsuario] = @idUsuario WHERE [idIngreso] = @idIngreso">
         <DeleteParameters>
             <asp:Parameter Name="idIngreso" Type="Int32" />
         </DeleteParameters>

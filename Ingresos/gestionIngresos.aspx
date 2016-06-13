@@ -2,11 +2,11 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
 
-    <h2>Gestión de ingresos de dinero</h2>
-    <h3><a href="formIngreso.aspx">Nuevo ingreso</a></h3>
-    <h3><asp:Label ID="LabelMensaje" runat="server" Text=""></asp:Label></h3>
+    <h2 style="text-align: center">Gestión de ingresos de dinero</h2>
+    <h3><a href="formIngreso.aspx" style="text-align: center">Nuevo ingreso</a></h3>
+    <h3 style="text-align: center"><asp:Label ID="LabelMensaje" runat="server" Text=""></asp:Label></h3>
 
-    <asp:GridView ID="GridViewIngresos" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="idIngreso" DataSourceID="SqlDataSourceIngresos" ForeColor="#333333" GridLines="None" Height="164px" Width="536px">
+    <asp:GridView ID="GridViewIngresos" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="idIngreso" DataSourceID="SqlDataSourceIngresos" ForeColor="#333333" GridLines="None" Height="198px" Width="536px" BorderStyle="Inset" HorizontalAlign="Center">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
             <asp:BoundField DataField="descripcion" HeaderText="Descripción" SortExpression="descripcion" />
