@@ -5,48 +5,92 @@
     <h2>Formulario de subcategoria</h2>
     <h3><asp:Label ID="LabelMensaje" runat="server" Text=""></asp:Label></h3>
 
-    <asp:FormView ID="FormViewSubcategoria" runat="server" DataKeyNames="idSubcategoria" DataSourceID="SqlDataSourceSubcategoria">
+    <asp:FormView ID="FormViewSubcategoria" runat="server" DataKeyNames="idSubcategoria" DataSourceID="SqlDataSourceSubcategoria" Width="648px">
         <EditItemTemplate>
-            idSubcategoria:
-            <asp:Label ID="idSubcategoriaLabel1" runat="server" Text='<%# Eval("idSubcategoria") %>' />
-            <br />
-            descripcion:
-            <asp:TextBox ID="descripcionTextBox" runat="server" Text='<%# Bind("descripcion") %>' />
-            <br />
-            nombre:
-            <asp:TextBox ID="nombreTextBox" runat="server" Text='<%# Bind("nombre") %>' />
-            <br />
-            idCategoria:
-            <asp:TextBox ID="idCategoriaTextBox" runat="server" Text='<%# Bind("idCategoria") %>' />
-            <br />
+            <table>
+                <tr>
+                    <td>Subcategoría:</td>
+                    <td><asp:Label ID="idSubcategoriaLabel1" runat="server" Text='<%# Eval("idSubcategoria") %>' /></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Nombre</td>
+                    <td><asp:TextBox ID="nombreTextBox" runat="server" Text='<%# Bind("nombre") %>' /></td>
+                    <td>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidatorNombre" runat="server" ErrorMessage="Debes ingresar un nombre." ControlToValidate="nombreTextBox"></asp:RequiredFieldValidator></td>
+                </tr>
+                <tr>
+                    <td>Descripción:</td>
+                    <td><asp:TextBox ID="descripcionTextBox" runat="server" Text='<%# Bind("descripcion") %>' /></td>
+                    <td>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidatorDescripcion" runat="server" ErrorMessage="Debes ingresar una descripción." ControlToValidate="descripcionTextBox"></asp:RequiredFieldValidator></td>
+                </tr>
+                <tr>
+                    <td> Categoría:</td>
+                    <td>
+                        <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSourceCategoria" DataTextField="nombre" DataValueField="idCategoria" SelectedValue='<%# Bind("idCategoria") %>'></asp:DropDownList>
+                        <asp:SqlDataSource ID="SqlDataSourceCategoria" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString2 %>" SelectCommand="SELECT * FROM [Categoria]"></asp:SqlDataSource>
+                    </td>
+                </tr>
+            </table>
+            
+         
             <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Actualizar" />
             &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" OnClick="UpdateCancelButton_Click" />
         </EditItemTemplate>
         <InsertItemTemplate>
-            descripcion:
-            <asp:TextBox ID="descripcionTextBox" runat="server" Text='<%# Bind("descripcion") %>' />
-            <br />
-            nombre:
-            <asp:TextBox ID="nombreTextBox" runat="server" Text='<%# Bind("nombre") %>' />
-            <br />
-            idCategoria:
-            <asp:TextBox ID="idCategoriaTextBox" runat="server" Text='<%# Bind("idCategoria") %>' />
+            <table>
+                <tr>
+                    <td>Nombre:</td>
+                    <td> <asp:TextBox ID="nombreTextBox" runat="server" Text='<%# Bind("nombre") %>' /></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Descripción:</td>
+                    <td><asp:TextBox ID="descripcionTextBox" runat="server" Text='<%# Bind("descripcion") %>' /></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Categoría:</td>
+                    <td>
+                        <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSourceCategorias" DataTextField="nombre" DataValueField="idCategoria" SelectedValue='<%# Bind("idCategoria") %>'></asp:DropDownList>
+                        <asp:SqlDataSource ID="SqlDataSourceCategorias" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString2 %>" SelectCommand="SELECT * FROM [Categoria]"></asp:SqlDataSource>
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+            
+            
+            
+           
             <br />
             <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insertar" />
             &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" OnClick="InsertCancelButton_Click" />
         </InsertItemTemplate>
         <ItemTemplate>
-            idSubcategoria:
-            <asp:Label ID="idSubcategoriaLabel" runat="server" Text='<%# Eval("idSubcategoria") %>' />
-            <br />
-            descripcion:
-            <asp:Label ID="descripcionLabel" runat="server" Text='<%# Bind("descripcion") %>' />
-            <br />
-            nombre:
-            <asp:Label ID="nombreLabel" runat="server" Text='<%# Bind("nombre") %>' />
-            <br />
-            idCategoria:
-            <asp:Label ID="idCategoriaLabel" runat="server" Text='<%# Bind("idCategoria") %>' />
+            <table>
+                <tr>
+                    <td> Subcategoria:</td>
+                    <td> <asp:Label ID="idSubcategoriaLabel" runat="server" Text='<%# Eval("idSubcategoria") %>' /></td>
+                </tr>
+                <tr>
+                    <td> Nombre:</td>
+                    <td> <asp:Label ID="nombreLabel" runat="server" Text='<%# Bind("nombre") %>' /></td>
+                </tr>
+                <tr>
+                    <td>Descripción:</td>
+                    <td> <asp:Label ID="descripcionLabel" runat="server" Text='<%# Bind("descripcion") %>' /></td>
+                </tr>
+                <tr>
+                    <td>Categoría:</td>
+                    <td><asp:Label ID="idCategoriaLabel" runat="server" Text='<%# Bind("idCategoria") %>' /></td>
+                </tr>
+            </table>
+           
+       
+
+            
+            
             <br />
             <asp:LinkButton ID="EditButton" runat="server" CausesValidation="False" CommandName="Edit" Text="Editar" />
             &nbsp;<asp:LinkButton ID="DeleteButton" runat="server" CausesValidation="False" CommandName="Delete" Text="Eliminar" />

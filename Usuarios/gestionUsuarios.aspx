@@ -2,11 +2,11 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
 
-    <h2>Gestión de usuarios</h2>
-    <h3><a href="formUsuarios.aspx">Nuevo usuario</a></h3>
-    <h3><asp:Label ID="LabelMensaje" runat="server"></asp:Label></h3>
+    <h2 style="text-align: center">Gestión de usuarios</h2>
+    <h3 style="text-align: center"><a href="formUsuarios.aspx">Nuevo usuario</a></h3>
+    <h3 style="text-align: center"><asp:Label ID="LabelMensaje" runat="server"></asp:Label></h3>
 
-    <asp:GridView ID="GridViewUsuarios" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="idUsuario" DataSourceID="SqlDataSourceUsuarios" ForeColor="#333333" GridLines="None">
+    <asp:GridView ID="GridViewUsuarios" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="idUsuario" DataSourceID="SqlDataSourceUsuarios" ForeColor="#333333" GridLines="None" HorizontalAlign="Center">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
             <asp:BoundField DataField="nombre" HeaderText="Nombre" SortExpression="nombre" />

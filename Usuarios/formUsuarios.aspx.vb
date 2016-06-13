@@ -9,4 +9,15 @@ Partial Class Usuarios_formUsuarios
     End Sub
 
 
+    Protected Sub LinkButtonVolver_Click(sender As Object, e As EventArgs)
+        Response.Redirect("gestionUsuarios.aspx")
+    End Sub
+
+    Protected Sub UpdateCancelButton_Click(sender As Object, e As EventArgs)
+        Response.Redirect("gestionUsuarios.aspx")
+    End Sub
+
+    Protected Sub InsertCancelButton_Click(sender As Object, e As EventArgs)
+        Response.Redirect("gestionUsuarios.aspx")
+    End Sub
 End Class

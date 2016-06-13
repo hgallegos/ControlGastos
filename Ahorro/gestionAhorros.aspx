@@ -2,12 +2,12 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
 
-    <h2>Gestión de ahorros</h2>
-    <h3><a href="formAhorro.aspx">Nuevo ahorro</a></h3>
-    <h3>
+    <h2 style="text-align: center">Gestión de ahorros</h2>
+    <h3 style="text-align: center"><a href="formAhorro.aspx">Nuevo ahorro</a></h3>
+    <h3 style="text-align: center">
         <asp:Label ID="LabelMensaje" runat="server" Text=""></asp:Label></h3>
 
-    <asp:GridView ID="GridViewAhorro" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="idAhorro" DataSourceID="SqlDataSourceAhorro" ForeColor="#333333" GridLines="None" Width="530px">
+    <asp:GridView ID="GridViewAhorro" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="idAhorro" DataSourceID="SqlDataSourceAhorro" ForeColor="#333333" GridLines="None" Width="530px" HorizontalAlign="Center">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
             <asp:BoundField DataField="Monto" HeaderText="Monto" SortExpression="Monto" />

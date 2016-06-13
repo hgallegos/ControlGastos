@@ -2,11 +2,11 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
 
-    <h2>Gestión de categorias</h2>
-    <h3><a href="formCategorias.aspx">Agregar categoría</a></h3>
-    <h3><asp:Label ID="LabelMensaje" runat="server" Text=""></asp:Label></h3>
+    <h2 style="text-align: center">Gestión de categorias</h2>
+    <h3 style="text-align: center"><a href="formCategorias.aspx">Agregar categoría</a></h3>
+    <h3 style="text-align: center"><asp:Label ID="LabelMensaje" runat="server" Text=""></asp:Label></h3>
 
-    <asp:GridView ID="GridViewCategorias" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="idCategoria" DataSourceID="SqlDataSourceCategorias" ForeColor="#333333" GridLines="None">
+    <asp:GridView ID="GridViewCategorias" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="idCategoria" DataSourceID="SqlDataSourceCategorias" ForeColor="#333333" GridLines="None" HorizontalAlign="Center">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
             <asp:BoundField DataField="idCategoria" HeaderText="# " InsertVisible="False" ReadOnly="True" SortExpression="idCategoria" />

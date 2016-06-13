@@ -115,12 +115,16 @@
                 </tr>
                 <tr>
                     <td style="width: 103px"> <strong>Usuario</strong>:</td>
-                    <td> <asp:Label ID="idUsuarioLabel" runat="server" Text='<%# Bind("idUsuario") %>' /></td>               
+                    <td> <asp:Label ID="idUsuarioLabel" runat="server" Text='<%# Bind("nombre") %>' /></td>               
                 </tr>
             </table>
    
            
+            <br />
+   
+           
             <asp:LinkButton ID="EditButton" runat="server" CausesValidation="False" CommandName="Edit" Text="Editar" />
+            &nbsp;
             <asp:LinkButton ID="LinkButtonVolver" runat="server" OnClick="LinkButtonVolver_Click">Volver</asp:LinkButton>
 
             <br />
@@ -130,7 +134,7 @@
     <asp:SqlDataSource ID="SqlDataSourceIngresos" runat="server" 
         ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString2 %>" 
         InsertCommand="INSERT INTO [Ingreso] ([descripcion], [fecha], [cantidad], [idUsuario]) VALUES (@descripcion, @fecha, @cantidad, @idUsuario)" 
-        SelectCommand="SELECT [idIngreso], [descripcion], [fecha], [cantidad], [idUsuario] FROM [Ingreso] WHERE ([idIngreso] = @idIngreso)" 
+        SelectCommand="SELECT Ingreso.idIngreso, Ingreso.descripcion, Ingreso.fecha, Ingreso.cantidad, Ingreso.idUsuario, Usuario.nombre FROM Ingreso INNER JOIN Usuario ON Ingreso.idUsuario = Usuario.idUsuario WHERE (Ingreso.idIngreso = @idIngreso)" 
         DeleteCommand="DELETE FROM [Ingreso] WHERE [idIngreso] = @idIngreso" 
         UpdateCommand="UPDATE [Ingreso] SET [descripcion] = @descripcion, [fecha] = @fecha, [cantidad] = @cantidad, [idUsuario] = @idUsuario WHERE [idIngreso] = @idIngreso">
         <DeleteParameters>
