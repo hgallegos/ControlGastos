@@ -41,5 +41,8 @@
             <asp:Parameter Name="idSubcategoria" Type="Int32" />
         </UpdateParameters>
     </asp:SqlDataSource>
+    
+    <h3 style="text-align: center"><a href="gestionCategorias.aspx">Volver</a></h3>
+<p style="text-align: center">&nbsp;</p>
 </asp:Content>
 

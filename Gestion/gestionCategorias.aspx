@@ -4,6 +4,7 @@
 
     <h2 style="text-align: center">Gestión de categorias</h2>
     <h3 style="text-align: center"><a href="formCategorias.aspx">Agregar categoría</a></h3>
+     <h3 style="text-align: center"><a href="gestionSubcategorias.aspx">Gestionar subcategorías</a></h3>
     <h3 style="text-align: center"><asp:Label ID="LabelMensaje" runat="server" Text=""></asp:Label></h3>
 
     <asp:GridView ID="GridViewCategorias" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="idCategoria" DataSourceID="SqlDataSourceCategorias" ForeColor="#333333" GridLines="None" HorizontalAlign="Center">
@@ -36,5 +37,7 @@
             <asp:Parameter Name="idCategoria" Type="Int32" />
         </UpdateParameters>
     </asp:SqlDataSource>
+
+    
 </asp:Content>
 
