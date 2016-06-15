@@ -8,6 +8,20 @@ Partial Class FormGastos
         End If
     End Sub
 
+
+    Protected Sub InsertButton_Click(sender As Object, e As EventArgs)
+        Server.Transfer("detallar.aspx")
+    End Sub
+
+    Protected Sub FormViewGastos_ItemInserted(sender As Object, e As System.Web.UI.WebControls.FormViewInsertedEventArgs) Handles FormViewGastos.ItemInserted
+        If (e.Exception Is Nothing) Then
+            labelGasto.Text = "Gasto agregado exitosamente"
+
+        Else
+            labelGasto.Text = "No se pudo agregar el gasto"
+        End If
+        e.ExceptionHandled = True
+    End Sub
 End Class
 
 

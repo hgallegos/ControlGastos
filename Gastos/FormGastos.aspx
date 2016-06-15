@@ -3,6 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
     
    <h2>Nuevo Gasto</h2>
+    <asp:Label ID="labelGasto" runat="server" Text='' />
     <asp:FormView ID="FormViewGastos" runat="server" DataKeyNames="idGasto" DataSourceID="SqlDataSourceGastos" Width="674px">
         <EditItemTemplate>
             idGasto:
@@ -41,7 +42,14 @@
                   
                     <td>Fecha:</td>
                     <td style="width: 129px">
-                        <asp:Calendar ID="Calendar1" runat="server" SelectedDate='<%# Bind("fecha") %>' CellPadding="0" Width="217px"></asp:Calendar>
+                        <asp:Calendar ID="Calendar1" runat="server" SelectedDate='<%# Bind("fecha") %>' Width="217px" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="190px" NextPrevFormat="FullMonth">
+                            <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
+                            <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" />
+                            <OtherMonthDayStyle ForeColor="#999999" />
+                            <SelectedDayStyle BackColor="#333399" ForeColor="White" />
+                            <TitleStyle BackColor="White" BorderColor="Black" BorderWidth="4px" Font-Bold="True" Font-Size="12pt" ForeColor="#333399" />
+                            <TodayDayStyle BackColor="#CCCCCC" />
+                        </asp:Calendar>
                     </td>
                       <td></td>
                 </tr>
@@ -76,7 +84,7 @@
   
             </table>
             <br />
-            <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insertar" />
+            <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insertar" OnClick="InsertButton_Click" />
 &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" />
         </InsertItemTemplate>
 
