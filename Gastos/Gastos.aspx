@@ -4,7 +4,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
 
     <h2>Gestion de gastos&nbsp;
-        <asp:Button ID="Button1" runat="server" Height="46px" Text="+" Width="48px" />
+        <asp:Button ID="ButtonAgregarGastos" runat="server" Height="46px" Text="+" Width="48px" />
     </h2>
   <h3><asp:Label ID="Label1" runat="server" Text=""></asp:Label> 
       <asp:GridView ID="GridViewGastos" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSourceGastos" Width="1024px" DataKeyNames="idGasto" AllowSorting="True" CellPadding="4" ForeColor="#333333" GridLines="None">

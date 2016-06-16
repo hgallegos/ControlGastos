@@ -8,7 +8,15 @@ Partial Class Gastos_Detallar
         labelPreguntaDetalle.Text = ""
         ButtonNoDetallar.Visible = False
         ButtonDetallar.Visible = False
-        ListBoxElementos.Visible = True
+        ' FormViewElementos.DefaultMode = FormViewMode.Insert
+        ' FormViewElementos.Visible = True
+        ' GridViewDetalleGastos.Visible = True
+        ' FormViewDetalleGastos.DefaultMode = FormViewMode.Insert
+
+
+
+
+
 
 
 
@@ -18,9 +26,10 @@ Partial Class Gastos_Detallar
 
     End Sub
 
-    Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
+ 
 
-    End Sub
+
+
 
 
 End Class

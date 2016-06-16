@@ -21,28 +21,20 @@
             idSubcategoria:
             <asp:TextBox ID="idSubcategoriaTextBox" runat="server" Text='<%# Bind("idSubcategoria") %>' />
             <br />
-            nombre:
-            <asp:TextBox ID="nombreTextBox" runat="server" Text='<%# Bind("nombre") %>' />
-            <br />
-            descripcion:
-            <asp:TextBox ID="descripcionTextBox" runat="server" Text='<%# Bind("descripcion") %>' />
-            <br />
             <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Actualizar" />
             &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" />
         </EditItemTemplate>
         <InsertItemTemplate>
-            <table class="tabla_formulario">
+            <table>
                 <tr>
-                     <td>Monto:</td>
-                     <td style="width: 129px"><asp:TextBox ID="montoTextBox" runat="server" Text='<%# Bind("monto") %>' Height="28px" Width="217px" /></td>
-                     <td style="width: 584px">
-                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorMonto" runat="server" ControlToValidate="montoTextBox" ErrorMessage="Debe ingresar un monto"></asp:RequiredFieldValidator></td>
-                     </tr>
+                    <td>monto:</td>
+                    <td><asp:TextBox ID="montoTextBox" runat="server" Text='<%# Bind("monto") %>' /></td>
+                    <td></td>
+                </tr>
                 <tr>
-                  
-                    <td>Fecha:</td>
-                    <td style="width: 129px">
-                        <asp:Calendar ID="Calendar1" runat="server" SelectedDate='<%# Bind("fecha") %>' Width="217px" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="190px" NextPrevFormat="FullMonth">
+                    <td>fecha:</td>
+                    <td>
+                        <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="190px" NextPrevFormat="FullMonth" SelectedDate='<%# Bind("fecha") %>' Width="350px">
                             <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
                             <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" />
                             <OtherMonthDayStyle ForeColor="#999999" />
@@ -51,40 +43,22 @@
                             <TodayDayStyle BackColor="#CCCCCC" />
                         </asp:Calendar>
                     </td>
-                      <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>idUsuario:</td>
-                    <td style="width: 129px"><asp:TextBox ID="idUsuarioTextBox" runat="server" Text='<%# Bind("idUsuario") %>' Height="28px" Width="217px" /></td>
-                    <td style="width: 584px"> <asp:RequiredFieldValidator ID="RequiredFieldValidatorIdUsuario" runat="server" ControlToValidate="idUsuarioTextBox" ErrorMessage="Debe ingresar un idUsuario"></asp:RequiredFieldValidator></td>
-                     </tr>
+                    <td><asp:TextBox ID="idUsuarioTextBox" runat="server" Text='<%# Bind("idUsuario") %>' /></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>Subcategoria:</td>
-                    <td style="width: 129px">
-                        <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSourceSubcategorias" DataTextField="nombre" DataValueField="idSubcategoria" Height="28px" SelectedIndex='<%# Bind("idSubcategoria") %>' SelectedValue='<%# bind("idSubcategoria") %>' Width="217px">
-                        </asp:DropDownList>
-                        <asp:SqlDataSource ID="SqlDataSourceSubcategorias" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString %>" SelectCommand="SELECT [nombre], [idSubcategoria] FROM [Subcategoria] ORDER BY [nombre] DESC"></asp:SqlDataSource>
-                    </td>
-                      <td></td>
+                    <td><asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSourceSubCategorias" DataTextField="nombre" DataValueField="idSubcategoria" SelectedIndex='<%# Eval("idSubcategoria") %>' SelectedValue='<%# Bind("idSubcategoria") %>' Width="129px" ></asp:DropDownList></td>
+                    <td></td>
                 </tr>
-                <tr>
-                    <td>Nombre:</td>
-                    <td style="width: 129px"><asp:TextBox ID="nombreTextBox" runat="server" Text='<%# Bind("nombre") %>' Height="28px" Width="217px" /></td>
-                    <td style="width: 584px"><asp:RequiredFieldValidator ID="RequiredFieldValidatorNombre" runat="server" ControlToValidate="nombreTextBox" ErrorMessage="Debe ingresar un nombre"></asp:RequiredFieldValidator></td>
-                   </tr>
-
-                </tr>
-                <tr>
-                    <td>Descripcion:</td>
-
-                    <td style="width: 129px"><asp:TextBox ID="descripcionTextBox" runat="server" Text='<%# Bind("descripcion") %>' Height="28px" Width="217px" /></td>
-                   <td style="width: 584px"> <asp:RequiredFieldValidator ID="RequiredFieldValidatorDescripcion" runat="server" ControlToValidate="descripcionTextBox" ErrorMessage="Debe ingresar una descripción"></asp:RequiredFieldValidator></td>
-                </tr>
-  
             </table>
-            <br />
-            <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insertar" OnClick="InsertButton_Click" />
+            
+            
+            <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insertar"  />
 &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" />
         </InsertItemTemplate>
 
@@ -104,18 +78,12 @@
             idSubcategoria:
             <asp:Label ID="idSubcategoriaLabel" runat="server" Text='<%# Bind("idSubcategoria") %>' />
             <br />
-            nombre:
-            <asp:Label ID="nombreLabel" runat="server" Text='<%# Bind("nombre") %>' />
-            <br />
-            descripcion:
-            <asp:Label ID="descripcionLabel" runat="server" Text='<%# Bind("descripcion") %>' />
-            <br />
             <asp:LinkButton ID="EditButton" runat="server" CausesValidation="False" CommandName="Edit" Text="Editar" />
             &nbsp;<asp:LinkButton ID="DeleteButton" runat="server" CausesValidation="False" CommandName="Delete" Text="Eliminar" />
             &nbsp;<asp:LinkButton ID="NewButton" runat="server" CausesValidation="False" CommandName="New" Text="Nuevo" />
         </ItemTemplate>
     </asp:FormView>
-    <asp:SqlDataSource ID="SqlDataSourceGastos" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString %>" DeleteCommand="DELETE FROM [Gasto] WHERE [idGasto] = @idGasto" InsertCommand="INSERT INTO [Gasto] ([monto], [fecha], [idUsuario], [idSubcategoria]) VALUES (@monto, @fecha, @idUsuario, @idSubcategoria)" SelectCommand="SELECT Gasto.idGasto, Gasto.monto, Gasto.fecha, Gasto.idUsuario, Gasto.idSubcategoria, Subcategoria.nombre, Subcategoria.descripcion FROM Gasto INNER JOIN Subcategoria ON Gasto.idSubcategoria = Subcategoria.idSubcategoria" UpdateCommand="UPDATE [Gasto] SET [monto] = @monto, [fecha] = @fecha, [idUsuario] = @idUsuario, [idSubcategoria] = @idSubcategoria WHERE [idGasto] = @idGasto">
+    <asp:SqlDataSource ID="SqlDataSourceGastos" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString %>" DeleteCommand="DELETE FROM [Gasto] WHERE [idGasto] = @idGasto" InsertCommand="INSERT INTO [Gasto] ([monto], [fecha], [idUsuario], [idSubcategoria]) VALUES (@monto, @fecha, @idUsuario, @idSubcategoria)" SelectCommand="SELECT Gasto.idGasto, Gasto.monto, Gasto.fecha, Gasto.idUsuario, Gasto.idSubcategoria, Subcategoria.nombre FROM Gasto INNER JOIN Subcategoria ON Gasto.idSubcategoria = Subcategoria.idSubcategoria" UpdateCommand="UPDATE [Gasto] SET [monto] = @monto, [fecha] = @fecha, [idUsuario] = @idUsuario, [idSubcategoria] = @idSubcategoria WHERE [idGasto] = @idGasto">
         <DeleteParameters>
             <asp:Parameter Name="idGasto" Type="Int32" />
         </DeleteParameters>
@@ -133,5 +101,8 @@
             <asp:Parameter Name="idGasto" Type="Int32" />
         </UpdateParameters>
     </asp:SqlDataSource>
+    <br />
+    <asp:SqlDataSource ID="SqlDataSourceSubCategorias" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString %>" SelectCommand="SELECT [idSubcategoria], [nombre] FROM [Subcategoria]"></asp:SqlDataSource>
+    <br />
 </asp:Content>
 
