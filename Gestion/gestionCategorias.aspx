@@ -7,7 +7,7 @@
      <h3 style="text-align: center"><a href="gestionSubcategorias.aspx">Gestionar subcategorías</a></h3>
     <h3 style="text-align: center"><asp:Label ID="LabelMensaje" runat="server" Text=""></asp:Label></h3>
 
-    <asp:GridView ID="GridViewCategorias" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="idCategoria" DataSourceID="SqlDataSourceCategorias" ForeColor="#333333" GridLines="None" HorizontalAlign="Center">
+    <asp:GridView ID="GridViewCategorias" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="idCategoria" DataSourceID="SqlDataSourceCategorias" ForeColor="#333333" GridLines="None" HorizontalAlign="Center" Width="600px">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
             <asp:BoundField DataField="idCategoria" HeaderText="# " InsertVisible="False" ReadOnly="True" SortExpression="idCategoria" />
