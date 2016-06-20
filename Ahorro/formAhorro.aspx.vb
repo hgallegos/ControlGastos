@@ -9,7 +9,7 @@ Partial Class Ahorro_formAhorro
     End Sub
 
     Protected Sub UpdateCancelButton_Click(sender As Object, e As EventArgs)
-
+        Response.Redirect("gestionAhorros.aspx")
     End Sub
 
     Protected Sub InsertCancelButton_Click(sender As Object, e As System.EventArgs)

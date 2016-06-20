@@ -7,7 +7,7 @@
     <h2 style="text-align: center">Gastos por categoria</h2>
     <p style="text-align: center">&nbsp;</p>
 
-    <asp:GridView ID="GridViewGastosCategoria" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSourceGastosCategoria" ForeColor="#333333" GridLines="None" HorizontalAlign="Center" CssClass="table-bordered" Width="600px">
+    <asp:GridView ID="GridViewGastosCategoria" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSourceGastosCategoria" ForeColor="#333333" GridLines="None" HorizontalAlign="Center" BorderStyle="Ridge" CssClass="table-bordered">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
             <asp:BoundField DataField="Usuario" HeaderText="Usuario" SortExpression="Usuario" />

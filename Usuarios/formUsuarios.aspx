@@ -8,35 +8,35 @@
 
     <asp:FormView ID="FormViewUsuarios" runat="server" DataKeyNames="idUsuario" DataSourceID="SqlDataSourceUsuarios" Width="636px">
         <EditItemTemplate>
-            <table class="tabla_formulario">
+            <table>
                 <tr>
-                    <td class="etiqueta">ID: </td>
+                    <td>ID: </td>
                     <td><asp:Label ID="idUsuarioLabel1" runat="server" Text='<%# Eval("idUsuario") %>' /></td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="etiqueta">Nombre: </td>
+                    <td>Nombre: </td>
                     <td><asp:TextBox ID="nombreTextBox" runat="server" Text='<%# Bind("nombre") %>' /></td>
                     <td>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorNombre" runat="server" ControlToValidate="nombreTextBox" ErrorMessage="Debes ingresar un nombre."></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
-                    <td class="etiqueta">Mail:</td>
+                    <td>Mail:</td>
                     <td> <asp:TextBox ID="correoTextBox" runat="server" Text='<%# Bind("correo") %>' /></td>
                     <td>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorMail" runat="server" ControlToValidate="correoTextBox" ErrorMessage="Debes ingresar un mail."></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
-                    <td class="etiqueta">Contraseña: </td>
+                    <td>Contraseña: </td>
                     <td><asp:TextBox ID="contraseñaTextBox" runat="server" Text='<%# Bind("contraseña") %>' /></td>
                     <td>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorContraseña" runat="server" ControlToValidate="contraseñaTextBox" ErrorMessage="Debes ingresar una contraseña."></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
-                    <td class="etiqueta">Perfil: </td>
+                    <td>Perfil: </td>
                     <td>
                         <asp:DropDownList ID="DropDownListPerfil" runat="server" DataSourceID="SqlDataSourcePerfil" DataTextField="nombre" DataValueField="idPerfil" SelectedValue='<%# Bind("idPerfil") %>'>
                         </asp:DropDownList>
@@ -49,30 +49,30 @@
             
             <br />
             <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Actualizar" />
-            &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" />
+            &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" OnClick="UpdateCancelButton_Click" />
         </EditItemTemplate>
         <InsertItemTemplate>
-            <table class="tabla_formulario">
+            <table>
                 <tr>
-                    <td class="etiqueta">Nombre: </td>
+                    <td>Nombre: </td>
                     <td><asp:TextBox ID="nombreTextBox" runat="server" Text='<%# Bind("nombre") %>' /></td>
                     <td>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorNombre" runat="server" ErrorMessage="Debes ingresar un nombre." ControlToValidate="nombreTextBox"></asp:RequiredFieldValidator></td>
                 </tr>
                 <tr>
-                    <td class="etiqueta">Mail: </td>
+                    <td>Mail: </td>
                     <td><asp:TextBox ID="correoTextBox" runat="server" Text='<%# Bind("correo") %>' /></td>
                     <td>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorMail" runat="server" ErrorMessage="Debes ingresar un mail." ControlToValidate="correoTextBox"></asp:RequiredFieldValidator></td>
                 </tr>
                 <tr>
-                    <td class="etiqueta">Contraseña: </td>
+                    <td>Contraseña: </td>
                     <td><asp:TextBox ID="contraseñaTextBox" runat="server" Text='<%# Bind("contraseña") %>' /></td>
                     <td>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorContraseña" runat="server" ErrorMessage="Debes ingresar una contraseña." ControlToValidate="contraseñaTextBox"></asp:RequiredFieldValidator></td>
                 </tr>
                 <tr>
-                    <td class="etiqueta">Perfil: </td>
+                    <td>Perfil: </td>
                     <td>
                         <asp:DropDownList ID="DropDownListPerfil" runat="server" DataSourceID="SqlDataSourcePerfil" DataTextField="nombre" DataValueField="idPerfil" SelectedValue='<%# Bind("idPerfil") %>'></asp:DropDownList>
                         <asp:SqlDataSource ID="SqlDataSourcePerfil" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString2 %>" SelectCommand="SELECT * FROM [Perfil]"></asp:SqlDataSource>
@@ -86,25 +86,25 @@
             &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" OnClick="InsertCancelButton_Click" />
         </InsertItemTemplate>
         <ItemTemplate>
-            <table class="tabla_formulario">
+            <table>
                 <tr>
-                    <td class="etiqueta">Usuario: </td>
+                    <td>Usuario: </td>
                     <td><asp:Label ID="idUsuarioLabel" runat="server" Text='<%# Eval("idUsuario") %>' /></td>
                 </tr>
                 <tr>
-                    <td class="etiqueta">Nombre: </td>
+                    <td>Nombre: </td>
                     <td><asp:Label ID="nombreLabel" runat="server" Text='<%# Bind("nombre") %>' /></td>
                 </tr>
                 <tr>
-                    <td class="etiqueta">Mail: </td>
+                    <td>Mail: </td>
                     <td><asp:Label ID="correoLabel" runat="server" Text='<%# Bind("correo") %>' /></td>
                 </tr>
                 <tr>
-                    <td class="etiqueta">Contraseña: </td>
+                    <td>Contraseña: </td>
                     <td><asp:Label ID="contraseñaLabel" runat="server" Text='<%# Bind("contraseña") %>' /></td>
                 </tr>
                 <tr>
-                    <td class="etiqueta">Perfil: </td>
+                    <td>Perfil: </td>
                     <td><asp:Label ID="idPerfilLabel" runat="server" Text='<%# Bind("Expr1")%>' /></td>
                 </tr>
             </table>

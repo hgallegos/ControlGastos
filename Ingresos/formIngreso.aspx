@@ -7,15 +7,15 @@
 
     <asp:FormView ID="FormViewIngresos" runat="server" DataKeyNames="idIngreso" DataSourceID="SqlDataSourceIngresos" Width="688px">
         <EditItemTemplate>
-            <table class="tabla_formulario">
+            <table>
                 <tr>
-                    <td class="etiqueta">Descripción:</td>
-                    <td > <asp:TextBox ID="descripcionTextBox" runat="server" Text='<%# Bind("descripcion") %>' Height="28px" Width="219px" /></td>
-                    <td > <asp:RequiredFieldValidator ID="RequiredFieldValidatorDescripcion" runat="server" ControlToValidate="descripcionTextBox" ErrorMessage="Debes ingresar una descripción."></asp:RequiredFieldValidator>
+                    <td style="height: 24px; "><strong>Descripción</strong>:</td>
+                    <td style="height: 24px"> <asp:TextBox ID="descripcionTextBox" runat="server" Text='<%# Bind("descripcion") %>' Height="28px" Width="219px" /></td>
+                    <td style="height: 24px"> <asp:RequiredFieldValidator ID="RequiredFieldValidatorDescripcion" runat="server" ControlToValidate="descripcionTextBox" ErrorMessage="Debes ingresar una descripción."></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
-                    <td class="etiqueta">Fecha:</td>
+                    <td> <strong>Fecha:</strong></td>
                     <td>
                         <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="106px" NextPrevFormat="FullMonth" SelectedDate='<%# Bind("fecha") %>' Width="230px">
                             <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
@@ -29,14 +29,14 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="etiqueta"> Cantidad:</td>
+                    <td> <strong>Cantidad:</strong></td>
                     <td><asp:TextBox ID="cantidadTextBox" runat="server" Text='<%# Bind("cantidad") %>' Height="28px" Width="223px" /></td>
                     <td>            <asp:RequiredFieldValidator ID="RequiredFieldValidatorCantidad" runat="server" ControlToValidate="cantidadTextBox" ErrorMessage="Debes ingresar un monto."></asp:RequiredFieldValidator>
 
                     </td>
                 </tr>
                 <tr>
-                    <td class="etiqueta">Usuario:</td>
+                    <td><strong>Usuario</strong>:</td>
                     <td><asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSourceUsuarios" DataTextField="nombre" DataValueField="idUsuario" Height="28px" SelectedValue='<%# Bind("idUsuario") %>' Width="227px">
             </asp:DropDownList></td>
                 </tr>
@@ -50,19 +50,20 @@
             <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True"
                  CommandName="Update" Text="Actualizar" />
 
-            &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" />
+            &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" 
+                CommandName="Cancel" Text="Cancelar"  />
 
         </EditItemTemplate>
         <InsertItemTemplate>
-            <table class="tabla_formulario">
+            <table>
                 <tr>
-                    <td class="etiqueta"><strong>Descripción</strong>:</td>
+                    <td><strong>Descripción</strong>:</td>
                     <td><asp:TextBox ID="descripcionTextBox" runat="server" Text='<%# Bind("descripcion") %>' Height="28px" Width="217px" /></td>
                     <td style="width: 346px"><asp:RequiredFieldValidator ID="RequiredFieldValidatorDescripcion" runat="server" ControlToValidate="descripcionTextBox" ErrorMessage="Debes ingresar una descripción."></asp:RequiredFieldValidator>
             </td>
                 </tr>
                 <tr>
-                    <td class="etiqueta"><strong>Fecha:</strong></td>
+                    <td><strong>Fecha:</strong></td>
                     <td>
                         <asp:Calendar ID="Calendar2" runat="server" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="28px" NextPrevFormat="FullMonth" SelectedDate='<%# Bind("fecha") %>' Width="221px">
                             <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
@@ -76,13 +77,13 @@
                     <td style="width: 346px">&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="etiqueta"><strong>Cantidad:</strong></td>
+                    <td><strong>Cantidad:</strong></td>
                     <td><asp:TextBox ID="cantidadTextBox" runat="server" Text='<%# Bind("cantidad") %>' Height="28px" Width="226px" /></td>
                     <td style="width: 346px"><asp:RequiredFieldValidator ID="RequiredFieldValidatorCantidad" runat="server" ControlToValidate="cantidadTextBox" ErrorMessage="Debes ingresar una cantidad de dinero."></asp:RequiredFieldValidator>
             </td>
                 </tr>
                 <tr>
-                    <td class="etiqueta">  <strong>Usuario</strong>:</td>
+                    <td>  <strong>Usuario</strong>:</td>
                     <td><asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSourceUsuarios" DataTextField="nombre" DataValueField="idUsuario" SelectedValue='<%# Bind("idUsuario") %>' Height="28px"></asp:DropDownList></td>
                 </tr>
             </table>
@@ -95,34 +96,31 @@
             &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" OnClick="InsertCancelButton_Click" />
         </InsertItemTemplate>
         <ItemTemplate>
-            <table class="tabla_formulario">
+            <table>
                 <tr>
-                    <td class="etiqueta">Ingreso #</td>
-                    <td > <asp:Label ID="idIngresoLabel" runat="server" Text='<%# Eval("idIngreso") %>' /></td>               
+                    <td style="height: 22px; width: 103px"><strong>Ingreso</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
+                    <td style="height: 22px"> <asp:Label ID="idIngresoLabel" runat="server" Text='<%# Eval("idIngreso") %>' /></td>               
                 </tr>
                 <tr>
-                    <td class="etiqueta"> <strong>Descripción</strong>:</td>
+                    <td style="width: 103px"> <strong>Descripción</strong>:</td>
                     <td> <asp:Label ID="descripcionLabel" runat="server" Text='<%# Bind("descripcion") %>' /></td>               
                 </tr>
                 <tr>
-                    <td class="etiqueta"> <strong>Fecha</strong>:</td>
+                    <td style="width: 103px"> <strong>Fecha</strong>:</td>
                     <td> <asp:Label ID="fechaLabel" runat="server" Text='<%# Bind("fecha") %>' /></td>               
                 </tr>
                 <tr>
-                    <td class="etiqueta"> <strong>Cantidad</strong>:</td>
+                    <td style="width: 103px"> <strong>Cantidad</strong>:</td>
                     <td><asp:Label ID="cantidadLabel" runat="server" Text='<%# Bind("cantidad") %>' /></td>               
                 </tr>
                 <tr>
-                    <td class="etiqueta"> <strong>Usuario</strong>:</td>
+                    <td style="width: 103px"> <strong>Usuario</strong>:</td>
                     <td> <asp:Label ID="idUsuarioLabel" runat="server" Text='<%# Bind("nombre") %>' /></td>               
                 </tr>
             </table>
    
            
             <br />
-   
-           
-            &nbsp;&nbsp;
    
            
             <asp:LinkButton ID="EditButton" runat="server" CausesValidation="False" CommandName="Edit" Text="Editar" />

@@ -7,11 +7,11 @@
     <h3 style="text-align: center">
         <asp:Label ID="LabelMensaje" runat="server" Text=""></asp:Label></h3>
 
-    <asp:GridView ID="GridViewAhorro" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="idAhorro" DataSourceID="SqlDataSourceAhorro" ForeColor="#333333" GridLines="None" Width="600px" HorizontalAlign="Center">
+    <asp:GridView ID="GridViewAhorro" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="idAhorro" DataSourceID="SqlDataSourceAhorro" ForeColor="#333333" GridLines="None" Width="530px" HorizontalAlign="Center">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
-            <asp:BoundField DataField="Monto" HeaderText="Monto" SortExpression="Monto" DataFormatString="{0:C0}" />
-            <asp:BoundField DataField="Fecha" HeaderText="Fecha" SortExpression="Fecha" DataFormatString="{0:d}" />
+            <asp:BoundField DataField="Monto" HeaderText="Monto" SortExpression="Monto" />
+            <asp:BoundField DataField="Fecha" HeaderText="Fecha" SortExpression="Fecha" />
             <asp:BoundField DataField="nombre" HeaderText="Nombre" SortExpression="nombre" />
             <asp:CommandField ShowSelectButton="True" />
         </Columns>
@@ -26,10 +26,6 @@
         <SortedDescendingCellStyle BackColor="#FFFDF8" />
         <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
     </asp:GridView>
-
-
-
-
     <asp:SqlDataSource ID="SqlDataSourceAhorro" runat="server" 
         ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString2 %>" 
         DeleteCommand="DELETE FROM [Ahorro] WHERE [idAhorro] = @original_idAhorro" 

@@ -7,26 +7,26 @@
 
     <asp:FormView ID="FormViewSubcategoria" runat="server" DataKeyNames="idSubcategoria" DataSourceID="SqlDataSourceSubcategoria" Width="648px">
         <EditItemTemplate>
-            <table class="tabla_formulario">
+            <table>
                 <tr>
-                    <td class="etiqueta">Subcategoría:</td>
+                    <td>Subcategoría:</td>
                     <td><asp:Label ID="idSubcategoriaLabel1" runat="server" Text='<%# Eval("idSubcategoria") %>' /></td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td class="etiqueta">Nombre</td>
+                    <td>Nombre</td>
                     <td><asp:TextBox ID="nombreTextBox" runat="server" Text='<%# Bind("nombre") %>' /></td>
                     <td>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorNombre" runat="server" ErrorMessage="Debes ingresar un nombre." ControlToValidate="nombreTextBox"></asp:RequiredFieldValidator></td>
                 </tr>
                 <tr>
-                    <td class="etiqueta">Descripción:</td>
+                    <td>Descripción:</td>
                     <td><asp:TextBox ID="descripcionTextBox" runat="server" Text='<%# Bind("descripcion") %>' /></td>
                     <td>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorDescripcion" runat="server" ErrorMessage="Debes ingresar una descripción." ControlToValidate="descripcionTextBox"></asp:RequiredFieldValidator></td>
                 </tr>
                 <tr>
-                    <td class="etiqueta"> Categoría:</td>
+                    <td> Categoría:</td>
                     <td>
                         <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSourceCategoria" DataTextField="nombre" DataValueField="idCategoria" SelectedValue='<%# Bind("idCategoria") %>'></asp:DropDownList>
                         <asp:SqlDataSource ID="SqlDataSourceCategoria" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString2 %>" SelectCommand="SELECT * FROM [Categoria]"></asp:SqlDataSource>
@@ -36,22 +36,22 @@
             
          
             <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Actualizar" />
-            &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" />
+            &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" OnClick="UpdateCancelButton_Click" />
         </EditItemTemplate>
         <InsertItemTemplate>
-            <table class="tabla_formulario">
+            <table>
                 <tr>
-                    <td class="etiqueta">Nombre:</td>
+                    <td>Nombre:</td>
                     <td> <asp:TextBox ID="nombreTextBox" runat="server" Text='<%# Bind("nombre") %>' /></td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td class="etiqueta">Descripción:</td>
+                    <td>Descripción:</td>
                     <td><asp:TextBox ID="descripcionTextBox" runat="server" Text='<%# Bind("descripcion") %>' /></td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td class="etiqueta">Categoría:</td>
+                    <td>Categoría:</td>
                     <td>
                         <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSourceCategorias" DataTextField="nombre" DataValueField="idCategoria" SelectedValue='<%# Bind("idCategoria") %>'></asp:DropDownList>
                         <asp:SqlDataSource ID="SqlDataSourceCategorias" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString2 %>" SelectCommand="SELECT * FROM [Categoria]"></asp:SqlDataSource>
@@ -68,21 +68,21 @@
             &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" OnClick="InsertCancelButton_Click" />
         </InsertItemTemplate>
         <ItemTemplate>
-            <table class="tabla_formulario">
+            <table>
                 <tr>
-                    <td class="etiqueta"> Subcategoria:</td>
+                    <td> Subcategoria:</td>
                     <td> <asp:Label ID="idSubcategoriaLabel" runat="server" Text='<%# Eval("idSubcategoria") %>' /></td>
                 </tr>
                 <tr>
-                    <td class="etiqueta"> Nombre:</td>
+                    <td> Nombre:</td>
                     <td> <asp:Label ID="nombreLabel" runat="server" Text='<%# Bind("nombre") %>' /></td>
                 </tr>
                 <tr>
-                    <td class="etiqueta">Descripción:</td>
+                    <td>Descripción:</td>
                     <td> <asp:Label ID="descripcionLabel" runat="server" Text='<%# Bind("descripcion") %>' /></td>
                 </tr>
                 <tr>
-                    <td class="etiqueta">Categoría:</td>
+                    <td>Categoría:</td>
                     <td><asp:Label ID="idCategoriaLabel" runat="server" Text='<%# Bind("idCategoria") %>' /></td>
                 </tr>
             </table>
