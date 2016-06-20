@@ -6,7 +6,7 @@
     <h3 style="text-align: center"><a href="formSubcategorias.aspx">Agregar subcategoria</a></h3>
     <h3 style="text-align: center"><asp:Label ID="LabelMensaje" runat="server" Text=""></asp:Label></h3>
 
-    <asp:GridView ID="GridViewSubcategorias" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="idSubcategoria" DataSourceID="SqlDataSourceSubcategoria" ForeColor="#333333" GridLines="None" HorizontalAlign="Center">
+    <asp:GridView ID="GridViewSubcategorias" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="idSubcategoria" DataSourceID="SqlDataSourceSubcategoria" ForeColor="#333333" GridLines="None" HorizontalAlign="Center" Width="600px">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
             <asp:BoundField DataField="nombre" HeaderText="Nombre" SortExpression="nombre" />
