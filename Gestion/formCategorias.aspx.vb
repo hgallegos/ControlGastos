@@ -22,4 +22,19 @@ Partial Class Gestion_formCategorias
     End Sub
 
 
+    Protected Sub FormViewCategorias_ItemInserted(sender As Object, e As FormViewInsertedEventArgs) Handles FormViewCategorias.ItemInserted
+        If (e.Exception Is Nothing) Then
+            LabelMensaje.Text = "¡Categoria ingresada exitosamente!"
+        Else
+            LabelMensaje.Text = "No se pudo ingresar la categoria"
+        End If
+    End Sub
+
+    Protected Sub FormViewCategorias_ItemUpdated(sender As Object, e As FormViewUpdatedEventArgs) Handles FormViewCategorias.ItemUpdated
+        If (e.Exception Is Nothing) Then
+            LabelMensaje.Text = "¡Categoria actualizada exitosamente!"
+        Else
+            LabelMensaje.Text = "No se pudo actualizar la categoria"
+        End If
+    End Sub
 End Class

@@ -101,7 +101,7 @@
         </ItemTemplate>
     </asp:FormView>
     <asp:SqlDataSource ID="SqlDataSourceSubcategoria" runat="server" 
-        ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString2 %>" 
+        ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=Proyecto;Integrated Security=True" 
         DeleteCommand="DELETE FROM [Subcategoria] WHERE [idSubcategoria] = @idSubcategoria" 
         InsertCommand="INSERT INTO [Subcategoria] ([descripcion], [nombre], [idCategoria]) VALUES (@descripcion, @nombre, @idCategoria)" 
         SelectCommand="SELECT Subcategoria.idSubcategoria, Subcategoria.descripcion, Subcategoria.nombre, Subcategoria.idCategoria, Categoria.nombre AS nombreCategoria FROM Subcategoria INNER JOIN Categoria ON Subcategoria.idCategoria = Categoria.idCategoria WHERE (Subcategoria.idSubcategoria = @idSubcategoria)" 

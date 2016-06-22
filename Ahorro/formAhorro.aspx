@@ -5,7 +5,7 @@
     <h2>Formulario de ahorro de dinero</h2>
     <h3>
         <asp:Label ID="LabelMensaje" runat="server" Text=""></asp:Label></h3>
-    <asp:FormView ID="FormViewAhorro" runat="server" DataKeyNames="idAhorro" DataSourceID="SqlDataSourceAhorros">
+    <asp:FormView ID="FormViewAhorro" runat="server" DataKeyNames="idAhorro" DataSourceID="SqlDataSourceAhorros" Width="554px">
         <EditItemTemplate>
 
 
@@ -19,7 +19,14 @@
                 <tr>
                     <td class="etiqueta" style="width: 80px">Fecha:</td>
                     <td style="width: 250px"> 
-                        <asp:Calendar ID="Calendar1" runat="server" Height="158px" Width="224px" SelectedDate='<%# Bind("Fecha") %>'></asp:Calendar>
+                        <asp:Calendar ID="Calendar1" runat="server" Height="190px" Width="212px" SelectedDate='<%# Bind("Fecha") %>' BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" NextPrevFormat="FullMonth">
+                            <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
+                            <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" />
+                            <OtherMonthDayStyle ForeColor="#999999" />
+                            <SelectedDayStyle BackColor="#333399" ForeColor="White" />
+                            <TitleStyle BackColor="White" BorderColor="Black" BorderWidth="4px" Font-Bold="True" Font-Size="12pt" ForeColor="#333399" />
+                            <TodayDayStyle BackColor="#CCCCCC" />
+                        </asp:Calendar>
                     </td>
                     <td></td>
                 </tr>
@@ -41,7 +48,7 @@
 
 
 
-            <h3>Nuevo ahorro</h3>
+            <h4>Nuevo ahorro</h4>
             <br />
 
 
@@ -57,7 +64,14 @@
                 <tr>
                     <td class="etiqueta" style="width: 67px">Fecha:</td>
                     <td style="width: 246px">
-                        <asp:Calendar ID="Calendar2" runat="server" Height="163px" SelectedDate='<%# Bind("Fecha") %>'></asp:Calendar>
+                        <asp:Calendar ID="Calendar2" runat="server" Height="190px" SelectedDate='<%# Bind("Fecha") %>' BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" NextPrevFormat="FullMonth" Width="226px">
+                            <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
+                            <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" />
+                            <OtherMonthDayStyle ForeColor="#999999" />
+                            <SelectedDayStyle BackColor="#333399" ForeColor="White" />
+                            <TitleStyle BackColor="White" BorderColor="Black" BorderWidth="4px" Font-Bold="True" Font-Size="12pt" ForeColor="#333399" />
+                            <TodayDayStyle BackColor="#CCCCCC" />
+                        </asp:Calendar>
                     </td>
                     <td></td>
                 </tr>

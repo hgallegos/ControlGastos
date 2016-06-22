@@ -21,7 +21,20 @@ Partial Class Usuarios_formUsuarios
         Response.Redirect("gestionUsuarios.aspx")
     End Sub
 
-    Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
 
+    Protected Sub FormViewUsuarios_ItemInserted(sender As Object, e As FormViewInsertedEventArgs) Handles FormViewUsuarios.ItemInserted
+        If (e.Exception Is Nothing) Then
+            LabelMensaje.Text = "Usuario ingresado exitosamente!"
+        Else
+            LabelMensaje.Text = "No se pudo ingresar el usuario"
+        End If
+    End Sub
+
+    Protected Sub FormViewUsuarios_ItemUpdated(sender As Object, e As FormViewUpdatedEventArgs) Handles FormViewUsuarios.ItemUpdated
+        If (e.Exception Is Nothing) Then
+            LabelMensaje.Text = "Usuario actualizado exitosamente!"
+        Else
+            LabelMensaje.Text = "No se pudo actualizar el usuario."
+        End If
     End Sub
 End Class

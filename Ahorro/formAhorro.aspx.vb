@@ -27,4 +27,13 @@ Partial Class Ahorro_formAhorro
             LabelMensaje.Text = "No se pudo agregar el ahorro"
         End If
     End Sub
+
+
+    Protected Sub FormViewAhorro_ItemUpdated(sender As Object, e As FormViewUpdatedEventArgs) Handles FormViewAhorro.ItemUpdated
+        If (e.Exception Is Nothing) Then
+            LabelMensaje.Text = "Ahorro actualizado exitosamente!"
+        Else
+            LabelMensaje.Text = "No se pudo actualizar el ahorro"
+        End If
+    End Sub
 End Class

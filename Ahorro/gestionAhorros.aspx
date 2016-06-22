@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
 
     <h2 style="text-align: center">Gestión de ahorros</h2>
-    <h3 style="text-align: center"><a href="formAhorro.aspx">Nuevo ahorro</a></h3>
+    <h4 style="text-align: center"><a href="formAhorro.aspx">Nuevo ahorro</a></h4>
     <h3 style="text-align: center">
         <asp:Label ID="LabelMensaje" runat="server" Text=""></asp:Label></h3>
 

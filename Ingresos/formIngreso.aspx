@@ -17,7 +17,7 @@
                 <tr>
                     <td class="etiqueta">Fecha:</td>
                     <td>
-                        <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="106px" NextPrevFormat="FullMonth" SelectedDate='<%# Bind("fecha") %>' Width="230px">
+                        <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="190px" NextPrevFormat="FullMonth" SelectedDate='<%# Bind("fecha") %>' Width="211px">
                             <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
                             <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" />
                             <OtherMonthDayStyle ForeColor="#999999" />
@@ -64,7 +64,7 @@
                 <tr>
                     <td class="etiqueta"><strong>Fecha:</strong></td>
                     <td>
-                        <asp:Calendar ID="Calendar2" runat="server" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="28px" NextPrevFormat="FullMonth" SelectedDate='<%# Bind("fecha") %>' Width="221px">
+                        <asp:Calendar ID="Calendar2" runat="server" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="190px" NextPrevFormat="FullMonth" SelectedDate='<%# Bind("fecha") %>' Width="231px">
                             <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
                             <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" />
                             <OtherMonthDayStyle ForeColor="#999999" />
