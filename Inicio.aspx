@@ -3,7 +3,7 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="jumbotron">
-        <h1>Bienvenidos a Home Spends</h1>
+        <h1>Bienvenidos a Home Spends </h1>
         <table class="tabla_portada">
             <tr>
                 <td>

@@ -111,7 +111,7 @@
         </ItemTemplate>
         <RowStyle BorderColor="White" BorderStyle="Dotted" />
     </asp:FormView>
-    <asp:SqlDataSource ID="SqlDataSourceAhorros" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString2 %>" DeleteCommand="DELETE FROM [Ahorro] WHERE [idAhorro] = @idAhorro" InsertCommand="INSERT INTO [Ahorro] ([Monto], [Fecha], [idUsuario]) VALUES (@Monto, @Fecha, @idUsuario)" SelectCommand="SELECT * FROM [Ahorro] WHERE ([idAhorro] = @idAhorro)" UpdateCommand="UPDATE [Ahorro] SET [Monto] = @Monto, [Fecha] = @Fecha, [idUsuario] = @idUsuario WHERE [idAhorro] = @idAhorro">
+    <asp:SqlDataSource ID="SqlDataSourceAhorros" runat="server" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=Proyecto;Integrated Security=True" DeleteCommand="DELETE FROM [Ahorro] WHERE [idAhorro] = @idAhorro" InsertCommand="INSERT INTO [Ahorro] ([Monto], [Fecha], [idUsuario]) VALUES (@Monto, @Fecha, @idUsuario)" SelectCommand="SELECT * FROM [Ahorro] WHERE ([idAhorro] = @idAhorro)" UpdateCommand="UPDATE [Ahorro] SET [Monto] = @Monto, [Fecha] = @Fecha, [idUsuario] = @idUsuario WHERE [idAhorro] = @idAhorro">
         <DeleteParameters>
             <asp:Parameter Name="idAhorro" Type="Int32" />
         </DeleteParameters>

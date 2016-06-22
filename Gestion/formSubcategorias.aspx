@@ -97,7 +97,7 @@
             &nbsp;<asp:LinkButton ID="LinkButtonVolver" runat="server" OnClick="LinkButtonVolver_Click">Volver</asp:LinkButton>
         </ItemTemplate>
     </asp:FormView>
-    <asp:SqlDataSource ID="SqlDataSourceSubcategoria" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString2 %>" DeleteCommand="DELETE FROM [Subcategoria] WHERE [idSubcategoria] = @idSubcategoria" InsertCommand="INSERT INTO [Subcategoria] ([descripcion], [nombre], [idCategoria]) VALUES (@descripcion, @nombre, @idCategoria)" SelectCommand="SELECT * FROM [Subcategoria] WHERE ([idSubcategoria] = @idSubcategoria)" UpdateCommand="UPDATE [Subcategoria] SET [descripcion] = @descripcion, [nombre] = @nombre, [idCategoria] = @idCategoria WHERE [idSubcategoria] = @idSubcategoria">
+    <asp:SqlDataSource ID="SqlDataSourceSubcategoria" runat="server" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=Proyecto;Integrated Security=True" DeleteCommand="DELETE FROM [Subcategoria] WHERE [idSubcategoria] = @idSubcategoria" InsertCommand="INSERT INTO [Subcategoria] ([descripcion], [nombre], [idCategoria]) VALUES (@descripcion, @nombre, @idCategoria)" SelectCommand="SELECT * FROM [Subcategoria] WHERE ([idSubcategoria] = @idSubcategoria)" UpdateCommand="UPDATE [Subcategoria] SET [descripcion] = @descripcion, [nombre] = @nombre, [idCategoria] = @idCategoria WHERE [idSubcategoria] = @idSubcategoria">
         <DeleteParameters>
             <asp:Parameter Name="idSubcategoria" Type="Int32" />
         </DeleteParameters>

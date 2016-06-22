@@ -134,7 +134,7 @@
         </ItemTemplate>
     </asp:FormView>
     <asp:SqlDataSource ID="SqlDataSourceIngresos" runat="server" 
-        ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString2 %>" 
+        ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=Proyecto;Integrated Security=True" 
         InsertCommand="INSERT INTO [Ingreso] ([descripcion], [fecha], [cantidad], [idUsuario]) VALUES (@descripcion, @fecha, @cantidad, @idUsuario)" 
         SelectCommand="SELECT Ingreso.idIngreso, Ingreso.descripcion, Ingreso.fecha, Ingreso.cantidad, Ingreso.idUsuario, Usuario.nombre FROM Ingreso INNER JOIN Usuario ON Ingreso.idUsuario = Usuario.idUsuario WHERE (Ingreso.idIngreso = @idIngreso)" 
         DeleteCommand="DELETE FROM [Ingreso] WHERE [idIngreso] = @idIngreso" 
