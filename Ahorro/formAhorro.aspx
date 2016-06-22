@@ -35,7 +35,7 @@
                     <td style="width: 250px">
                         <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSourceUsuarios" DataTextField="nombre" DataValueField="idUsuario" SelectedValue='<%# Bind("idUsuario") %>'>
                         </asp:DropDownList>
-                        <asp:SqlDataSource ID="SqlDataSourceUsuarios" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString2 %>" SelectCommand="SELECT * FROM [Usuario]"></asp:SqlDataSource>
+                        <asp:SqlDataSource ID="SqlDataSourceUsuarios" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString %>" SelectCommand="SELECT * FROM [Usuario]"></asp:SqlDataSource>
                     </td>
                 </tr>
             </table>
@@ -79,17 +79,14 @@
                     <td class="etiqueta" style="width: 67px">Usuario: </td>
                     <td style="width: 246px"><asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSourceUsuarios" DataTextField="nombre" DataValueField="idUsuario" SelectedValue='<%# Bind("idUsuario") %>'>
             </asp:DropDownList>
-            <asp:SqlDataSource ID="SqlDataSourceUsuarios" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString2 %>" SelectCommand="SELECT * FROM [Usuario]"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSourceUsuarios" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString %>" SelectCommand="SELECT * FROM [Usuario]"></asp:SqlDataSource>
             </td>
                 </tr>
             </table>
 
 
             <br />
-            &nbsp;&nbsp;
-
-
-            <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insertar" />
+            &nbsp;&nbsp;&nbsp;<asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insertar" />
             &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" OnClick="InsertCancelButton_Click" />
         </InsertItemTemplate>
         <ItemTemplate>
@@ -125,7 +122,7 @@
         </ItemTemplate>
         <RowStyle BorderColor="White" BorderStyle="Dotted" />
     </asp:FormView>
-    <asp:SqlDataSource ID="SqlDataSourceAhorros" runat="server" ConnectionString="<%$ ConnectionStrings:ControlGastosConnectionString %>" DeleteCommand="DELETE FROM [Ahorro] WHERE [idAhorro] = @idAhorro" InsertCommand="INSERT INTO [Ahorro] ([Monto], [Fecha], [idUsuario]) VALUES (@Monto, @Fecha, @idUsuario)" SelectCommand="SELECT * FROM [Ahorro] WHERE ([idAhorro] = @idAhorro)" UpdateCommand="UPDATE [Ahorro] SET [Monto] = @Monto, [Fecha] = @Fecha, [idUsuario] = @idUsuario WHERE [idAhorro] = @idAhorro">
+    <asp:SqlDataSource ID="SqlDataSourceAhorros" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString %>" DeleteCommand="DELETE FROM [Ahorro] WHERE [idAhorro] = @idAhorro" InsertCommand="INSERT INTO [Ahorro] ([Monto], [Fecha], [idUsuario]) VALUES (@Monto, @Fecha, @idUsuario)" SelectCommand="SELECT * FROM [Ahorro] WHERE ([idAhorro] = @idAhorro)" UpdateCommand="UPDATE [Ahorro] SET [Monto] = @Monto, [Fecha] = @Fecha, [idUsuario] = @idUsuario WHERE [idAhorro] = @idAhorro">
         <DeleteParameters>
             <asp:Parameter Name="idAhorro" Type="Int32" />
         </DeleteParameters>
