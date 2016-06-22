@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
 
     <h2 style="text-align: center">Gestión de subcategorias</h2>
-    <h3 style="text-align: center"><a href="formSubcategorias.aspx">Agregar subcategoria</a></h3>
+    <h4 style="text-align: center"><a href="formSubcategorias.aspx">Agregar subcategoria</a></h4>
     <h3 style="text-align: center"><asp:Label ID="LabelMensaje" runat="server" Text=""></asp:Label></h3>
 
     <asp:GridView ID="GridViewSubcategorias" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="idSubcategoria" DataSourceID="SqlDataSourceSubcategoria" ForeColor="#333333" GridLines="None" HorizontalAlign="Center" Width="600px">
@@ -26,7 +26,7 @@
         <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
     </asp:GridView>
     <asp:SqlDataSource ID="SqlDataSourceSubcategoria" runat="server" 
-        ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=Proyecto;Integrated Security=True" 
+        ConnectionString="<%$ ConnectionStrings:ControlGastosConnectionString %>" 
         DeleteCommand="DELETE FROM [Subcategoria] WHERE [idSubcategoria] = @idSubcategoria" 
         InsertCommand="INSERT INTO [Subcategoria] ([descripcion], [nombre], [idCategoria]) 
                         VALUES (@descripcion, @nombre, @idCategoria)" 

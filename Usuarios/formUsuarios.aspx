@@ -3,8 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
 
     <h2>Formulario de usuarios</h2>
-    <h3>
-        <asp:Label ID="LabelMensaje" runat="server" Text=""></asp:Label></h3>
+    <h3><asp:Label ID="LabelMensaje" runat="server" Text=""></asp:Label></h3>
 
     <asp:FormView ID="FormViewUsuarios" runat="server" DataKeyNames="idUsuario" DataSourceID="SqlDataSourceUsuarios" Width="636px">
         <EditItemTemplate>

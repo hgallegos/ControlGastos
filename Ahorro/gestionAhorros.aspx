@@ -31,7 +31,7 @@
 
 
     <asp:SqlDataSource ID="SqlDataSourceAhorro" runat="server" 
-        ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=Proyecto;Integrated Security=True" 
+        ConnectionString="<%$ ConnectionStrings:ControlGastosConnectionString %>" 
         DeleteCommand="DELETE FROM [Ahorro] WHERE [idAhorro] = @original_idAhorro" 
         InsertCommand="INSERT INTO [Ahorro] ([Monto], [Fecha], [idUsuario]) VALUES (@Monto, @Fecha, @idUsuario)" 
         OldValuesParameterFormatString="original_{0}" 
