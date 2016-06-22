@@ -83,7 +83,7 @@
             &nbsp;<asp:LinkButton ID="NewButton" runat="server" CausesValidation="False" CommandName="New" Text="Nuevo" />
         </ItemTemplate>
     </asp:FormView>
-    <asp:SqlDataSource ID="SqlDataSourceGastos" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString %>" DeleteCommand="DELETE FROM [Gasto] WHERE [idGasto] = @idGasto" InsertCommand="INSERT INTO [Gasto] ([monto], [fecha], [idUsuario], [idSubcategoria]) VALUES (@monto, @fecha, @idUsuario, @idSubcategoria)" SelectCommand="SELECT Gasto.idGasto, Gasto.monto, Gasto.fecha, Gasto.idUsuario, Gasto.idSubcategoria, Subcategoria.nombre FROM Gasto INNER JOIN Subcategoria ON Gasto.idSubcategoria = Subcategoria.idSubcategoria" UpdateCommand="UPDATE [Gasto] SET [monto] = @monto, [fecha] = @fecha, [idUsuario] = @idUsuario, [idSubcategoria] = @idSubcategoria WHERE [idGasto] = @idGasto">
+    <asp:SqlDataSource ID="SqlDataSourceGastos" runat="server" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=Proyecto;Integrated Security=True" DeleteCommand="DELETE FROM [Gasto] WHERE [idGasto] = @idGasto" InsertCommand="INSERT INTO [Gasto] ([monto], [fecha], [idUsuario], [idSubcategoria]) VALUES (@monto, @fecha, @idUsuario, @idSubcategoria); SELECT @idNuevoGasto = SCOPE_IDENTITY();" SelectCommand="SELECT Gasto.idGasto, Gasto.monto, Gasto.fecha, Gasto.idUsuario, Gasto.idSubcategoria, Subcategoria.nombre FROM Gasto INNER JOIN Subcategoria ON Gasto.idSubcategoria = Subcategoria.idSubcategoria" UpdateCommand="UPDATE [Gasto] SET [monto] = @monto, [fecha] = @fecha, [idUsuario] = @idUsuario, [idSubcategoria] = @idSubcategoria WHERE [idGasto] = @idGasto">
         <DeleteParameters>
             <asp:Parameter Name="idGasto" Type="Int32" />
         </DeleteParameters>
@@ -99,10 +99,133 @@
             <asp:Parameter Name="idUsuario" Type="Int32" />
             <asp:Parameter Name="idSubcategoria" Type="Int32" />
             <asp:Parameter Name="idGasto" Type="Int32" />
+            <asp:Parameter Name="idNuevoGasto" Type="Int32" Direction="Output" />
         </UpdateParameters>
     </asp:SqlDataSource>
     <br />
-    <asp:SqlDataSource ID="SqlDataSourceSubCategorias" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString %>" SelectCommand="SELECT [idSubcategoria], [nombre] FROM [Subcategoria]"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSourceSubCategorias" runat="server" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=Proyecto;Integrated Security=True" SelectCommand="SELECT [idSubcategoria], [nombre] FROM [Subcategoria]"></asp:SqlDataSource>
+    <br />
+    <h3>Detalle
+    </h3>
+<asp:FormView ID="FormView1" runat="server" DataKeyNames="idDetalle" DataSourceID="SqlDataSourceDetalle">
+    <EditItemTemplate>
+        idDetalle:
+        <asp:Label ID="idDetalleLabel1" runat="server" Text='<%# Eval("idDetalle") %>' />
+        <br />
+        idGasto:
+        <asp:TextBox ID="idGastoTextBox" runat="server" Text='<%# Bind("idGasto") %>' />
+        <br />
+        idElemento:
+        <asp:TextBox ID="idElementoTextBox" runat="server" Text='<%# Bind("idElemento") %>' />
+        <br />
+        Cantidad:
+        <asp:TextBox ID="CantidadTextBox" runat="server" Text='<%# Bind("Cantidad") %>' />
+        <br />
+        <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Actualizar" />
+        &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" />
+    </EditItemTemplate>
+    <InsertItemTemplate>
+        idGasto:
+        <asp:TextBox ID="idGastoTextBox" runat="server" Text='<%# Bind("idGasto") %>' />
+        <br />
+        idElemento:
+        <asp:TextBox ID="idElementoTextBox" runat="server" Text='<%# Bind("idElemento") %>' />
+        <br />
+        Cantidad:
+        <asp:TextBox ID="CantidadTextBox" runat="server" Text='<%# Bind("Cantidad") %>' />
+        <br />
+        <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insertar" />
+        &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" />
+    </InsertItemTemplate>
+    <ItemTemplate>
+        idDetalle:
+        <asp:Label ID="idDetalleLabel" runat="server" Text='<%# Eval("idDetalle") %>' />
+        <br />
+        idGasto:
+        <asp:Label ID="idGastoLabel" runat="server" Text='<%# Bind("idGasto") %>' />
+        <br />
+        idElemento:
+        <asp:Label ID="idElementoLabel" runat="server" Text='<%# Bind("idElemento") %>' />
+        <br />
+        Cantidad:
+        <asp:Label ID="CantidadLabel" runat="server" Text='<%# Bind("Cantidad") %>' />
+        <br />
+        <asp:LinkButton ID="EditButton" runat="server" CausesValidation="False" CommandName="Edit" Text="Editar" />
+        &nbsp;<asp:LinkButton ID="DeleteButton" runat="server" CausesValidation="False" CommandName="Delete" Text="Eliminar" />
+        &nbsp;<asp:LinkButton ID="NewButton" runat="server" CausesValidation="False" CommandName="New" Text="Nuevo" />
+    </ItemTemplate>
+        </asp:FormView>
+    <br />
+    <h3>Agregar Detalle</h3>
+    <asp:FormView ID="FormViewDetalleGasto" runat="server" DataSourceID="SqlDataSourceDetalle" DefaultMode="Insert" Height="54px" Width="187px" DataKeyNames="idDetalle">
+        <EditItemTemplate>
+            idDetalle:
+            <asp:Label ID="idDetalleLabel1" runat="server" Text='<%# Eval("idDetalle") %>' />
+            <br />
+            idGasto:
+            <asp:TextBox ID="idGastoTextBox" runat="server" Text='<%# Bind("idGasto") %>' />
+            <br />
+            idElemento:
+            <asp:TextBox ID="idElementoTextBox" runat="server" Text='<%# Bind("idElemento") %>' />
+            <br />
+            Cantidad:
+            <asp:TextBox ID="CantidadTextBox" runat="server" Text='<%# Bind("Cantidad") %>' />
+            <br />
+            <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Actualizar" />
+            &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" />
+        </EditItemTemplate>
+        <InsertItemTemplate>
+            idGasto:
+            <asp:TextBox ID="idGastoTextBox" runat="server" Text='<%# Bind("idGasto") %>' />
+            <br />
+            idElemento:
+            <asp:TextBox ID="idElementoTextBox" runat="server" Text='<%# Bind("idElemento") %>' />
+            <br />
+            Cantidad:
+            <asp:TextBox ID="CantidadTextBox" runat="server" Text='<%# Bind("Cantidad") %>' />
+            <br />
+            <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insertar" />
+            &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" />
+         
+        </InsertItemTemplate>
+        <ItemTemplate>
+            idDetalle:
+            <asp:Label ID="idDetalleLabel" runat="server" Text='<%# Eval("idDetalle") %>' />
+            <br />
+            idGasto:
+            <asp:Label ID="idGastoLabel" runat="server" Text='<%# Bind("idGasto") %>' />
+            <br />
+            idElemento:
+            <asp:Label ID="idElementoLabel" runat="server" Text='<%# Bind("idElemento") %>' />
+            <br />
+            Cantidad:
+            <asp:Label ID="CantidadLabel" runat="server" Text='<%# Bind("Cantidad") %>' />
+            <br />
+            <asp:LinkButton ID="EditButton" runat="server" CausesValidation="False" CommandName="Edit" Text="Editar" />
+            &nbsp;<asp:LinkButton ID="DeleteButton" runat="server" CausesValidation="False" CommandName="Delete" Text="Eliminar" />
+            &nbsp;<asp:LinkButton ID="NewButton" runat="server" CausesValidation="False" CommandName="New" Text="Nuevo" />
+        </ItemTemplate>
+    </asp:FormView>
+    <br />
+    <asp:SqlDataSource ID="SqlDataSourceDetalle" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString %>" DeleteCommand="DELETE FROM [DetalleGasto] WHERE [idDetalle] = @idDetalle" InsertCommand="INSERT INTO DetalleGasto(idGasto, idElemento, Cantidad) VALUES (@idGasto, @idElemento, @Cantidad)" SelectCommand="SELECT * FROM [DetalleGasto] WHERE ([idGasto] = @idGasto)" UpdateCommand="UPDATE [DetalleGasto] SET [idGasto] = @idGasto, [idElemento] = @idElemento, [Cantidad] = @Cantidad WHERE [idDetalle] = @idDetalle">
+        <DeleteParameters>
+            <asp:Parameter Name="idDetalle" Type="Int32" />
+        </DeleteParameters>
+        <InsertParameters>
+            <asp:Parameter Name="idGasto" Type="Int32" />
+            <asp:Parameter Name="idElemento" Type="Int32" />
+            <asp:Parameter Name="Cantidad" Type="Int32" />
+        </InsertParameters>
+        <SelectParameters>
+            <asp:QueryStringParameter DefaultValue="" Name="idGasto" QueryStringField="idGasto" Type="Int32" />
+        </SelectParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="idGasto" Type="Int32" />
+            <asp:Parameter Name="idElemento" Type="Int32" />
+            <asp:Parameter Name="Cantidad" Type="Int32" />
+            <asp:Parameter Name="idDetalle" Type="Int32" />
+        </UpdateParameters>
+    </asp:SqlDataSource>
     <br />
 </asp:Content>
 

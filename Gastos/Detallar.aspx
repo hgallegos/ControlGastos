@@ -34,7 +34,7 @@
              <asp:BoundField DataField="idSubcategoria" HeaderText="idSubcategoria" SortExpression="idSubcategoria" />
          </Fields>
      </asp:DetailsView>
-     <asp:SqlDataSource ID="SqlDataSourceGastos" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString %>" SelectCommand="SELECT idGasto, monto, fecha, idUsuario, idSubcategoria FROM Gasto WHERE (idGasto = (SELECT MAX(idGasto) AS Expr1 FROM Gasto AS Gasto_1))"></asp:SqlDataSource>
+     <asp:SqlDataSource ID="SqlDataSourceGastos" runat="server" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=Proyecto;Integrated Security=True" SelectCommand="SELECT idGasto, monto, fecha, idUsuario, idSubcategoria FROM Gasto WHERE (idGasto = (SELECT MAX(idGasto) AS Expr1 FROM Gasto AS Gasto_1))"></asp:SqlDataSource>
        
  
     
