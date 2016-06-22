@@ -5,6 +5,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
 
     <h2 style="text-align: center">Gastos por categoria</h2>
+
+    <h4 style="text-align: center">Módulo no implementado.</h4>
     <p style="text-align: center">&nbsp;</p>
 
     <asp:GridView ID="GridViewGastosCategoria" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSourceGastosCategoria" ForeColor="#333333" GridLines="None" HorizontalAlign="Center" CssClass="table-bordered" Width="600px">

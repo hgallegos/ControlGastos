@@ -45,11 +45,11 @@
             <ItemTemplate>
                 <table class="tabla_formulario">
                     <tr>
-                        <td class="etiqueta">Categoria #:</td>
+                        <td class="etiqueta" style="width: 168px">Categoria #:</td>
                         <td><asp:Label ID="idCategoriaLabel" runat="server" Text='<%# Eval("idCategoria") %>' /></td>
                     </tr>
                     <tr>
-                        <td> Nombre:</td>
+                        <td class="etiqueta" style="width: 168px"> Nombre:</td>
                         <td><asp:Label ID="nombreLabel" runat="server" Text='<%# Bind("nombre") %>' /></td>
                     </tr>
                 </table>

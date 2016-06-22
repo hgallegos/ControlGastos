@@ -20,4 +20,8 @@ Partial Class Usuarios_formUsuarios
     Protected Sub InsertCancelButton_Click(sender As Object, e As EventArgs)
         Response.Redirect("gestionUsuarios.aspx")
     End Sub
+
+    Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
+
+    End Sub
 End Class

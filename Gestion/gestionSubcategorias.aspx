@@ -25,7 +25,12 @@
         <SortedDescendingCellStyle BackColor="#FFFDF8" />
         <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
     </asp:GridView>
-    <asp:SqlDataSource ID="SqlDataSourceSubcategoria" runat="server" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=Proyecto;Integrated Security=True" DeleteCommand="DELETE FROM [Subcategoria] WHERE [idSubcategoria] = @idSubcategoria" InsertCommand="INSERT INTO [Subcategoria] ([descripcion], [nombre], [idCategoria]) VALUES (@descripcion, @nombre, @idCategoria)" SelectCommand="SELECT Subcategoria.idSubcategoria, Subcategoria.descripcion, Subcategoria.nombre, Subcategoria.idCategoria, Categoria.nombre AS Expr1 FROM Subcategoria INNER JOIN Categoria ON Subcategoria.idCategoria = Categoria.idCategoria" UpdateCommand="UPDATE [Subcategoria] SET [descripcion] = @descripcion, [nombre] = @nombre, [idCategoria] = @idCategoria WHERE [idSubcategoria] = @idSubcategoria">
+    <asp:SqlDataSource ID="SqlDataSourceSubcategoria" runat="server" 
+        ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=Proyecto;Integrated Security=True" 
+        DeleteCommand="DELETE FROM [Subcategoria] WHERE [idSubcategoria] = @idSubcategoria" 
+        InsertCommand="INSERT INTO [Subcategoria] ([descripcion], [nombre], [idCategoria]) 
+                        VALUES (@descripcion, @nombre, @idCategoria)" 
+        SelectCommand="SELECT Subcategoria.idSubcategoria, Subcategoria.descripcion, Subcategoria.nombre, Subcategoria.idCategoria, Categoria.nombre AS Expr1 FROM Subcategoria INNER JOIN Categoria ON Subcategoria.idCategoria = Categoria.idCategoria" UpdateCommand="UPDATE [Subcategoria] SET [descripcion] = @descripcion, [nombre] = @nombre, [idCategoria] = @idCategoria WHERE [idSubcategoria] = @idSubcategoria">
         <DeleteParameters>
             <asp:Parameter Name="idSubcategoria" Type="Int32" />
         </DeleteParameters>

@@ -11,21 +11,21 @@
 
             <table class="tabla_formulario">
                 <tr>
-                    <td class="etiqueta">Monto:</td>
-                    <td ><asp:TextBox ID="MontoTextBox" runat="server" Text='<%# Bind("Monto") %>' />   
+                    <td class="etiqueta" style="width: 80px">Monto:</td>
+                    <td style="width: 250px" ><asp:TextBox ID="MontoTextBox" runat="server" Text='<%# Bind("Monto") %>' />   
                     </td>
                     <td ><asp:RequiredFieldValidator ID="RequiredFieldValidatorMonto" runat="server" ControlToValidate="MontoTextBox" ErrorMessage="Debes ingresar un monto."></asp:RequiredFieldValidator></td>
                 </tr>
                 <tr>
-                    <td class="etiqueta">Fecha:</td>
-                    <td> 
-                        <asp:Calendar ID="Calendar1" runat="server" Height="158px" Width="161px" SelectedDate='<%# Bind("Fecha") %>'></asp:Calendar>
+                    <td class="etiqueta" style="width: 80px">Fecha:</td>
+                    <td style="width: 250px"> 
+                        <asp:Calendar ID="Calendar1" runat="server" Height="158px" Width="224px" SelectedDate='<%# Bind("Fecha") %>'></asp:Calendar>
                     </td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td class="etiqueta">Usuario</td>
-                    <td>
+                    <td class="etiqueta" style="width: 80px">Usuario</td>
+                    <td style="width: 250px">
                         <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSourceUsuarios" DataTextField="nombre" DataValueField="idUsuario" SelectedValue='<%# Bind("idUsuario") %>'>
                         </asp:DropDownList>
                         <asp:SqlDataSource ID="SqlDataSourceUsuarios" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString2 %>" SelectCommand="SELECT * FROM [Usuario]"></asp:SqlDataSource>
@@ -49,21 +49,21 @@
 
             <table class="tabla_formulario">
                 <tr>
-                    <td class="etiqueta">Monto:</td>
-                    <td><asp:TextBox ID="MontoTextBox" runat="server" Text='<%# Bind("Monto") %>' Height="16px" Width="203px" /></td>
+                    <td class="etiqueta" style="width: 67px">Monto:</td>
+                    <td style="width: 246px"><asp:TextBox ID="MontoTextBox" runat="server" Text='<%# Bind("Monto") %>' Height="16px" Width="203px" /></td>
                     <td>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorMonto" runat="server" ErrorMessage="Debes ingresar un monto." ControlToValidate="MontoTextBox"></asp:RequiredFieldValidator></td>
                 </tr>
                 <tr>
-                    <td class="etiqueta">Fecha:</td>
-                    <td>
+                    <td class="etiqueta" style="width: 67px">Fecha:</td>
+                    <td style="width: 246px">
                         <asp:Calendar ID="Calendar2" runat="server" Height="163px" SelectedDate='<%# Bind("Fecha") %>'></asp:Calendar>
                     </td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td class="etiqueta">Usuario: </td>
-                    <td><asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSourceUsuarios" DataTextField="nombre" DataValueField="idUsuario" SelectedValue='<%# Bind("idUsuario") %>'>
+                    <td class="etiqueta" style="width: 67px">Usuario: </td>
+                    <td style="width: 246px"><asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSourceUsuarios" DataTextField="nombre" DataValueField="idUsuario" SelectedValue='<%# Bind("idUsuario") %>'>
             </asp:DropDownList>
             <asp:SqlDataSource ID="SqlDataSourceUsuarios" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString2 %>" SelectCommand="SELECT * FROM [Usuario]"></asp:SqlDataSource>
             </td>

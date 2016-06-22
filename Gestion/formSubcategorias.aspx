@@ -28,7 +28,7 @@
                 <tr>
                     <td class="etiqueta"> Categoría:</td>
                     <td>
-                        <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSourceCategoria" DataTextField="nombre" DataValueField="idCategoria" SelectedValue='<%# Bind("idCategoria") %>'></asp:DropDownList>
+                        <asp:DropDownList ID="DropDownListCategoria" runat="server" DataSourceID="SqlDataSourceCategoria" DataTextField="nombre" DataValueField="idCategoria" SelectedValue='<%# Bind("idCategoria") %>'></asp:DropDownList>
                         <asp:SqlDataSource ID="SqlDataSourceCategoria" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString2 %>" SelectCommand="SELECT * FROM [Categoria]"></asp:SqlDataSource>
                     </td>
                 </tr>
@@ -39,21 +39,24 @@
             &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" />
         </EditItemTemplate>
         <InsertItemTemplate>
+
             <table class="tabla_formulario">
                 <tr>
                     <td class="etiqueta">Nombre:</td>
                     <td> <asp:TextBox ID="nombreTextBox" runat="server" Text='<%# Bind("nombre") %>' /></td>
-                    <td></td>
+                    <td>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidatorNombre" runat="server" ErrorMessage="Debes ingresar un nombre." ControlToValidate="nombreTextBox"></asp:RequiredFieldValidator></td>
                 </tr>
                 <tr>
                     <td class="etiqueta">Descripción:</td>
                     <td><asp:TextBox ID="descripcionTextBox" runat="server" Text='<%# Bind("descripcion") %>' /></td>
-                    <td></td>
+                    <td>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidatorDescripcion" runat="server" ErrorMessage="Debes ingresar una descripción." ControlToValidate="descripcionTextBox"></asp:RequiredFieldValidator></td>
                 </tr>
                 <tr>
                     <td class="etiqueta">Categoría:</td>
                     <td>
-                        <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSourceCategorias" DataTextField="nombre" DataValueField="idCategoria" SelectedValue='<%# Bind("idCategoria") %>'></asp:DropDownList>
+                        <asp:DropDownList ID="DropDownListCategoria" runat="server" DataSourceID="SqlDataSourceCategorias" DataTextField="nombre" DataValueField="idCategoria" SelectedValue='<%# Bind("idCategoria") %>'></asp:DropDownList>
                         <asp:SqlDataSource ID="SqlDataSourceCategorias" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString2 %>" SelectCommand="SELECT * FROM [Categoria]"></asp:SqlDataSource>
                     </td>
                     <td></td>
@@ -83,7 +86,7 @@
                 </tr>
                 <tr>
                     <td class="etiqueta">Categoría:</td>
-                    <td><asp:Label ID="idCategoriaLabel" runat="server" Text='<%# Bind("idCategoria") %>' /></td>
+                    <td><asp:Label ID="idCategoriaLabel" runat="server" Text='<%# Bind("nombreCategoria")%>' /></td>
                 </tr>
             </table>
            
@@ -97,7 +100,12 @@
             &nbsp;<asp:LinkButton ID="LinkButtonVolver" runat="server" OnClick="LinkButtonVolver_Click">Volver</asp:LinkButton>
         </ItemTemplate>
     </asp:FormView>
-    <asp:SqlDataSource ID="SqlDataSourceSubcategoria" runat="server" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=Proyecto;Integrated Security=True" DeleteCommand="DELETE FROM [Subcategoria] WHERE [idSubcategoria] = @idSubcategoria" InsertCommand="INSERT INTO [Subcategoria] ([descripcion], [nombre], [idCategoria]) VALUES (@descripcion, @nombre, @idCategoria)" SelectCommand="SELECT * FROM [Subcategoria] WHERE ([idSubcategoria] = @idSubcategoria)" UpdateCommand="UPDATE [Subcategoria] SET [descripcion] = @descripcion, [nombre] = @nombre, [idCategoria] = @idCategoria WHERE [idSubcategoria] = @idSubcategoria">
+    <asp:SqlDataSource ID="SqlDataSourceSubcategoria" runat="server" 
+        ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString2 %>" 
+        DeleteCommand="DELETE FROM [Subcategoria] WHERE [idSubcategoria] = @idSubcategoria" 
+        InsertCommand="INSERT INTO [Subcategoria] ([descripcion], [nombre], [idCategoria]) VALUES (@descripcion, @nombre, @idCategoria)" 
+        SelectCommand="SELECT Subcategoria.idSubcategoria, Subcategoria.descripcion, Subcategoria.nombre, Subcategoria.idCategoria, Categoria.nombre AS nombreCategoria FROM Subcategoria INNER JOIN Categoria ON Subcategoria.idCategoria = Categoria.idCategoria WHERE (Subcategoria.idSubcategoria = @idSubcategoria)" 
+        UpdateCommand="UPDATE [Subcategoria] SET [descripcion] = @descripcion, [nombre] = @nombre, [idCategoria] = @idCategoria WHERE [idSubcategoria] = @idSubcategoria">
         <DeleteParameters>
             <asp:Parameter Name="idSubcategoria" Type="Int32" />
         </DeleteParameters>
