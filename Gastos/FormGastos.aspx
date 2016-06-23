@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
     
-   <h2>Nuevo Gasto</h2>
+    <h2>Nuevo Gasto</h2>
     <asp:Label ID="labelGasto" runat="server" Text='' />
     <asp:FormView ID="FormViewGastos" runat="server" DataKeyNames="idGasto" DataSourceID="SqlDataSourceGastos" Width="674px">
         <EditItemTemplate>

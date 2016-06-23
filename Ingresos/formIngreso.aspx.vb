@@ -21,16 +21,20 @@ Partial Class Ingresos_formIngreso
     Protected Sub FormViewIngresos_ItemInserted(sender As Object, e As FormViewInsertedEventArgs) Handles FormViewIngresos.ItemInserted
         If (e.Exception Is Nothing) Then
             LabelMensaje.Text = "Ingreso agregado exitosamente!"
+            LabelMensaje.CssClass = "mensaje_confirmacion"
         Else
             LabelMensaje.Text = "No se pudo agregar el ingreso"
+            LabelMensaje.CssClass = "mensaje_error"
         End If
     End Sub
 
     Protected Sub FormViewIngresos_ItemUpdated(sender As Object, e As FormViewUpdatedEventArgs) Handles FormViewIngresos.ItemUpdated
         If (e.Exception Is Nothing) Then
             LabelMensaje.Text = "Ingreso actualizado exitosamente!"
+            LabelMensaje.CssClass = "mensaje_confirmacion"
         Else
             LabelMensaje.Text = "No se pudo actualizar el ingreso"
+            LabelMensaje.CssClass = "mensaje_error"
         End If
     End Sub
 End Class

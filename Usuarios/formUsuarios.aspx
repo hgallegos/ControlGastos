@@ -16,21 +16,21 @@
                 <tr>
                     <td class="etiqueta">Nombre: </td>
                     <td><asp:TextBox ID="nombreTextBox" runat="server" Text='<%# Bind("nombre") %>' /></td>
-                    <td>
+                    <td class="error">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorNombre" runat="server" ControlToValidate="nombreTextBox" ErrorMessage="Debes ingresar un nombre."></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
                     <td class="etiqueta">Mail:</td>
                     <td> <asp:TextBox ID="correoTextBox" runat="server" Text='<%# Bind("correo") %>' /></td>
-                    <td>
+                    <td class="error">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorMail" runat="server" ControlToValidate="correoTextBox" ErrorMessage="Debes ingresar un mail."></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
                     <td class="etiqueta">Contraseña: </td>
                     <td><asp:TextBox ID="contraseñaTextBox" runat="server" Text='<%# Bind("contraseña") %>' /></td>
-                    <td>
+                    <td class="error">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorContraseña" runat="server" ControlToValidate="contraseñaTextBox" ErrorMessage="Debes ingresar una contraseña."></asp:RequiredFieldValidator>
                     </td>
                 </tr>
@@ -55,19 +55,19 @@
                 <tr>
                     <td class="etiqueta">Nombre: </td>
                     <td><asp:TextBox ID="nombreTextBox" runat="server" Text='<%# Bind("nombre") %>' /></td>
-                    <td>
+                    <td class="error">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorNombre" runat="server" ErrorMessage="Debes ingresar un nombre." ControlToValidate="nombreTextBox"></asp:RequiredFieldValidator></td>
                 </tr>
                 <tr>
                     <td class="etiqueta">Mail: </td>
                     <td><asp:TextBox ID="correoTextBox" runat="server" Text='<%# Bind("correo") %>' /></td>
-                    <td>
+                    <td class="error">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorMail" runat="server" ErrorMessage="Debes ingresar un mail." ControlToValidate="correoTextBox"></asp:RequiredFieldValidator></td>
                 </tr>
                 <tr>
                     <td class="etiqueta">Contraseña: </td>
                     <td><asp:TextBox ID="contraseñaTextBox" runat="server" Text='<%# Bind("contraseña") %>' /></td>
-                    <td>
+                    <td class="error">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorContraseña" runat="server" ErrorMessage="Debes ingresar una contraseña." ControlToValidate="contraseñaTextBox"></asp:RequiredFieldValidator></td>
                 </tr>
                 <tr>

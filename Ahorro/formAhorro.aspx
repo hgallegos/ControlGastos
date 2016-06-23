@@ -14,7 +14,7 @@
                     <td class="etiqueta" style="width: 80px">Monto:</td>
                     <td style="width: 250px" ><asp:TextBox ID="MontoTextBox" runat="server" Text='<%# Bind("Monto") %>' />   
                     </td>
-                    <td ><asp:RequiredFieldValidator ID="RequiredFieldValidatorMonto" runat="server" ControlToValidate="MontoTextBox" ErrorMessage="Debes ingresar un monto."></asp:RequiredFieldValidator></td>
+                    <td class="error" ><asp:RequiredFieldValidator ID="RequiredFieldValidatorMonto" runat="server" ControlToValidate="MontoTextBox" ErrorMessage="Debes ingresar un monto."></asp:RequiredFieldValidator></td>
                 </tr>
                 <tr>
                     <td class="etiqueta" style="width: 80px">Fecha:</td>
@@ -58,7 +58,7 @@
                 <tr>
                     <td class="etiqueta" style="width: 67px">Monto:</td>
                     <td style="width: 246px"><asp:TextBox ID="MontoTextBox" runat="server" Text='<%# Bind("Monto") %>' Height="16px" Width="203px" /></td>
-                    <td>
+                    <td class="error">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorMonto" runat="server" ErrorMessage="Debes ingresar un monto." ControlToValidate="MontoTextBox"></asp:RequiredFieldValidator></td>
                 </tr>
                 <tr>

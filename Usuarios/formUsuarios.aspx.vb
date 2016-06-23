@@ -25,16 +25,20 @@ Partial Class Usuarios_formUsuarios
     Protected Sub FormViewUsuarios_ItemInserted(sender As Object, e As FormViewInsertedEventArgs) Handles FormViewUsuarios.ItemInserted
         If (e.Exception Is Nothing) Then
             LabelMensaje.Text = "Usuario ingresado exitosamente!"
+            LabelMensaje.CssClass = "mensaje_confirmacion"
         Else
             LabelMensaje.Text = "No se pudo ingresar el usuario"
+            LabelMensaje.CssClass = "mensaje_error"
         End If
     End Sub
 
     Protected Sub FormViewUsuarios_ItemUpdated(sender As Object, e As FormViewUpdatedEventArgs) Handles FormViewUsuarios.ItemUpdated
         If (e.Exception Is Nothing) Then
             LabelMensaje.Text = "Usuario actualizado exitosamente!"
+            LabelMensaje.CssClass = "mensaje_confirmacion"
         Else
             LabelMensaje.Text = "No se pudo actualizar el usuario."
+            LabelMensaje.CssClass = "mensaje_error"
         End If
     End Sub
 End Class

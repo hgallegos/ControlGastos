@@ -23,8 +23,10 @@ Partial Class Ahorro_formAhorro
     Protected Sub FormViewAhorro_ItemInserted(sender As Object, e As FormViewInsertedEventArgs) Handles FormViewAhorro.ItemInserted
         If (e.Exception Is Nothing) Then
             LabelMensaje.Text = "Ahorro agregado exitosamente!"
+            LabelMensaje.CssClass = "mensaje_confirmacion"
         Else
             LabelMensaje.Text = "No se pudo agregar el ahorro"
+            LabelMensaje.CssClass = "mensaje_error"
         End If
     End Sub
 
@@ -32,8 +34,10 @@ Partial Class Ahorro_formAhorro
     Protected Sub FormViewAhorro_ItemUpdated(sender As Object, e As FormViewUpdatedEventArgs) Handles FormViewAhorro.ItemUpdated
         If (e.Exception Is Nothing) Then
             LabelMensaje.Text = "Ahorro actualizado exitosamente!"
+            LabelMensaje.CssClass = "mensaje_confirmacion"
         Else
             LabelMensaje.Text = "No se pudo actualizar el ahorro"
+            LabelMensaje.CssClass = "mensaje_error"
         End If
     End Sub
 End Class

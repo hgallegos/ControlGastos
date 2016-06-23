@@ -11,7 +11,7 @@
                 <tr>
                     <td class="etiqueta">Descripción:</td>
                     <td > <asp:TextBox ID="descripcionTextBox" runat="server" Text='<%# Bind("descripcion") %>' Height="28px" Width="219px" /></td>
-                    <td > <asp:RequiredFieldValidator ID="RequiredFieldValidatorDescripcion" runat="server" ControlToValidate="descripcionTextBox" ErrorMessage="Debes ingresar una descripción."></asp:RequiredFieldValidator>
+                    <td class="error"> <asp:RequiredFieldValidator ID="RequiredFieldValidatorDescripcion" runat="server" ControlToValidate="descripcionTextBox" ErrorMessage="Debes ingresar una descripción."></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
@@ -31,7 +31,7 @@
                 <tr>
                     <td class="etiqueta"> Cantidad:</td>
                     <td><asp:TextBox ID="cantidadTextBox" runat="server" Text='<%# Bind("cantidad") %>' Height="28px" Width="223px" /></td>
-                    <td>            <asp:RequiredFieldValidator ID="RequiredFieldValidatorCantidad" runat="server" ControlToValidate="cantidadTextBox" ErrorMessage="Debes ingresar un monto."></asp:RequiredFieldValidator>
+                    <td class="error"> <asp:RequiredFieldValidator ID="RequiredFieldValidatorCantidad" runat="server" ControlToValidate="cantidadTextBox" ErrorMessage="Debes ingresar un monto."></asp:RequiredFieldValidator>
 
                     </td>
                 </tr>
@@ -58,7 +58,7 @@
                 <tr>
                     <td class="etiqueta"><strong>Descripción</strong>:</td>
                     <td><asp:TextBox ID="descripcionTextBox" runat="server" Text='<%# Bind("descripcion") %>' Height="28px" Width="217px" /></td>
-                    <td style="width: 346px"><asp:RequiredFieldValidator ID="RequiredFieldValidatorDescripcion" runat="server" ControlToValidate="descripcionTextBox" ErrorMessage="Debes ingresar una descripción."></asp:RequiredFieldValidator>
+                    <td style="width: 346px" class="error"><asp:RequiredFieldValidator ID="RequiredFieldValidatorDescripcion" runat="server" ControlToValidate="descripcionTextBox" ErrorMessage="Debes ingresar una descripción."></asp:RequiredFieldValidator>
             </td>
                 </tr>
                 <tr>
@@ -78,7 +78,7 @@
                 <tr>
                     <td class="etiqueta"><strong>Cantidad:</strong></td>
                     <td><asp:TextBox ID="cantidadTextBox" runat="server" Text='<%# Bind("cantidad") %>' Height="28px" Width="226px" /></td>
-                    <td style="width: 346px"><asp:RequiredFieldValidator ID="RequiredFieldValidatorCantidad" runat="server" ControlToValidate="cantidadTextBox" ErrorMessage="Debes ingresar una cantidad de dinero."></asp:RequiredFieldValidator>
+                    <td style="width: 346px" class="error"><asp:RequiredFieldValidator ID="RequiredFieldValidatorCantidad" runat="server" ControlToValidate="cantidadTextBox" ErrorMessage="Debes ingresar una cantidad de dinero."></asp:RequiredFieldValidator>
             </td>
                 </tr>
                 <tr>

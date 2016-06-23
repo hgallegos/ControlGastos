@@ -15,7 +15,7 @@
                     <tr>
                         <td class="etiqueta"> Nombre:</td>
                         <td> <asp:TextBox ID="nombreTextBox" runat="server" Text='<%# Bind("nombre") %>' /></td>
-                        <td>
+                        <td class="error">
                             <asp:RequiredFieldValidator ID="RequiredFieldValidatorNombre" runat="server" ErrorMessage="Debes ingresar un nombre." ControlToValidate="nombreTextBox"></asp:RequiredFieldValidator></td>
                     </tr>
                 </table>
@@ -32,7 +32,7 @@
                     <tr>
                         <td class="etiqueta"> Nombre:</td>
                         <td><asp:TextBox ID="nombreTextBox" runat="server" Text='<%# Bind("nombre") %>' /></td>
-                        <td>
+                        <td class="error">
                             <asp:RequiredFieldValidator ID="RequiredFieldValidatorNombre" runat="server" ErrorMessage="Debes ingresar un nombre." ControlToValidate="nombreTextBox"></asp:RequiredFieldValidator></td>
                     </tr>
                 </table>

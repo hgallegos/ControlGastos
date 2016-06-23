@@ -16,13 +16,13 @@
                 <tr>
                     <td class="etiqueta">Nombre</td>
                     <td><asp:TextBox ID="nombreTextBox" runat="server" Text='<%# Bind("nombre") %>' /></td>
-                    <td>
+                    <td class="error">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorNombre" runat="server" ErrorMessage="Debes ingresar un nombre." ControlToValidate="nombreTextBox"></asp:RequiredFieldValidator></td>
                 </tr>
                 <tr>
                     <td class="etiqueta">Descripción:</td>
                     <td><asp:TextBox ID="descripcionTextBox" runat="server" Text='<%# Bind("descripcion") %>' /></td>
-                    <td>
+                    <td class="error">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorDescripcion" runat="server" ErrorMessage="Debes ingresar una descripción." ControlToValidate="descripcionTextBox"></asp:RequiredFieldValidator></td>
                 </tr>
                 <tr>
@@ -44,13 +44,13 @@
                 <tr>
                     <td class="etiqueta">Nombre:</td>
                     <td> <asp:TextBox ID="nombreTextBox" runat="server" Text='<%# Bind("nombre") %>' /></td>
-                    <td>
+                    <td class="error">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorNombre" runat="server" ErrorMessage="Debes ingresar un nombre." ControlToValidate="nombreTextBox"></asp:RequiredFieldValidator></td>
                 </tr>
                 <tr>
                     <td class="etiqueta">Descripción:</td>
                     <td><asp:TextBox ID="descripcionTextBox" runat="server" Text='<%# Bind("descripcion") %>' /></td>
-                    <td>
+                    <td class="error">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorDescripcion" runat="server" ErrorMessage="Debes ingresar una descripción." ControlToValidate="descripcionTextBox"></asp:RequiredFieldValidator></td>
                 </tr>
                 <tr>

@@ -50,3 +50,28 @@
     font-size: small;
 }
 
+.mensaje_confirmacion{
+    display:inline-block;
+    width:300px;
+    border:1px solid #0a0;
+    color:#090;
+    background-color#DEFAFA;
+    margin-left:auto;
+    margin-right:auto;
+    padding:20px;
+    text-align:center;
+    font-weight:bold;  
+}
+
+.mensaje_error{
+    display:block;
+    width:300px;
+    border:1px solid #a00;
+    color:#900;
+    background-color#FADEDE;
+    margin-left:auto;
+    margin-right:auto;
+    padding:20px;
+    text-align:center;
+    font-weight:bold;
+}
