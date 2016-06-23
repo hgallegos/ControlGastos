@@ -47,13 +47,13 @@
         <InsertItemTemplate>
             <table class="tabla_formulario">
                 <tr>
-                    <td class="etiqueta" style="width: 80px">monto:</td>
+                    <td class="etiqueta" style="width: 80px">Monto:</td>
                     <td style="width: 250px"><asp:TextBox ID="montoTextBox" runat="server" Text='<%# Bind("monto") %>' /></td>
                     <td class="error" ><asp:RequiredFieldValidator ID="RequiredFieldValidatorMonto" runat="server" ControlToValidate="MontoTextBox" ErrorMessage="Debes ingresar un monto."></asp:RequiredFieldValidator></td>
 
                 </tr>
                 <tr>
-                    <td class="etiqueta" style="width: 80px">fecha:</td>
+                    <td class="etiqueta" style="width: 80px">Fecha:</td>
                     <td style="width: 250px">
                         <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="190px" NextPrevFormat="FullMonth" SelectedDate='<%# Bind("fecha")%>' Width="350px" >
                             <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
