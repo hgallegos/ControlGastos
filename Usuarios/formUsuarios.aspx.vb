@@ -41,4 +41,14 @@ Partial Class Usuarios_formUsuarios
             LabelMensaje.CssClass = "mensaje_error"
         End If
     End Sub
+
+    Protected Sub FormViewUsuarios_ItemDeleted(sender As Object, e As FormViewDeletedEventArgs) Handles FormViewUsuarios.ItemDeleted
+        If (e.Exception Is Nothing) Then
+            LabelMensaje.Text = "Usuario eliminado exitosamente!"
+            LabelMensaje.CssClass = "mensaje_confirmacion"
+        Else
+            LabelMensaje.Text = "No se pudo eliminar el usuario"
+            LabelMensaje.CssClass = "mensaje_error"
+        End If
+    End Sub
 End Class

@@ -37,4 +37,14 @@ Partial Class Aportes_formAporte
             LabelMensaje.CssClass = "mensaje_error"
         End If
     End Sub
+
+    Protected Sub FormViewAportes_ItemDeleted(sender As Object, e As FormViewDeletedEventArgs) Handles FormViewAportes.ItemDeleted
+        If (e.Exception Is Nothing) Then
+            LabelMensaje.Text = "Aporte eliminado exitosamente!"
+            LabelMensaje.CssClass = "mensaje_confirmacion"
+        Else
+            LabelMensaje.Text = "No se pudo eliminar el aporte"
+            LabelMensaje.CssClass = "mensaje_error"
+        End If
+    End Sub
 End Class

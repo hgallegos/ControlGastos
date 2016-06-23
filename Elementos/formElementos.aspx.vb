@@ -42,4 +42,14 @@ Partial Class Elementos_formElementos
     Protected Sub InsertCancelButton_Click(sender As Object, e As EventArgs)
         Response.Redirect("gestionElementos.aspx")
     End Sub
+
+    Protected Sub FormViewElementos_ItemDeleted(sender As Object, e As FormViewDeletedEventArgs) Handles FormViewElementos.ItemDeleted
+        If (e.Exception Is Nothing) Then
+            LabelMensaje.Text = "Elemento eliminado exitosamente!"
+            LabelMensaje.CssClass = "mensaje_confirmacion"
+        Else
+            LabelMensaje.Text = "No se pudo eliminar el elemento"
+            LabelMensaje.CssClass = "mensaje_error"
+        End If
+    End Sub
 End Class

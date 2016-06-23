@@ -39,4 +39,14 @@ Partial Class Gestion_formSubcategorias
             LabelMensaje.CssClass = "mensaje_error"
         End If
     End Sub
+
+    Protected Sub FormViewSubcategoria_ItemDeleted(sender As Object, e As FormViewDeletedEventArgs) Handles FormViewSubcategoria.ItemDeleted
+        If (e.Exception Is Nothing) Then
+            LabelMensaje.Text = "Subcategoria eliminada exitosamente!"
+            LabelMensaje.CssClass = "mensaje_confirmacion"
+        Else
+            LabelMensaje.Text = "No se pudo eliminar la subcategoria"
+            LabelMensaje.CssClass = "mensaje_error"
+        End If
+    End Sub
 End Class
