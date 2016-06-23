@@ -2,6 +2,19 @@
     text-align:justify;
 }
 
+.titulo_tablas{
+    display:inline-block;
+    width:300px;
+    border:1px solid #5D7B9D;
+    color:#5D7B9D;
+    background-color:#FFF;
+    margin-left:auto;
+    margin-right:auto;
+    padding:20px;
+    text-align:center;
+    font-weight:bold;  
+}
+
 .tabla_portada 
 {
     padding:10px;    
