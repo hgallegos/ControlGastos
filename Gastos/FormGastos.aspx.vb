@@ -6,9 +6,13 @@ Partial Class FormGastos
         If (Request.QueryString("idGasto") Is Nothing) Then
             FormViewGastos.DefaultMode = FormViewMode.Insert
             FormViewDetalleGasto.Visible = False
+            LabelAgregarDetalle.Visible = False
+            LabelVerDetalles.Visible = False
         Else
             FormViewGastos.DefaultMode = FormViewMode.Edit
             FormViewDetalleGasto.Visible = True
+            LabelAgregarDetalle.Visible = True
+            LabelVerDetalles.Visible = True
 
 
 
@@ -35,6 +39,7 @@ Partial Class FormGastos
 
 
     Protected Sub SqlDataSourceGastos_Inserted(sender As Object, e As System.Web.UI.WebControls.SqlDataSourceStatusEventArgs) Handles SqlDataSourceGastos.Inserted
+        'Cuando se ingresa el gasto
         Dim idGasto As Integer
         idGasto = Convert.ToInt32(e.Command.Parameters("@idNuevoGasto").Value)
         Response.Redirect("FormGastos.aspx?idGasto=" & idGasto)
@@ -68,10 +73,13 @@ Partial Class FormGastos
  
   
     Protected Sub SqlDataSourceDetalle_Inserted(sender As Object, e As SqlDataSourceStatusEventArgs) Handles SqlDataSourceDetalle.Inserted
+        'Cuando se ingresa una tupla al detalle del gasto
         Dim idGasto As Integer
         idGasto = Convert.ToInt32(e.Command.Parameters("@idGastoActual").Value)
         Response.Redirect("FormGastos.aspx?idGasto=" & idGasto)
     End Sub
+
+
 End Class
 
 

@@ -67,13 +67,16 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <td class="etiqueta" style="width: 80px">idUsuario:</td>
-                    <td style="width: 250px"><asp:TextBox ID="idUsuarioTextBox" runat="server" Text='<%# Bind("idUsuario") %>' /></td>
+                    <td class="etiqueta" style="width: 80px">Usuario:</td>
+                    <td style="width: 250px">
+                        <asp:DropDownList ID="DropDownListUsuario" runat="server" DataSourceID="SqlDataSourceUsuarios" DataTextField="nombre" DataValueField="idUsuario" SelectedValue='<%# Bind("idUsuario") %>'>
+                        </asp:DropDownList>
+                    </td>
                     <td></td>
                 </tr>
                 <tr>
                     <td class="etiqueta" style="width: 80px">Subcategoria:</td>
-                    <td><asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSourceSubCategorias" DataTextField="nombre" DataValueField="idSubcategoria" SelectedIndex='<%# Eval("idSubcategoria") %>' SelectedValue='<%# Bind("idSubcategoria") %>' Width="129px" ></asp:DropDownList></td>
+                    <td><asp:DropDownList ID="DropDownListSubcategoria" runat="server" DataSourceID="SqlDataSourceSubCategorias" DataTextField="nombre" DataValueField="idSubcategoria" SelectedIndex='<%# Eval("idSubcategoria") %>' SelectedValue='<%# Bind("idSubcategoria") %>' Width="129px" ></asp:DropDownList></td>
                     <td></td>
                 </tr>
             </table>
@@ -131,9 +134,10 @@
     </asp:SqlDataSource>
     <br />
     <asp:SqlDataSource ID="SqlDataSourceSubCategorias" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString %>" SelectCommand="SELECT [idSubcategoria], [nombre] FROM [Subcategoria]"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSourceUsuarios" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString %>" SelectCommand="SELECT * FROM [Usuario]"></asp:SqlDataSource>
     <br />
-    <h3>Agregar Detalle
-    </h3>
+    <h3>
+        <asp:Label ID="LabelAgregarDetalle" runat="server" Text="Agregar Detalle"></asp:Label></h3>
     <br />
     <asp:FormView ID="FormViewDetalleGasto" runat="server" DataSourceID="SqlDataSourceDetalle" DefaultMode="Insert" Height="54px" Width="445px" DataKeyNames="idDetalle">
         <EditItemTemplate>
@@ -208,7 +212,7 @@
         </UpdateParameters>
     </asp:SqlDataSource>
     <br />
-    <h3>&nbsp;Detalle</h3>
+    <h3><asp:Label ID="LabelVerDetalles" runat="server" Text="Detalle gasto"></asp:Label></h3>
     <asp:GridView ID="GridViewDetalle" runat="server" AllowPaging="True" CellPadding="4" DataSourceID="SqlDataSourceDetalleGastos" ForeColor="#333333" GridLines="None" Width="322px" AutoGenerateColumns="False">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
