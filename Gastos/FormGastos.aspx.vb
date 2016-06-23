@@ -13,6 +13,10 @@ Partial Class FormGastos
             FormViewDetalleGasto.Visible = True
             LabelAgregarDetalle.Visible = True
             LabelVerDetalles.Visible = True
+            labelGasto.Text = "Ingreso agregado exitosamente!"
+            labelGasto.CssClass = "mensaje_confirmacion"
+
+
 
 
 
@@ -78,6 +82,7 @@ Partial Class FormGastos
         idGasto = Convert.ToInt32(e.Command.Parameters("@idGastoActual").Value)
         Response.Redirect("FormGastos.aspx?idGasto=" & idGasto)
     End Sub
+
 
 
 End Class
