@@ -3,7 +3,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
 
     <h2>Formulario de Categorías</h2>
-    <h3><asp:Label ID="LabelMensaje" runat="server" Text=""></asp:Label>
+    <h3><asp:Label ID="LabelMensaje" runat="server" Text=""></asp:Label></h3>
+
         <asp:FormView ID="FormViewCategorias" runat="server" DataKeyNames="idCategoria" DataSourceID="SqlDataSourceCategorias" Width="727px">
             <EditItemTemplate>
                 <table class="tabla_formulario">
@@ -64,7 +65,6 @@
             
             </ItemTemplate>
         </asp:FormView>
-    </h3>
 
     <asp:SqlDataSource ID="SqlDataSourceCategorias" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString %>" DeleteCommand="DELETE FROM [Categoria] WHERE [idCategoria] = @idCategoria" InsertCommand="INSERT INTO [Categoria] ([nombre]) VALUES (@nombre)" SelectCommand="SELECT * FROM [Categoria] WHERE ([idCategoria] = @idCategoria)" UpdateCommand="UPDATE [Categoria] SET [nombre] = @nombre WHERE [idCategoria] = @idCategoria">
         <DeleteParameters>
