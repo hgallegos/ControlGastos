@@ -28,13 +28,16 @@
                 <tr>                              
             
                     <td class="etiqueta" style="width: 80px">Usuario:</td>
-                    <td style="width: 250px" > <asp:TextBox ID="idUsuarioTextBox" runat="server" Text='<%# Bind("idUsuario") %>' /></td>
+                    <td style="width: 250px" ><asp:DropDownList style="width: 250px" ID="DropDownListUsuarioEdit" runat="server" DataSourceID="SqlDataSourceUsuarios" DataTextField="nombre" DataValueField="idUsuario"></asp:DropDownList> </td>
                     
                 </tr>
                 <tr>         
             
                     <td class="etiqueta" style="width: 80px">Subcategoria:</td>
-                    <td style="width: 250px" > <asp:TextBox ID="idSubcategoriaTextBox" runat="server" Text='<%# Bind("idSubcategoria") %>' /></td>
+                    <td style="width: 250px" > 
+                        <asp:DropDownList style="width: 250px" ID="DropDownList1" runat="server" DataSourceID="SqlDataSourceSubCategorias" DataTextField="nombre" DataValueField="idSubcategoria">
+                        </asp:DropDownList>
+                    </td>
  
 
                 </tr>
@@ -48,14 +51,14 @@
             <table class="tabla_formulario">
                 <tr>
                     <td class="etiqueta" style="width: 80px">Monto:</td>
-                    <td style="width: 250px"><asp:TextBox ID="montoTextBox" runat="server" Text='<%# Bind("monto") %>' /></td>
+                    <td style="width: 250px"><asp:TextBox style="width: 250px" ID="montoTextBox" runat="server" Text='<%# Bind("monto") %>' /></td>
                     <td class="error" ><asp:RequiredFieldValidator ID="RequiredFieldValidatorMonto" runat="server" ControlToValidate="MontoTextBox" ErrorMessage="Debes ingresar un monto."></asp:RequiredFieldValidator></td>
 
                 </tr>
                 <tr>
                     <td class="etiqueta" style="width: 80px">Fecha:</td>
                     <td style="width: 250px">
-                        <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="190px" NextPrevFormat="FullMonth" SelectedDate='<%# Bind("fecha")%>' Width="350px" >
+                        <asp:Calendar style="width: 250px" ID="Calendar1" runat="server" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="190px" NextPrevFormat="FullMonth" SelectedDate='<%# Bind("fecha")%>' Width="350px" >
                             <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
                             <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" />
                             <OtherMonthDayStyle ForeColor="#999999" />
@@ -76,7 +79,7 @@
                 </tr>
                 <tr>
                     <td class="etiqueta" style="width: 80px">Subcategoria:</td>
-                    <td><asp:DropDownList ID="DropDownListSubcategoria" runat="server" DataSourceID="SqlDataSourceSubCategorias" DataTextField="nombre" DataValueField="idSubcategoria" SelectedIndex='<%# Eval("idSubcategoria") %>' SelectedValue='<%# Bind("idSubcategoria") %>' Width="129px" ></asp:DropDownList></td>
+                    <td style="width: 250px"><asp:DropDownList ID="DropDownListSubcategoria" runat="server" DataSourceID="SqlDataSourceSubCategorias" DataTextField="nombre" DataValueField="idSubcategoria" SelectedIndex='<%# Eval("idSubcategoria") %>' SelectedValue='<%# Bind("idSubcategoria") %>' Width="129px" ></asp:DropDownList></td>
                     <td></td>
                 </tr>
             </table>
