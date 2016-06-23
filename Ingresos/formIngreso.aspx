@@ -43,7 +43,7 @@
             </table>
  
             <asp:SqlDataSource ID="SqlDataSourceUsuarios" runat="server" 
-                ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString2 %>" 
+                ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString %>" 
                 SelectCommand="SELECT * FROM [Usuario]"></asp:SqlDataSource>
             <br />
 
@@ -89,7 +89,7 @@
             
   
 
-            <asp:SqlDataSource ID="SqlDataSourceUsuarios" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString2 %>" SelectCommand="SELECT * FROM [Usuario]"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSourceUsuarios" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString %>" SelectCommand="SELECT * FROM [Usuario]"></asp:SqlDataSource>
             <br />
             <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insertar" />
             &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" OnClick="InsertCancelButton_Click" />
@@ -134,7 +134,7 @@
         </ItemTemplate>
     </asp:FormView>
     <asp:SqlDataSource ID="SqlDataSourceIngresos" runat="server" 
-        ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=Proyecto;Integrated Security=True" 
+        ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString %>" 
         InsertCommand="INSERT INTO [Ingreso] ([descripcion], [fecha], [cantidad], [idUsuario]) VALUES (@descripcion, @fecha, @cantidad, @idUsuario)" 
         SelectCommand="SELECT Ingreso.idIngreso, Ingreso.descripcion, Ingreso.fecha, Ingreso.cantidad, Ingreso.idUsuario, Usuario.nombre FROM Ingreso INNER JOIN Usuario ON Ingreso.idUsuario = Usuario.idUsuario WHERE (Ingreso.idIngreso = @idIngreso)" 
         DeleteCommand="DELETE FROM [Ingreso] WHERE [idIngreso] = @idIngreso" 

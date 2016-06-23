@@ -26,7 +26,7 @@
         <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
     </asp:GridView>
     <asp:SqlDataSource ID="SqlDataSourceSubcategoria" runat="server" 
-        ConnectionString="<%$ ConnectionStrings:ControlGastosConnectionString %>" 
+        ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString %>" 
         DeleteCommand="DELETE FROM [Subcategoria] WHERE [idSubcategoria] = @idSubcategoria" 
         InsertCommand="INSERT INTO [Subcategoria] ([descripcion], [nombre], [idCategoria]) 
                         VALUES (@descripcion, @nombre, @idCategoria)" 
