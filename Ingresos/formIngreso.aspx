@@ -29,7 +29,7 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="etiqueta"> Cantidad:</td>
+                    <td class="etiqueta"> Monto:</td>
                     <td><asp:TextBox ID="cantidadTextBox" runat="server" Text='<%# Bind("cantidad") %>' Height="28px" Width="223px" /></td>
                     <td class="error"> <asp:RequiredFieldValidator ID="RequiredFieldValidatorCantidad" runat="server" ControlToValidate="cantidadTextBox" ErrorMessage="Debes ingresar un monto."></asp:RequiredFieldValidator>
 
@@ -76,7 +76,7 @@
                     <td style="width: 346px">&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="etiqueta"><strong>Cantidad:</strong></td>
+                    <td class="etiqueta"><strong>Monto:</strong></td>
                     <td><asp:TextBox ID="cantidadTextBox" runat="server" Text='<%# Bind("cantidad") %>' Height="28px" Width="226px" /></td>
                     <td style="width: 346px" class="error"><asp:RequiredFieldValidator ID="RequiredFieldValidatorCantidad" runat="server" ControlToValidate="cantidadTextBox" ErrorMessage="Debes ingresar una cantidad de dinero."></asp:RequiredFieldValidator>
             </td>
@@ -109,7 +109,7 @@
                     <td> <asp:Label ID="fechaLabel" runat="server" Text='<%# Bind("fecha") %>' /></td>               
                 </tr>
                 <tr>
-                    <td class="etiqueta"> <strong>Cantidad</strong>:</td>
+                    <td class="etiqueta"> <strong>Monto</strong>:</td>
                     <td><asp:Label ID="cantidadLabel" runat="server" Text='<%# Bind("cantidad") %>' /></td>               
                 </tr>
                 <tr>
