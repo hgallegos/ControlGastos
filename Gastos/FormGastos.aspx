@@ -83,7 +83,7 @@
             &nbsp;<asp:LinkButton ID="NewButton" runat="server" CausesValidation="False" CommandName="New" Text="Nuevo" />
         </ItemTemplate>
     </asp:FormView>
-    <asp:SqlDataSource ID="SqlDataSourceGastos" runat="server" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=Proyecto;Integrated Security=True" DeleteCommand="DELETE FROM [Gasto] WHERE [idGasto] = @idGasto" InsertCommand="INSERT INTO [Gasto] ([monto], [fecha], [idUsuario], [idSubcategoria]) VALUES (@monto, @fecha, @idUsuario, @idSubcategoria); SELECT @idNuevoGasto = SCOPE_IDENTITY();" SelectCommand="SELECT Gasto.idGasto, Gasto.monto, Gasto.fecha, Gasto.idUsuario, Gasto.idSubcategoria, Subcategoria.nombre FROM Gasto INNER JOIN Subcategoria ON Gasto.idSubcategoria = Subcategoria.idSubcategoria" UpdateCommand="UPDATE [Gasto] SET [monto] = @monto, [fecha] = @fecha, [idUsuario] = @idUsuario, [idSubcategoria] = @idSubcategoria WHERE [idGasto] = @idGasto">
+    <asp:SqlDataSource ID="SqlDataSourceGastos" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString %>" DeleteCommand="DELETE FROM [Gasto] WHERE [idGasto] = @idGasto" InsertCommand="INSERT INTO [Gasto] ([monto], [fecha], [idUsuario], [idSubcategoria]) VALUES (@monto, @fecha, @idUsuario, @idSubcategoria); SELECT @idNuevoGasto = SCOPE_IDENTITY();" SelectCommand="SELECT Gasto.idGasto, Gasto.monto, Gasto.fecha, Gasto.idUsuario, Gasto.idSubcategoria, Subcategoria.nombre FROM Gasto INNER JOIN Subcategoria ON Gasto.idSubcategoria = Subcategoria.idSubcategoria" UpdateCommand="UPDATE [Gasto] SET [monto] = @monto, [fecha] = @fecha, [idUsuario] = @idUsuario, [idSubcategoria] = @idSubcategoria WHERE [idGasto] = @idGasto">
         <DeleteParameters>
             <asp:Parameter Name="idGasto" Type="Int32" />
         </DeleteParameters>
@@ -92,6 +92,7 @@
             <asp:Parameter DbType="Date" Name="fecha" />
             <asp:Parameter Name="idUsuario" Type="Int32" />
             <asp:Parameter Name="idSubcategoria" Type="Int32" />
+            <asp:Parameter Name="idNuevoGasto" />
         </InsertParameters>
         <UpdateParameters>
             <asp:Parameter Name="monto" Type="Int32" />
@@ -99,11 +100,10 @@
             <asp:Parameter Name="idUsuario" Type="Int32" />
             <asp:Parameter Name="idSubcategoria" Type="Int32" />
             <asp:Parameter Name="idGasto" Type="Int32" />
-            <asp:Parameter Name="idNuevoGasto" Type="Int32" Direction="Output" />
         </UpdateParameters>
     </asp:SqlDataSource>
     <br />
-    <asp:SqlDataSource ID="SqlDataSourceSubCategorias" runat="server" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=Proyecto;Integrated Security=True" SelectCommand="SELECT [idSubcategoria], [nombre] FROM [Subcategoria]"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSourceSubCategorias" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString %>" SelectCommand="SELECT [idSubcategoria], [nombre] FROM [Subcategoria]"></asp:SqlDataSource>
     <br />
     <h3>Detalle
     </h3>
