@@ -30,6 +30,7 @@ Partial Class Usuarios_formUsuarios
             LabelMensaje.Text = "No se pudo ingresar el usuario"
             LabelMensaje.CssClass = "mensaje_error"
         End If
+        e.ExceptionHandled = True
     End Sub
 
     Protected Sub FormViewUsuarios_ItemUpdated(sender As Object, e As FormViewUpdatedEventArgs) Handles FormViewUsuarios.ItemUpdated
@@ -40,6 +41,7 @@ Partial Class Usuarios_formUsuarios
             LabelMensaje.Text = "No se pudo actualizar el usuario."
             LabelMensaje.CssClass = "mensaje_error"
         End If
+        e.ExceptionHandled = True
     End Sub
 
     Protected Sub FormViewUsuarios_ItemDeleted(sender As Object, e As FormViewDeletedEventArgs) Handles FormViewUsuarios.ItemDeleted
@@ -50,5 +52,6 @@ Partial Class Usuarios_formUsuarios
             LabelMensaje.Text = "No se pudo eliminar el usuario"
             LabelMensaje.CssClass = "mensaje_error"
         End If
+        e.ExceptionHandled = True
     End Sub
 End Class

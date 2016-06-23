@@ -25,6 +25,7 @@ Partial Class Perfiles_formPerfiles
             LabelMensaje.Text = "No se pudo ingresar el perfil"
             LabelMensaje.CssClass = "mensaje_error"
         End If
+        e.ExceptionHandled = True
     End Sub
 
     Protected Sub FormViewPerfiles_ItemUpdated(sender As Object, e As FormViewUpdatedEventArgs) Handles FormViewPerfiles.ItemUpdated
@@ -35,6 +36,7 @@ Partial Class Perfiles_formPerfiles
             LabelMensaje.Text = "No se pudo actualizar el perfil"
             LabelMensaje.CssClass = "mensaje_error"
         End If
+        e.ExceptionHandled = True
     End Sub
 
     Protected Sub UpdateCancelButton_Click(sender As Object, e As EventArgs)
@@ -49,5 +51,6 @@ Partial Class Perfiles_formPerfiles
             LabelMensaje.Text = "No se pudo eliminar el perfil"
             LabelMensaje.CssClass = "mensaje_error"
         End If
+        e.ExceptionHandled = True
     End Sub
 End Class

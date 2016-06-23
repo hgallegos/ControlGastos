@@ -30,6 +30,7 @@ Partial Class Gestion_formCategorias
             LabelMensaje.Text = "No se pudo ingresar la categoria"
             LabelMensaje.CssClass = "mensaje_error"
         End If
+        e.ExceptionHandled = True
     End Sub
 
     Protected Sub FormViewCategorias_ItemUpdated(sender As Object, e As FormViewUpdatedEventArgs) Handles FormViewCategorias.ItemUpdated
@@ -40,6 +41,7 @@ Partial Class Gestion_formCategorias
             LabelMensaje.Text = "No se pudo actualizar la categoria"
             LabelMensaje.CssClass = "mensaje_error"
         End If
+        e.ExceptionHandled = True
     End Sub
 
     Protected Sub FormViewCategorias_ItemDeleted(sender As Object, e As FormViewDeletedEventArgs) Handles FormViewCategorias.ItemDeleted
@@ -50,5 +52,6 @@ Partial Class Gestion_formCategorias
             LabelMensaje.Text = "No se pudo eliminar la categoria"
             LabelMensaje.CssClass = "mensaje_error"
         End If
+        e.ExceptionHandled = True
     End Sub
 End Class

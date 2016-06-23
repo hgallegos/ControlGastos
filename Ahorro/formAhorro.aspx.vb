@@ -28,6 +28,7 @@ Partial Class Ahorro_formAhorro
             LabelMensaje.Text = "No se pudo agregar el ahorro"
             LabelMensaje.CssClass = "mensaje_error"
         End If
+        e.ExceptionHandled = True
     End Sub
 
 
@@ -39,6 +40,7 @@ Partial Class Ahorro_formAhorro
             LabelMensaje.Text = "No se pudo actualizar el ahorro"
             LabelMensaje.CssClass = "mensaje_error"
         End If
+        e.ExceptionHandled = True
     End Sub
 
     Protected Sub FormViewAhorro_ItemDeleted(sender As Object, e As FormViewDeletedEventArgs) Handles FormViewAhorro.ItemDeleted
@@ -49,5 +51,6 @@ Partial Class Ahorro_formAhorro
             LabelMensaje.Text = "No se pudo eliminar el ahorro"
             LabelMensaje.CssClass = "mensaje_error"
         End If
+        e.ExceptionHandled = True
     End Sub
 End Class

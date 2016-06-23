@@ -16,6 +16,7 @@ Partial Class Elementos_formElementos
             LabelMensaje.Text = "No se pudo ingresar el elemento"
             LabelMensaje.CssClass = "mensaje_error"
         End If
+        e.ExceptionHandled = True
     End Sub
 
     Protected Sub FormViewElementos_ItemUpdated(sender As Object, e As FormViewUpdatedEventArgs) Handles FormViewElementos.ItemUpdated
@@ -26,6 +27,7 @@ Partial Class Elementos_formElementos
             LabelMensaje.Text = "No se pudo actualizar el elemento"
             LabelMensaje.CssClass = "mensaje_error"
         End If
+        e.ExceptionHandled = True
     End Sub
 
     Protected Sub LinkButtonVolver_Click(sender As Object, e As EventArgs)
@@ -51,5 +53,6 @@ Partial Class Elementos_formElementos
             LabelMensaje.Text = "No se pudo eliminar el elemento"
             LabelMensaje.CssClass = "mensaje_error"
         End If
+        e.ExceptionHandled = True
     End Sub
 End Class

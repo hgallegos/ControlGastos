@@ -28,6 +28,7 @@ Partial Class Gestion_formSubcategorias
             LabelMensaje.Text = "No se pudo ingresar la subcategoria"
             LabelMensaje.CssClass = "mensaje_error"
         End If
+        e.ExceptionHandled = True
     End Sub
 
     Protected Sub FormViewSubcategoria_ItemUpdated(sender As Object, e As FormViewUpdatedEventArgs) Handles FormViewSubcategoria.ItemUpdated
@@ -38,6 +39,7 @@ Partial Class Gestion_formSubcategorias
             LabelMensaje.Text = "No se pudo actualizar la subcategoria"
             LabelMensaje.CssClass = "mensaje_error"
         End If
+        e.ExceptionHandled = True
     End Sub
 
     Protected Sub FormViewSubcategoria_ItemDeleted(sender As Object, e As FormViewDeletedEventArgs) Handles FormViewSubcategoria.ItemDeleted
@@ -48,5 +50,6 @@ Partial Class Gestion_formSubcategorias
             LabelMensaje.Text = "No se pudo eliminar la subcategoria"
             LabelMensaje.CssClass = "mensaje_error"
         End If
+        e.ExceptionHandled = True
     End Sub
 End Class

@@ -26,6 +26,7 @@ Partial Class Aportes_formAporte
             LabelMensaje.Text = "No se pudo agregar el aporte"
             LabelMensaje.CssClass = "mensaje_error"
         End If
+        e.ExceptionHandled = True
     End Sub
 
     Protected Sub FormViewAportes_ItemUpdated(sender As Object, e As FormViewUpdatedEventArgs) Handles FormViewAportes.ItemUpdated
@@ -36,6 +37,7 @@ Partial Class Aportes_formAporte
             LabelMensaje.Text = "No se pudo actualizar el aporte"
             LabelMensaje.CssClass = "mensaje_error"
         End If
+        e.ExceptionHandled = True
     End Sub
 
     Protected Sub FormViewAportes_ItemDeleted(sender As Object, e As FormViewDeletedEventArgs) Handles FormViewAportes.ItemDeleted
@@ -46,5 +48,6 @@ Partial Class Aportes_formAporte
             LabelMensaje.Text = "No se pudo eliminar el aporte"
             LabelMensaje.CssClass = "mensaje_error"
         End If
+        e.ExceptionHandled = True
     End Sub
 End Class

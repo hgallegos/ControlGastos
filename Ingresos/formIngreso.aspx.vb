@@ -26,6 +26,7 @@ Partial Class Ingresos_formIngreso
             LabelMensaje.Text = "No se pudo agregar el ingreso"
             LabelMensaje.CssClass = "mensaje_error"
         End If
+        e.ExceptionHandled = True
     End Sub
 
     Protected Sub FormViewIngresos_ItemUpdated(sender As Object, e As FormViewUpdatedEventArgs) Handles FormViewIngresos.ItemUpdated
@@ -36,6 +37,7 @@ Partial Class Ingresos_formIngreso
             LabelMensaje.Text = "No se pudo actualizar el ingreso"
             LabelMensaje.CssClass = "mensaje_error"
         End If
+        e.ExceptionHandled = True
     End Sub
 
     Protected Sub FormViewIngresos_ItemDeleted(sender As Object, e As FormViewDeletedEventArgs) Handles FormViewIngresos.ItemDeleted
@@ -46,5 +48,6 @@ Partial Class Ingresos_formIngreso
             LabelMensaje.Text = "No se pudo eliminar el ingreso"
             LabelMensaje.CssClass = "mensaje_error"
         End If
+        e.ExceptionHandled = True
     End Sub
 End Class
