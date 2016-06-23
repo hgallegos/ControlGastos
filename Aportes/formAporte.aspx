@@ -56,8 +56,6 @@
         </EditItemTemplate>
         <InsertItemTemplate>
 
-            <h4 class="titulo_tablas">Nuevo aporte</h4>
-
             <table class="tabla_formulario">
                 <tr>
                     <td class="etiqueta">Monto: </td>
