@@ -51,29 +51,31 @@
             &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" />
         </EditItemTemplate>
         <InsertItemTemplate>
-            <table class="tabla_formulario">
+
+
+            <table class="table table-bordered">
                 <tr>
-                    <td class="etiqueta">Nombre: </td>
-                    <td><asp:TextBox ID="nombreTextBox" runat="server" Text='<%# Bind("nombre") %>' /></td>
+                    <th class="etiqueta">Nombre: </th>
+                    <td><asp:TextBox ID="nombreTextBox" CssClass="form-control" runat="server" Text='<%# Bind("nombre") %>' /></td>
                     <td class="error">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorNombre" runat="server" ErrorMessage="Debes ingresar un nombre." ControlToValidate="nombreTextBox"></asp:RequiredFieldValidator></td>
                 </tr>
                 <tr>
-                    <td class="etiqueta">Mail: </td>
-                    <td><asp:TextBox ID="correoTextBox" runat="server" Text='<%# Bind("correo") %>' /></td>
+                    <th class="etiqueta">Mail: </th>
+                    <td><asp:TextBox ID="correoTextBox" CssClass="form-control" runat="server" Text='<%# Bind("correo") %>' /></td>
                     <td class="error">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorMail" runat="server" ErrorMessage="Debes ingresar un mail." ControlToValidate="correoTextBox"></asp:RequiredFieldValidator></td>
                 </tr>
                 <tr>
-                    <td class="etiqueta">Contraseña: </td>
-                    <td><asp:TextBox ID="contraseñaTextBox" runat="server" Text='<%# Bind("contraseña") %>' /></td>
+                    <th class="etiqueta">Contraseña: </th>
+                    <td><asp:TextBox ID="contraseñaTextBox" CssClass="form-control" runat="server" Text='<%# Bind("contraseña") %>' /></td>
                     <td class="error">
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidatorContraseña" runat="server" ErrorMessage="Debes ingresar una contraseña." ControlToValidate="contraseñaTextBox"></asp:RequiredFieldValidator></td>
+                        <asp:RequiredFieldValidator CssClass="has-error" ID="RequiredFieldValidatorContraseña" runat="server" ErrorMessage="Debes ingresar una contraseña." ControlToValidate="contraseñaTextBox"></asp:RequiredFieldValidator></td>
                 </tr>
                 <tr>
-                    <td class="etiqueta">Perfil: </td>
+                    <th class="etiqueta">Perfil: </th>
                     <td>
-                        <asp:DropDownList ID="DropDownListPerfil" runat="server" DataSourceID="SqlDataSourcePerfil" DataTextField="nombre" DataValueField="idPerfil" SelectedValue='<%# Bind("idPerfil") %>'></asp:DropDownList>
+                        <asp:DropDownList ID="DropDownListPerfil" CssClass="form-control" runat="server" DataSourceID="SqlDataSourcePerfil" DataTextField="nombre" DataValueField="idPerfil" SelectedValue='<%# Bind("idPerfil") %>'></asp:DropDownList>
                         <asp:SqlDataSource ID="SqlDataSourcePerfil" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString %>" SelectCommand="SELECT * FROM [Perfil] WHERE ([idPerfil] &lt;&gt; @idPerfil)">
                             <SelectParameters>
                                 <asp:QueryStringParameter DefaultValue="1" Name="idPerfil" QueryStringField="idPerfil" Type="Byte" />
@@ -84,9 +86,11 @@
                 </tr>
             </table>
            
+
+
             <br />
-            <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insertar" />
-            &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" OnClick="InsertCancelButton_Click" />
+            <asp:LinkButton ID="InsertButton" runat="server" CssClass="btn btn-primary" CausesValidation="True" CommandName="Insert" Text="Insertar" />
+            &nbsp;<asp:LinkButton ID="InsertCancelButton" CssClass="btn btn-danger" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" OnClick="InsertCancelButton_Click" />
         </InsertItemTemplate>
         <ItemTemplate>
             <table class="tabla_formulario">
@@ -114,9 +118,8 @@
            
             
             <br />
-            <asp:LinkButton ID="EditButton" runat="server" CausesValidation="False" CommandName="Edit" Text="Editar" />
-            &nbsp;<asp:LinkButton ID="DeleteButton" runat="server" CausesValidation="False" CommandName="Delete" Text="Eliminar" />
-            &nbsp;<asp:LinkButton ID="LinkButtonVolver" runat="server" OnClick="LinkButtonVolver_Click">Volver</asp:LinkButton>
+            <asp:LinkButton ID="EditButton" runat="server"  CssClass="btn btn-primary" CausesValidation="False" CommandName="Edit" Text="Editar" />
+            &nbsp;<asp:LinkButton ID="LinkButtonVolver" CssClass="btn btn-danger" runat="server" OnClick="LinkButtonVolver_Click">Volver</asp:LinkButton>
         </ItemTemplate>
 </asp:FormView>
     <asp:SqlDataSource ID="SqlDataSourceUsuarios" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString %>" DeleteCommand="DELETE FROM [Usuario] WHERE [idUsuario] = @idUsuario" InsertCommand="INSERT INTO [Usuario] ([nombre], [contraseña], [correo], [idPerfil]) VALUES (@nombre, @contraseña, @correo, @idPerfil)" SelectCommand="SELECT Usuario.idUsuario, Usuario.nombre, Usuario.contraseña, Usuario.correo, Usuario.idPerfil, Perfil.nombre AS Expr1 FROM Usuario INNER JOIN Perfil ON Usuario.idPerfil = Perfil.idPerfil WHERE (Usuario.idUsuario = @idUsuario)" UpdateCommand="UPDATE [Usuario] SET [nombre] = @nombre, [contraseña] = @contraseña, [correo] = @correo, [idPerfil] = @idPerfil WHERE [idUsuario] = @idUsuario">
