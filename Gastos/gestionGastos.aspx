@@ -6,7 +6,7 @@
     <h2 style="text-align: center" >Gestión de gastos</h2>
     <h4 style="text-align: center"><a href="FormGastos.aspx">Nuevo Gasto</a></h4>
     <h3 style="text-align: center" ><asp:Label ID="LabelMensaje" runat="server" Text=""></asp:Label> </h3>
-      <asp:GridView ID="GridViewGastos" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSourceGastos" Width="1024px" DataKeyNames="idGasto" AllowSorting="True" CellPadding="4" ForeColor="#333333" GridLines="None" HorizontalAlign="Center">
+      <asp:GridView ID="GridViewGastos" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSourceGastos" Width="1000px" DataKeyNames="idGasto" AllowSorting="True" CellPadding="4" ForeColor="#333333" GridLines="None" HorizontalAlign="Center">
           <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
           <Columns>
               <asp:BoundField DataField="monto" HeaderText="Monto" SortExpression="monto" />

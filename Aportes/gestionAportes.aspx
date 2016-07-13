@@ -7,7 +7,7 @@
     <h3 style="text-align: center">
         <asp:Label ID="LabelMensaje" runat="server" Text=""></asp:Label></h3>
 
-    <asp:GridView ID="GridViewAportes" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="idAporte" DataSourceID="SqlDataSourceAportes" ForeColor="#333333" GridLines="None" HorizontalAlign="Center" Width="453px">
+    <asp:GridView ID="GridViewAportes" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="idAporte" DataSourceID="SqlDataSourceAportes" ForeColor="#333333" GridLines="None" HorizontalAlign="Center" Width="1000px">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
             <asp:BoundField DataField="nombre" HeaderText="Nombre conviviente" SortExpression="nombre" />

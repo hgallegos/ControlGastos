@@ -4,7 +4,7 @@
     <h2 style="text-align:center">Gesti&oacute;n de perfiles</h2>
     <h4 style="text-align:center"><a href="formPerfiles.aspx">Nuevo perfil</a></h4>
     <h3 style="text-align: center"><asp:Label ID="LabelMensaje" runat="server"></asp:Label></h3>
-        <asp:GridView ID="GridViewPerfiles" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="idPerfil" DataSourceID="SqlDataSourcePerfiles" ForeColor="#333333" GridLines="None" HorizontalAlign="Center" Width="600px">
+        <asp:GridView ID="GridViewPerfiles" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="idPerfil" DataSourceID="SqlDataSourcePerfiles" ForeColor="#333333" GridLines="None" HorizontalAlign="Center" Width="1000px">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
             <Columns>
                 <asp:BoundField DataField="idPerfil" HeaderText="#" ReadOnly="True" SortExpression="idPerfil" />

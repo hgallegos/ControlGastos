@@ -6,7 +6,7 @@
     <h4 style="text-align: center"><a href="formIngreso.aspx" >Nuevo ingreso</a></h4>
     <h3 style="text-align: center"><asp:Label ID="LabelMensaje" runat="server" Text=""></asp:Label></h3>
 
-    <asp:GridView ID="GridViewIngresos" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="idIngreso" DataSourceID="SqlDataSourceIngresos" ForeColor="#333333" GridLines="None" Width="600px" BorderStyle="Inset" HorizontalAlign="Center">
+    <asp:GridView ID="GridViewIngresos" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="idIngreso" DataSourceID="SqlDataSourceIngresos" ForeColor="#333333" GridLines="None" Width="1000px" HorizontalAlign="Center">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
             <asp:BoundField DataField="descripcion" HeaderText="Descripción" SortExpression="descripcion" />
