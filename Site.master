@@ -64,6 +64,14 @@
                                 <li><a runat="server" href="~/Ahorro/gestionAhorros">Gestionar ahorros</a></li>
                             </ul>
                         </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown">Mi hogar<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a runat="server" href="~/Usuarios/formNuevoConviviente">Agregar conviviente</a></li>
+                                <li><a runat="server" href="~/Usuarios/gestionUsuarios">Gestionar familia</a></li>
+                                <li><a runat="server" href="~/Perfiles/gestionPerfiles">Agregar perfil</a></li>
+                            </ul>
+                        </li>
                         <li><a runat="server" href="~/Elementos/gestionElementos">Elementos</a></li>
                         <li><a runat="server" href="~/Gestion/gestionCategorias">Categorias</a></li>
                         <li><a runat="server" href="~/Usuarios/gestionUsuarios">Usuarios</a></li>
