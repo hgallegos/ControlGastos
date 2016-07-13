@@ -14,7 +14,7 @@ Partial Class FormGastos
             LabelAgregarDetalle.Visible = True
             LabelVerDetalles.Visible = True
             labelGasto.Text = "Gasto agregado exitosamente!"
-            labelGasto.CssClass = "mensaje_confirmacion"
+            labelGasto.CssClass = "alert alert-success"
 
 
 

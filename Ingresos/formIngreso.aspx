@@ -4,7 +4,7 @@
 
     <h2 style="text-align: center">Formulario de ingresos de dinero</h2>
     <h3 style="text-align: center"><asp:Label ID="LabelMensaje" runat="server" Text=""></asp:Label></h3>
-
+    &nbsp;
     <asp:FormView ID="FormViewIngresos" runat="server" DataKeyNames="idIngreso" DataSourceID="SqlDataSourceIngresos" Width="688px">
         <EditItemTemplate>
             <table class="table table-bordered">
@@ -47,10 +47,10 @@
                 SelectCommand="SELECT * FROM [Usuario]"></asp:SqlDataSource>
             <br />
 
-            <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True"
+            <asp:LinkButton ID="UpdateButton" CssClass="btn btn-primary" runat="server" CausesValidation="True"
                  CommandName="Update" Text="Actualizar" />
 
-            &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" />
+            &nbsp;<asp:LinkButton ID="UpdateCancelButton" CssClass="btn btn-deafult" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" />
 
         </EditItemTemplate>
         <InsertItemTemplate>
@@ -91,8 +91,8 @@
 
             <asp:SqlDataSource ID="SqlDataSourceUsuarios" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString %>" SelectCommand="SELECT * FROM [Usuario]"></asp:SqlDataSource>
             <br />
-            <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insertar" />
-            &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" OnClick="InsertCancelButton_Click" />
+            <asp:LinkButton ID="InsertButton" CssClass="btn btn-primary" runat="server" CausesValidation="True" CommandName="Insert" Text="Insertar" />
+            &nbsp;<asp:LinkButton ID="InsertCancelButton" CssClass="btn btn-deafult" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" OnClick="InsertCancelButton_Click" />
         </InsertItemTemplate>
         <ItemTemplate>
             <table class="table table-bordered">
@@ -125,9 +125,9 @@
             &nbsp;&nbsp;
    
            
-            <asp:LinkButton ID="EditButton" runat="server" CausesValidation="False" CommandName="Edit" Text="Editar" />
-            &nbsp;<asp:LinkButton ID="DeleteButton" runat="server" CausesValidation="False" CommandName="Delete" Text="Eliminar" />
-            &nbsp;<asp:LinkButton ID="LinkButtonVolver" runat="server" OnClick="LinkButtonVolver_Click">Volver</asp:LinkButton>
+            <asp:LinkButton ID="EditButton" CssClass="btn btn-primary" runat="server" CausesValidation="False" CommandName="Edit" Text="Editar" />
+            &nbsp;<asp:LinkButton ID="DeleteButton" CssClass="btn btn-danger" runat="server" CausesValidation="False" CommandName="Delete" Text="Eliminar" />
+            &nbsp;<asp:LinkButton ID="LinkButtonVolver" runat="server" CssClass="btn btn-default" OnClick="LinkButtonVolver_Click">Volver</asp:LinkButton>
 
             <br />
 

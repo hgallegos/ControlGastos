@@ -11,10 +11,10 @@ Partial Class Elementos_formElementos
     Protected Sub FormViewElementos_ItemInserted(sender As Object, e As FormViewInsertedEventArgs) Handles FormViewElementos.ItemInserted
         If (e.Exception Is Nothing) Then
             LabelMensaje.Text = "¡Elemento ingresado exitosamente!"
-            LabelMensaje.CssClass = "mensaje_confirmacion"
+            LabelMensaje.CssClass = "alert alert-success"
         Else
             LabelMensaje.Text = "No se pudo ingresar el elemento"
-            LabelMensaje.CssClass = "mensaje_error"
+            LabelMensaje.CssClass = "alert alert-danger"
         End If
         e.ExceptionHandled = True
     End Sub
@@ -22,10 +22,10 @@ Partial Class Elementos_formElementos
     Protected Sub FormViewElementos_ItemUpdated(sender As Object, e As FormViewUpdatedEventArgs) Handles FormViewElementos.ItemUpdated
         If (e.Exception Is Nothing) Then
             LabelMensaje.Text = "¡Elemento actualizado exitosamente!"
-            LabelMensaje.CssClass = "mensaje_confirmacion"
+            LabelMensaje.CssClass = "alert alert-success"
         Else
             LabelMensaje.Text = "No se pudo actualizar el elemento"
-            LabelMensaje.CssClass = "mensaje_error"
+            LabelMensaje.CssClass = "alert alert-danger"
         End If
         e.ExceptionHandled = True
     End Sub
@@ -48,10 +48,10 @@ Partial Class Elementos_formElementos
     Protected Sub FormViewElementos_ItemDeleted(sender As Object, e As FormViewDeletedEventArgs) Handles FormViewElementos.ItemDeleted
         If (e.Exception Is Nothing) Then
             LabelMensaje.Text = "Elemento eliminado exitosamente!"
-            LabelMensaje.CssClass = "mensaje_confirmacion"
+            LabelMensaje.CssClass = "alert alert-success"
         Else
             LabelMensaje.Text = "No se pudo eliminar el elemento"
-            LabelMensaje.CssClass = "mensaje_error"
+            LabelMensaje.CssClass = "alert alert-danger"
         End If
         e.ExceptionHandled = True
     End Sub

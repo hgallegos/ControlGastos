@@ -11,4 +11,11 @@ Partial Class Usuarios_gestionPerfiles
         Response.Redirect("formPerfiles.aspx?idPerfil=" & idPerfil)
 
     End Sub
+
+    Protected Sub GridViewPerfiles_PreRender(sender As Object, e As EventArgs) Handles GridViewPerfiles.PreRender
+        Try
+            GridViewPerfiles.HeaderRow.TableSection = TableRowSection.TableHeader
+        Catch ex As Exception
+        End Try
+    End Sub
 End Class

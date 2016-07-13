@@ -10,4 +10,11 @@ Partial Class Usuarios_gestionUsuarios
         idUsuario = GridViewUsuarios.SelectedDataKey(0)
         Response.Redirect("formUsuarios.aspx?idUsuario=" & idUsuario)
     End Sub
+
+    Protected Sub GridViewUsuarios_PreRender(sender As Object, e As EventArgs) Handles GridViewUsuarios.PreRender
+        Try
+            GridViewUsuarios.HeaderRow.TableSection = TableRowSection.TableHeader
+        Catch ex As Exception
+        End Try
+    End Sub
 End Class

@@ -10,4 +10,11 @@ Partial Class Gestion_gestionCategorias
         idCategoria = GridViewCategorias.SelectedDataKey(0)
         Response.Redirect("formCategorias.aspx?idCategoria=" & idCategoria)
     End Sub
+
+    Protected Sub GridViewCategorias_PreRender(sender As Object, e As EventArgs) Handles GridViewCategorias.PreRender
+        Try
+            GridViewCategorias.HeaderRow.TableSection = TableRowSection.TableHeader
+        Catch ex As Exception
+        End Try
+    End Sub
 End Class

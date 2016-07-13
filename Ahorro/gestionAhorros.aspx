@@ -3,23 +3,31 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
 
     <h2 style="text-align: center">Gestión de ahorros</h2>
-    <h4 style="text-align: center"><a href="formAhorro.aspx">Nuevo ahorro</a></h4>
+    <div class="text-center">
+        <div class="btn-group" role="group">
+        <a class="btn btn-default" data-toggle="tooltip" title="Nuevo ahorro" href="formAhorro.aspx">
+            <span class="glyphicon glyphicon-plus"></span>
+        </a>
+        </div>
+    </div>
+    
+    <script>
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip(); 
+        });
+    </script>
     <h3 style="text-align: center">
         <asp:Label ID="LabelMensaje" runat="server" Text=""></asp:Label></h3>
 
-    <asp:GridView ID="GridViewAhorro" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="idAhorro" DataSourceID="SqlDataSourceAhorro" ForeColor="#333333" GridLines="None" Width="1000px" HorizontalAlign="Center">
+    <asp:GridView ID="GridViewAhorro" runat="server" CssClass="table table-bordered table-striped table-hover" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" UseAccessibleHeader="true" DataKeyNames="idAhorro" DataSourceID="SqlDataSourceAhorro" ForeColor="#333333" GridLines="None" Width="1000px" HorizontalAlign="Center">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
             <asp:BoundField DataField="Monto" HeaderText="Monto" SortExpression="Monto" DataFormatString="{0:C0}" />
             <asp:BoundField DataField="Fecha" HeaderText="Fecha" SortExpression="Fecha" DataFormatString="{0:d}" />
             <asp:BoundField DataField="nombre" HeaderText="Nombre" SortExpression="nombre" />
-            <asp:CommandField ShowSelectButton="True" />
+            <asp:CommandField ButtonType="Button" ControlStyle-CssClass="btn btn-sm btn-primary" ShowSelectButton="True" />
         </Columns>
-        <EditRowStyle BackColor="#999999" />
-        <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-        <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-        <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
-        <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+        
         <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
         <SortedAscendingCellStyle BackColor="#E9E7E2" />
         <SortedAscendingHeaderStyle BackColor="#506C8C" />

@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
     <h2 style="text-align: center">Detalle Gasto</h2>
     
-        <asp:GridView ID="GridViewDetalleGasto" runat="server" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="idDetalle" DataSourceID="SqlDataSourceDetalleGastos" ForeColor="#333333" GridLines="None" Width="944px">
+        <asp:GridView ID="GridViewDetalleGasto" runat="server" AllowSorting="True" CssClass="table table-bordered table-striped table-hover" UseAccessibleHeader="true" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="idDetalle" DataSourceID="SqlDataSourceDetalleGastos" ForeColor="#333333" GridLines="None" Width="944px">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
             <asp:BoundField DataField="nombre" HeaderText="nombre" SortExpression="nombre" />
@@ -15,10 +15,7 @@
         <EmptyDataTemplate>
             <h3>Este gasto no tiene detalle</h3>
         </EmptyDataTemplate>
-        <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-        <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-        <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
-        <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+      
         <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
         <SortedAscendingCellStyle BackColor="#E9E7E2" />
         <SortedAscendingHeaderStyle BackColor="#506C8C" />

@@ -21,10 +21,10 @@ Partial Class Ingresos_formIngreso
     Protected Sub FormViewIngresos_ItemInserted(sender As Object, e As FormViewInsertedEventArgs) Handles FormViewIngresos.ItemInserted
         If (e.Exception Is Nothing) Then
             LabelMensaje.Text = "Ingreso agregado exitosamente!"
-            LabelMensaje.CssClass = "mensaje_confirmacion"
+            LabelMensaje.CssClass = "alert alert-success"
         Else
             LabelMensaje.Text = "No se pudo agregar el ingreso"
-            LabelMensaje.CssClass = "mensaje_error"
+            LabelMensaje.CssClass = "alert alert-danger"
         End If
         e.ExceptionHandled = True
     End Sub
@@ -32,10 +32,10 @@ Partial Class Ingresos_formIngreso
     Protected Sub FormViewIngresos_ItemUpdated(sender As Object, e As FormViewUpdatedEventArgs) Handles FormViewIngresos.ItemUpdated
         If (e.Exception Is Nothing) Then
             LabelMensaje.Text = "Ingreso actualizado exitosamente!"
-            LabelMensaje.CssClass = "mensaje_confirmacion"
+            LabelMensaje.CssClass = "alert alert-success"
         Else
             LabelMensaje.Text = "No se pudo actualizar el ingreso"
-            LabelMensaje.CssClass = "mensaje_error"
+            LabelMensaje.CssClass = "alert alert-danger"
         End If
         e.ExceptionHandled = True
     End Sub
@@ -43,10 +43,10 @@ Partial Class Ingresos_formIngreso
     Protected Sub FormViewIngresos_ItemDeleted(sender As Object, e As FormViewDeletedEventArgs) Handles FormViewIngresos.ItemDeleted
         If (e.Exception Is Nothing) Then
             LabelMensaje.Text = "Ingreso eliminado exitosamente!"
-            LabelMensaje.CssClass = "mensaje_confirmacion"
+            LabelMensaje.CssClass = "alert alert-success"
         Else
             LabelMensaje.Text = "No se pudo eliminar el ingreso"
-            LabelMensaje.CssClass = "mensaje_error"
+            LabelMensaje.CssClass = "alert alert-danger"
         End If
         e.ExceptionHandled = True
     End Sub

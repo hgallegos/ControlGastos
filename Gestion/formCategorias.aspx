@@ -4,7 +4,7 @@
 
     <h2>Formulario de Categorías</h2>
     <h3><asp:Label ID="LabelMensaje" runat="server" Text=""></asp:Label></h3>
-
+    &nbsp;
         <asp:FormView ID="FormViewCategorias" runat="server" DataKeyNames="idCategoria" DataSourceID="SqlDataSourceCategorias" Width="727px">
             <EditItemTemplate>
                 <table class="table table-bordered">
@@ -25,8 +25,8 @@
                 <br />
                 
                 
-                <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Actualizar" />
-                &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" />
+                <asp:LinkButton ID="UpdateButton" CssClass="btn btn-primary" runat="server" CausesValidation="True" CommandName="Update" Text="Actualizar" />
+                &nbsp;<asp:LinkButton ID="UpdateCancelButton" CssClass="btn btn-default" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" />
             </EditItemTemplate>
             <InsertItemTemplate>
                 <table class="table table-bordered">
@@ -40,8 +40,8 @@
                
                 <br />
                
-                <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insertar" />
-                &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" OnClick="InsertCancelButton_Click" />
+                <asp:LinkButton ID="InsertButton" CssClass="btn btn-primary" runat="server" CausesValidation="True" CommandName="Insert" Text="Insertar" />
+                &nbsp;<asp:LinkButton ID="InsertCancelButton" CssClass="btn btn-default" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" OnClick="InsertCancelButton_Click" />
             </InsertItemTemplate>
             <ItemTemplate>
                 <table class="table table-bordered table-striped">
@@ -59,9 +59,9 @@
                 <br />
                 
                
-                <asp:LinkButton ID="EditButton" runat="server" CausesValidation="False" CommandName="Edit" Text="Editar" />
-                &nbsp;<asp:LinkButton ID="DeleteButton" runat="server" CausesValidation="False" CommandName="Delete" Text="Eliminar" />
-                &nbsp;<asp:LinkButton ID="LinkButtonVolver" runat="server" OnClick="LinkButtonVolver_Click">Volver</asp:LinkButton>
+                <asp:LinkButton ID="EditButton" CssClass="btn btn-primary" runat="server" CausesValidation="False" CommandName="Edit" Text="Editar" />
+                &nbsp;<asp:LinkButton ID="DeleteButton" CssClass="btn btn-danger"  runat="server" CausesValidation="False" CommandName="Delete" Text="Eliminar" />
+                &nbsp;<asp:LinkButton ID="LinkButtonVolver" CssClass="btn btn-deafult" runat="server" OnClick="LinkButtonVolver_Click">Volver</asp:LinkButton>
             
             </ItemTemplate>
         </asp:FormView>

@@ -6,6 +6,7 @@
     
 
     <asp:Label ID="labelGasto" runat="server" Text=' ' />
+    &nbsp;
     <asp:FormView ID="FormViewGastos" runat="server" DataKeyNames="idGasto" DataSourceID="SqlDataSourceGastos" Width="674px" DefaultMode="Insert">
         <EditItemTemplate>
             <table class="table table-bordered">
@@ -46,8 +47,8 @@
             </table>
 
         
-            <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Actualizar" />
-            &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" />
+            <asp:LinkButton ID="UpdateButton" CssClass="btn btn-primary" runat="server" CausesValidation="True" CommandName="Update" Text="Actualizar" />
+            &nbsp;<asp:LinkButton ID="UpdateCancelButton" CssClass="btn btn-default" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" />
         </EditItemTemplate>
         <InsertItemTemplate>
             <table class="table table-bordered">
@@ -87,8 +88,8 @@
             </table>
             
             
-            &nbsp;&nbsp;&nbsp;&nbsp;<asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insertar"  />
-            &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" />
+            &nbsp;&nbsp;&nbsp;&nbsp;<asp:LinkButton ID="InsertButton" CssClass="btn btn-primary" runat="server" CausesValidation="True" CommandName="Insert" Text="Insertar"  />
+            &nbsp;<asp:LinkButton ID="InsertCancelButton" CssClass="btn btn-defualt" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" />
         </InsertItemTemplate>
 
         <ItemTemplate>
@@ -108,9 +109,9 @@
             idSubcategoria:
             <asp:Label ID="idSubcategoriaLabel" runat="server" Text='<%# Bind("idSubcategoria") %>' />
             <br />
-            <asp:LinkButton ID="EditButton" runat="server" CausesValidation="False" CommandName="Edit" Text="Editar" />
-            &nbsp;<asp:LinkButton ID="DeleteButton" runat="server" CausesValidation="False" CommandName="Delete" Text="Eliminar" />
-            &nbsp;<asp:LinkButton ID="NewButton" runat="server" CausesValidation="False" CommandName="New" Text="Nuevo" />
+            <asp:LinkButton ID="EditButton" CssClass="btn btn-primary" runat="server" CausesValidation="False" CommandName="Edit" Text="Editar" />
+            &nbsp;<asp:LinkButton ID="DeleteButton" CssClass="btn btn-danger" runat="server" CausesValidation="False" CommandName="Delete" Text="Eliminar" />
+            &nbsp;<asp:LinkButton ID="NewButton" CssClass="btn btn-default" runat="server" CausesValidation="False" CommandName="New" Text="Nuevo" />
         </ItemTemplate>
     </asp:FormView>
     <br />

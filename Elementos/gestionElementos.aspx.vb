@@ -10,4 +10,11 @@ Partial Class Elementos_gestionElementos
         idElemento = GridViewElementos.SelectedDataKey(0)
         Response.Redirect("formElementos.aspx?idElemento=" & idElemento)
     End Sub
+
+    Protected Sub GridViewElementos_PreRender(sender As Object, e As EventArgs) Handles GridViewElementos.PreRender
+        Try
+            GridViewElementos.HeaderRow.TableSection = TableRowSection.TableHeader
+        Catch ex As Exception
+        End Try
+    End Sub
 End Class

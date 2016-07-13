@@ -11,4 +11,11 @@ Partial Class Ingresos_gestionIngresos
         idIngreso = GridViewIngresos.SelectedDataKey(0)
         Response.Redirect("formIngreso.aspx?idIngreso=" & idIngreso)
     End Sub
+
+    Protected Sub GridViewIngresos_PreRender(sender As Object, e As EventArgs) Handles GridViewIngresos.PreRender
+        Try
+            GridViewIngresos.HeaderRow.TableSection = TableRowSection.TableHeader
+        Catch ex As Exception
+        End Try
+    End Sub
 End Class

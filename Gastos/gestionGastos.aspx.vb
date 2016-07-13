@@ -14,4 +14,10 @@ Partial Class ingresos
 
 
 
+    Protected Sub GridViewGastos_PreRender(sender As Object, e As EventArgs) Handles GridViewGastos.PreRender
+        Try
+            GridViewGastos.HeaderRow.TableSection = TableRowSection.TableHeader
+        Catch ex As Exception
+        End Try
+    End Sub
 End Class

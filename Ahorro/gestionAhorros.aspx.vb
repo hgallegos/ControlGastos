@@ -10,4 +10,12 @@ Partial Class Ahorro_gestionAhorros
         idAhorro = GridViewAhorro.SelectedDataKey(0)
         Response.Redirect("formAhorro.aspx?idAhorro=" & idAhorro)
     End Sub
+
+
+    Protected Sub GridViewAhorro_PreRender(sender As Object, e As EventArgs) Handles GridViewAhorro.PreRender
+        Try
+            GridViewAhorro.HeaderRow.TableSection = TableRowSection.TableHeader
+        Catch ex As Exception
+        End Try
+    End Sub
 End Class

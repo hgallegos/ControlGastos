@@ -3,6 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
     <h2>Formulario de Elementos</h2>
     <h3><asp:Label ID="LabelMensaje" runat="server" Text=""></asp:Label></h3>
+    <p>&nbsp;</p>
     <asp:FormView ID="FormViewElementos" runat="server" DataKeyNames="idElemento" DataSourceID="SqlDataSourceElementos">
         <EditItemTemplate>
             <table class ="table table-bordered">
@@ -31,8 +32,8 @@
             </table>
             
             <br />
-            <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Actualizar" />
-            &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" OnClick="UpdateCancelButton_Click" />
+            <asp:LinkButton ID="UpdateButton" CssClass="btn btn-primary" runat="server" CausesValidation="True" CommandName="Update" Text="Actualizar" />
+            &nbsp;<asp:LinkButton ID="UpdateCancelButton" CssClass="btn btn-default" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" OnClick="UpdateCancelButton_Click" />
         </EditItemTemplate>
         <InsertItemTemplate>
             <table class ="table table-bordered">
@@ -55,8 +56,8 @@
             </table>
  
             <br />
-            <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insertar" />
-            &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" OnClick="InsertCancelButton_Click" />
+            <asp:LinkButton ID="InsertButton" runat="server" CssClass="btn btn-primary" CausesValidation="True" CommandName="Insert" Text="Insertar" />
+            &nbsp;<asp:LinkButton ID="InsertCancelButton" CssClass="btn btn-default" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" OnClick="InsertCancelButton_Click" />
         </InsertItemTemplate>
         <ItemTemplate>
             <table class ="table table-bordered table-striped">
@@ -80,9 +81,9 @@
        
             
             <br />
-            <asp:LinkButton ID="EditButton" runat="server" CausesValidation="False" CommandName="Edit" Text="Editar" />
-            &nbsp;<asp:LinkButton ID="DeleteButton" runat="server" CausesValidation="False" CommandName="Delete" Text="Eliminar" />
-            &nbsp;<asp:LinkButton ID="LinkButtonVolver" runat="server" CausesValidation="False" Text="Volver" OnClick="LinkButtonVolver_Click" />
+            <asp:LinkButton ID="EditButton" runat="server" CssClass="btn btn-primary" CausesValidation="False" CommandName="Edit" Text="Editar" />
+            &nbsp;<asp:LinkButton ID="DeleteButton" CssClass="btn btn-danger" runat="server" CausesValidation="False" CommandName="Delete" Text="Eliminar" />
+            &nbsp;<asp:LinkButton ID="LinkButtonVolver" CssClass="btn btn-default" runat="server" CausesValidation="False" Text="Volver" OnClick="LinkButtonVolver_Click" />
         </ItemTemplate>
     </asp:FormView>
     <asp:SqlDataSource ID="SqlDataSourceElementos" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString %>" DeleteCommand="DELETE FROM [Elemento] WHERE [idElemento] = @idElemento" InsertCommand="INSERT INTO [Elemento] ([descripcion], [monto], [nombre]) VALUES (@descripcion, @monto, @nombre)" SelectCommand="SELECT * FROM [Elemento] WHERE ([idElemento] = @idElemento)" UpdateCommand="UPDATE [Elemento] SET [descripcion] = @descripcion, [monto] = @monto, [nombre] = @nombre WHERE [idElemento] = @idElemento">

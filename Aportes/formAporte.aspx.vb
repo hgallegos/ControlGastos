@@ -21,10 +21,10 @@ Partial Class Aportes_formAporte
     Protected Sub FormViewAportes_ItemInserted(sender As Object, e As FormViewInsertedEventArgs) Handles FormViewAportes.ItemInserted
         If (e.Exception Is Nothing) Then
             LabelMensaje.Text = "Aporte agregado exitosamente!"
-            LabelMensaje.CssClass = "mensaje_confirmacion"
+            LabelMensaje.CssClass = "alert alert-success"
         Else
             LabelMensaje.Text = "No se pudo agregar el aporte"
-            LabelMensaje.CssClass = "mensaje_error"
+            LabelMensaje.CssClass = "alert alert-danger"
         End If
         e.ExceptionHandled = True
     End Sub
@@ -32,10 +32,10 @@ Partial Class Aportes_formAporte
     Protected Sub FormViewAportes_ItemUpdated(sender As Object, e As FormViewUpdatedEventArgs) Handles FormViewAportes.ItemUpdated
         If (e.Exception Is Nothing) Then
             LabelMensaje.Text = "Aporte actualizado exitosamente!"
-            LabelMensaje.CssClass = "mensaje_confirmacion"
+            LabelMensaje.CssClass = "alert alert-success"
         Else
             LabelMensaje.Text = "No se pudo actualizar el aporte"
-            LabelMensaje.CssClass = "mensaje_error"
+            LabelMensaje.CssClass = "alert alert-danger"
         End If
         e.ExceptionHandled = True
     End Sub
@@ -43,10 +43,10 @@ Partial Class Aportes_formAporte
     Protected Sub FormViewAportes_ItemDeleted(sender As Object, e As FormViewDeletedEventArgs) Handles FormViewAportes.ItemDeleted
         If (e.Exception Is Nothing) Then
             LabelMensaje.Text = "Aporte eliminado exitosamente!"
-            LabelMensaje.CssClass = "mensaje_confirmacion"
+            LabelMensaje.CssClass = "alert alert-success"
         Else
             LabelMensaje.Text = "No se pudo eliminar el aporte"
-            LabelMensaje.CssClass = "mensaje_error"
+            LabelMensaje.CssClass = "alert alert-danger"
         End If
         e.ExceptionHandled = True
     End Sub

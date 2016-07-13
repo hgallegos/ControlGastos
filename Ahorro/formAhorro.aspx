@@ -9,15 +9,15 @@
         <EditItemTemplate>
 
 
-            <table class="tabla_formulario">
+            <table class="table table-bordered ">
                 <tr>
-                    <td class="etiqueta" style="width: 80px">Monto:</td>
-                    <td style="width: 250px" ><asp:TextBox ID="MontoTextBox" runat="server" Text='<%# Bind("Monto") %>' />   
+                    <th class="etiqueta" style="width: 80px">Monto:</th>
+                    <td style="width: 250px" ><asp:TextBox CssClass="form-control" ID="MontoTextBox" runat="server" Text='<%# Bind("Monto") %>' />   
                     </td>
                     <td class="error" ><asp:RequiredFieldValidator ID="RequiredFieldValidatorMonto" runat="server" ControlToValidate="MontoTextBox" ErrorMessage="Debes ingresar un monto."></asp:RequiredFieldValidator></td>
                 </tr>
                 <tr>
-                    <td class="etiqueta" style="width: 80px">Fecha:</td>
+                    <th class="etiqueta" style="width: 80px">Fecha:</th>
                     <td style="width: 250px"> 
                         <asp:Calendar ID="Calendar1" runat="server" Height="190px" Width="212px" SelectedDate='<%# Bind("Fecha") %>' BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" NextPrevFormat="FullMonth">
                             <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
@@ -31,9 +31,9 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <td class="etiqueta" style="width: 80px">Usuario</td>
+                    <th class="etiqueta" style="width: 80px">Usuario</th>
                     <td style="width: 250px">
-                        <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSourceUsuarios" DataTextField="nombre" DataValueField="idUsuario" SelectedValue='<%# Bind("idUsuario") %>'>
+                        <asp:DropDownList ID="DropDownList1" runat="server" CssClass="form-control" DataSourceID="SqlDataSourceUsuarios" DataTextField="nombre" DataValueField="idUsuario" SelectedValue='<%# Bind("idUsuario") %>'>
                         </asp:DropDownList>
                         <asp:SqlDataSource ID="SqlDataSourceUsuarios" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString %>" SelectCommand="SELECT * FROM [Usuario]"></asp:SqlDataSource>
                     </td>
@@ -41,8 +41,8 @@
             </table>
 
 
-            &nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;<asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Actualizar" />
-            &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" />
+            &nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;<asp:LinkButton ID="UpdateButton" CssClass="btn btn-primary" runat="server" CausesValidation="True" CommandName="Update" Text="Actualizar" />
+            &nbsp;<asp:LinkButton ID="UpdateCancelButton" CssClass="btn btn-default" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" />
         </EditItemTemplate>
         <InsertItemTemplate>
 
@@ -54,15 +54,15 @@
 
 
 
-            <table class="tabla_formulario">
+            <table class="table table-bordered">
                 <tr>
-                    <td class="etiqueta" style="width: 67px">Monto:</td>
-                    <td style="width: 246px"><asp:TextBox ID="MontoTextBox" runat="server" Text='<%# Bind("Monto") %>' Height="16px" Width="203px" /></td>
+                    <th class="etiqueta" style="width: 67px">Monto:</th>
+                    <td style="width: 246px"><asp:TextBox ID="MontoTextBox" CssClass="form-control" runat="server" Text='<%# Bind("Monto") %>' Height="16px" Width="203px" /></td>
                     <td class="error">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorMonto" runat="server" ErrorMessage="Debes ingresar un monto." ControlToValidate="MontoTextBox"></asp:RequiredFieldValidator></td>
                 </tr>
                 <tr>
-                    <td class="etiqueta" style="width: 67px">Fecha:</td>
+                    <th class="etiqueta" style="width: 67px">Fecha:</th>
                     <td style="width: 246px">
                         <asp:Calendar ID="Calendar2" runat="server" Height="190px" SelectedDate='<%# Bind("Fecha") %>' BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" NextPrevFormat="FullMonth" Width="226px">
                             <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
@@ -76,8 +76,8 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <td class="etiqueta" style="width: 67px">Usuario: </td>
-                    <td style="width: 246px"><asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSourceUsuarios" DataTextField="nombre" DataValueField="idUsuario" SelectedValue='<%# Bind("idUsuario") %>'>
+                    <th class="etiqueta" style="width: 67px">Usuario: </th>
+                    <td style="width: 246px"><asp:DropDownList ID="DropDownList2" CssClass="form-control" runat="server" DataSourceID="SqlDataSourceUsuarios" DataTextField="nombre" DataValueField="idUsuario" SelectedValue='<%# Bind("idUsuario") %>'>
             </asp:DropDownList>
             <asp:SqlDataSource ID="SqlDataSourceUsuarios" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString %>" SelectCommand="SELECT * FROM [Usuario]"></asp:SqlDataSource>
             </td>
@@ -86,39 +86,39 @@
 
 
             <br />
-            &nbsp;&nbsp;&nbsp;<asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insertar" />
-            &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" OnClick="InsertCancelButton_Click" />
+            &nbsp;&nbsp;&nbsp;<asp:LinkButton ID="InsertButton" CssClass="btn btn-primary" runat="server" CausesValidation="True" CommandName="Insert" Text="Insertar" />
+            &nbsp;<asp:LinkButton ID="InsertCancelButton" CssClass="btn btn-default" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" OnClick="InsertCancelButton_Click" />
         </InsertItemTemplate>
         <ItemTemplate>
 
 
-            <table class='tabla_formulario'>
+            <table class='table table-bordered table-striped'>
                 <tr>
-                    <td class='etiqueta'>Ahorro   #</td>
+                    <th class='etiqueta'>Ahorro   #</th>
                     <td>
                         <asp:Label ID="idAhorroLabel" runat="server" Text='<%# Eval("idAhorro") %>' /></td>
                 </tr>
                 <tr>
-                    <td class='etiqueta'>Monto: </td>
+                    <th class='etiqueta'>Monto: </th>
                     <td>
                         <asp:Label ID="MontoLabel" runat="server" Text='<%# Bind("Monto") %>' /></td>
                 </tr>
                 <tr>
-                    <td class='etiqueta'>Fecha: </td>
+                    <th class='etiqueta'>Fecha: </th>
                     <td>
                         <asp:Label ID="FechaLabel" runat="server" Text='<%# Bind("Fecha") %>' /></td>
                 </tr>
                 <tr>
-                    <td class='etiqueta'>Usuario: </td>
+                    <th class='etiqueta'>Usuario: </th>
                     <td>
                         <asp:Label ID="idUsuarioLabel" runat="server" Text='<%# Bind("idUsuario") %>' /></td>
                 </tr>
             </table>
 
 
-            &nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;<asp:LinkButton ID="EditButton" runat="server" CausesValidation="False" CommandName="Edit" Text="Editar" />
-            &nbsp;<asp:LinkButton ID="DeleteButton" runat="server" CausesValidation="False" CommandName="Delete" Text="Eliminar" />
-            &nbsp;<asp:LinkButton ID="LinkButtonVolver" runat="server" OnClick="LinkButtonVolver_Click">Volver</asp:LinkButton>
+            &nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;<asp:LinkButton ID="EditButton" CssClass="btn btn-primary" runat="server" CausesValidation="False" CommandName="Edit" Text="Editar" />
+            &nbsp;<asp:LinkButton ID="DeleteButton" CssClass="btn btn-danger" runat="server" CausesValidation="False" CommandName="Delete" Text="Eliminar" />
+            &nbsp;<asp:LinkButton ID="LinkButtonVolver" CssClass="btn btn-default" runat="server" OnClick="LinkButtonVolver_Click">Volver</asp:LinkButton>
         </ItemTemplate>
         <RowStyle BorderColor="White" BorderStyle="Dotted" />
     </asp:FormView>

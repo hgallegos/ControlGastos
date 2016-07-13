@@ -20,10 +20,10 @@ Partial Class Perfiles_formPerfiles
     Protected Sub FormViewPerfiles_ItemInserted(sender As Object, e As FormViewInsertedEventArgs) Handles FormViewPerfiles.ItemInserted
         If (e.Exception Is Nothing) Then
             LabelMensaje.Text = "¡Perfil ingresado exitosamente!"
-            LabelMensaje.CssClass = "mensaje_confirmacion"
+            LabelMensaje.CssClass = "alert alert-success"
         Else
             LabelMensaje.Text = "No se pudo ingresar el perfil"
-            LabelMensaje.CssClass = "mensaje_error"
+            LabelMensaje.CssClass = "alert alert-danger"
         End If
         e.ExceptionHandled = True
     End Sub
@@ -31,10 +31,10 @@ Partial Class Perfiles_formPerfiles
     Protected Sub FormViewPerfiles_ItemUpdated(sender As Object, e As FormViewUpdatedEventArgs) Handles FormViewPerfiles.ItemUpdated
         If (e.Exception Is Nothing) Then
             LabelMensaje.Text = "!Perfil actualizado exitosamente!"
-            LabelMensaje.CssClass = "mensaje_confirmacion"
+            LabelMensaje.CssClass = "alert alert-success"
         Else
             LabelMensaje.Text = "No se pudo actualizar el perfil"
-            LabelMensaje.CssClass = "mensaje_error"
+            LabelMensaje.CssClass = "alert alert-danger"
         End If
         e.ExceptionHandled = True
     End Sub
@@ -46,10 +46,10 @@ Partial Class Perfiles_formPerfiles
     Protected Sub FormViewPerfiles_ItemDeleted(sender As Object, e As FormViewDeletedEventArgs) Handles FormViewPerfiles.ItemDeleted
         If (e.Exception Is Nothing) Then
             LabelMensaje.Text = "Perfil eliminado exitosamente!"
-            LabelMensaje.CssClass = "mensaje_confirmacion"
+            LabelMensaje.CssClass = "alert alert-success"
         Else
             LabelMensaje.Text = "No se pudo eliminar el perfil"
-            LabelMensaje.CssClass = "mensaje_error"
+            LabelMensaje.CssClass = "alert alert-danger"
         End If
         e.ExceptionHandled = True
     End Sub
