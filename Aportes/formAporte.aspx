@@ -101,11 +101,7 @@
 
         <ItemTemplate>
             <table class="table table-bordered table-striped">
-                  <tr>
-                    <th class="etiqueta">Aporte #: </th>
-                    <td><asp:Label ID="idAporteLabel1" runat="server" Text='<%# Eval("idAporte") %>' /> </td>
-                 
-                </tr>
+           
                 <tr>
                     <th class="etiqueta">Monto: </th>
                     <td><asp:Label ID="montoTextBox" runat="server" Text='<%# Bind("monto") %>'  /></td>

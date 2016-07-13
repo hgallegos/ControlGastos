@@ -94,11 +94,6 @@
 
             <table class='table table-bordered table-striped'>
                 <tr>
-                    <th class='etiqueta'>Ahorro   #</th>
-                    <td>
-                        <asp:Label ID="idAhorroLabel" runat="server" Text='<%# Eval("idAhorro") %>' /></td>
-                </tr>
-                <tr>
                     <th class='etiqueta'>Monto: </th>
                     <td>
                         <asp:Label ID="MontoLabel" runat="server" Text='<%# Bind("Monto") %>' /></td>
