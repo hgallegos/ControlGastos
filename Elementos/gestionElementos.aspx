@@ -4,7 +4,7 @@
     <h2 style="text-align:center">Gesti&oacute;n de elementos</h2>
     <h4 style="text-align:center"><a href="formElementos.aspx">Nuevo elemento</a></h4>
     <h3 style="text-align: center"><asp:Label ID="LabelMensaje" runat="server"></asp:Label></h3>
-    <asp:GridView ID="GridViewElementos" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="idElemento" DataSourceID="SqlDataSourceElementos" ForeColor="#333333" GridLines="None" HorizontalAlign="Center" Width="1000px">
+    <asp:GridView ID="GridViewElementos" CssClass="table table-bordered" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="idElemento" DataSourceID="SqlDataSourceElementos" ForeColor="#333333" GridLines="None" HorizontalAlign="Center" Width="1000px">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
             <asp:BoundField DataField="idElemento" HeaderText="#" InsertVisible="False" ReadOnly="True" SortExpression="idElemento" />

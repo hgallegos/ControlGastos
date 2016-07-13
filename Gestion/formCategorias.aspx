@@ -7,15 +7,15 @@
 
         <asp:FormView ID="FormViewCategorias" runat="server" DataKeyNames="idCategoria" DataSourceID="SqlDataSourceCategorias" Width="727px">
             <EditItemTemplate>
-                <table class="tabla_formulario">
+                <table class="table table-bordered">
                     <tr>
-                        <td class="etiqueta">Categoria:</td>
-                        <td><asp:Label ID="idCategoriaLabel1" runat="server" Text='<%# Eval("idCategoria") %>' /></td>
+                        <th class="etiqueta">Categoria:</th>
+                        <td><asp:Label ID="idCategoriaLabel1" CssClass="form-control" runat="server" Text='<%# Eval("idCategoria") %>' /></td>
                         <td></td>
                     </tr>
                     <tr>
-                        <td class="etiqueta"> Nombre:</td>
-                        <td> <asp:TextBox ID="nombreTextBox" runat="server" Text='<%# Bind("nombre") %>' /></td>
+                        <th class="etiqueta"> Nombre:</th>
+                        <td> <asp:TextBox ID="nombreTextBox" CssClass="form-control" runat="server" Text='<%# Bind("nombre") %>' /></td>
                         <td class="error">
                             <asp:RequiredFieldValidator ID="RequiredFieldValidatorNombre" runat="server" ErrorMessage="Debes ingresar un nombre." ControlToValidate="nombreTextBox"></asp:RequiredFieldValidator></td>
                     </tr>
@@ -29,10 +29,10 @@
                 &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" />
             </EditItemTemplate>
             <InsertItemTemplate>
-                <table class="tabla_formulario">
+                <table class="table table-bordered">
                     <tr>
-                        <td class="etiqueta"> Nombre:</td>
-                        <td><asp:TextBox ID="nombreTextBox" runat="server" Text='<%# Bind("nombre") %>' /></td>
+                        <th> Nombre:</th>
+                        <td><asp:TextBox ID="nombreTextBox" CssClass="form-control" runat="server" Text='<%# Bind("nombre") %>' /></td>
                         <td class="error">
                             <asp:RequiredFieldValidator ID="RequiredFieldValidatorNombre" runat="server" ErrorMessage="Debes ingresar un nombre." ControlToValidate="nombreTextBox"></asp:RequiredFieldValidator></td>
                     </tr>
@@ -44,13 +44,13 @@
                 &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" OnClick="InsertCancelButton_Click" />
             </InsertItemTemplate>
             <ItemTemplate>
-                <table class="tabla_formulario">
+                <table class="table table-bordered table-striped">
                     <tr>
-                        <td class="etiqueta" style="width: 168px">Categoria #:</td>
+                        <th class="etiqueta" style="width: 168px">Categoria #:</th>
                         <td><asp:Label ID="idCategoriaLabel" runat="server" Text='<%# Eval("idCategoria") %>' /></td>
                     </tr>
                     <tr>
-                        <td class="etiqueta" style="width: 168px"> Nombre:</td>
+                        <th class="etiqueta" style="width: 168px"> Nombre:</th>
                         <td><asp:Label ID="nombreLabel" runat="server" Text='<%# Bind("nombre") %>' /></td>
                     </tr>
                 </table>

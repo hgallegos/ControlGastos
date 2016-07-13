@@ -7,28 +7,28 @@
 
     <asp:FormView ID="FormViewSubcategoria" runat="server" DataKeyNames="idSubcategoria" DataSourceID="SqlDataSourceSubcategoria" Width="648px">
         <EditItemTemplate>
-            <table class="tabla_formulario">
+            <table class="table table-bordered">
                 <tr>
-                    <td class="etiqueta">Subcategoría:</td>
-                    <td><asp:Label ID="idSubcategoriaLabel1" runat="server" Text='<%# Eval("idSubcategoria") %>' /></td>
+                    <th class="etiqueta">Subcategoría:</th>
+                    <td><asp:Label ID="idSubcategoriaLabel1" CssClass="form-control" runat="server" Text='<%# Eval("idSubcategoria") %>' /></td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td class="etiqueta">Nombre</td>
-                    <td><asp:TextBox ID="nombreTextBox" runat="server" Text='<%# Bind("nombre") %>' /></td>
+                    <th class="etiqueta">Nombre</th>
+                    <td><asp:TextBox ID="nombreTextBox" CssClass="form-control" runat="server" Text='<%# Bind("nombre") %>' /></td>
                     <td class="error">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorNombre" runat="server" ErrorMessage="Debes ingresar un nombre." ControlToValidate="nombreTextBox"></asp:RequiredFieldValidator></td>
                 </tr>
                 <tr>
-                    <td class="etiqueta">Descripción:</td>
-                    <td><asp:TextBox ID="descripcionTextBox" runat="server" Text='<%# Bind("descripcion") %>' /></td>
+                    <th class="etiqueta">Descripción:</th>
+                    <td><asp:TextBox ID="descripcionTextBox" CssClass="form-control" runat="server" Text='<%# Bind("descripcion") %>' /></td>
                     <td class="error">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorDescripcion" runat="server" ErrorMessage="Debes ingresar una descripción." ControlToValidate="descripcionTextBox"></asp:RequiredFieldValidator></td>
                 </tr>
                 <tr>
-                    <td class="etiqueta"> Categoría:</td>
+                    <th class="etiqueta"> Categoría:</th>
                     <td>
-                        <asp:DropDownList ID="DropDownListCategoria" runat="server" DataSourceID="SqlDataSourceCategoria" DataTextField="nombre" DataValueField="idCategoria" SelectedValue='<%# Bind("idCategoria") %>'></asp:DropDownList>
+                        <asp:DropDownList ID="DropDownListCategoria" CssClass="form-control" runat="server" DataSourceID="SqlDataSourceCategoria" DataTextField="nombre" DataValueField="idCategoria" SelectedValue='<%# Bind("idCategoria") %>'></asp:DropDownList>
                         <asp:SqlDataSource ID="SqlDataSourceCategoria" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString %>" SelectCommand="SELECT * FROM [Categoria]"></asp:SqlDataSource>
                     </td>
                 </tr>
@@ -40,23 +40,24 @@
         </EditItemTemplate>
         <InsertItemTemplate>
 
-            <table class="tabla_formulario">
+            <table class="table table-bordered ">
                 <tr>
-                    <td class="etiqueta">Nombre:</td>
-                    <td> <asp:TextBox ID="nombreTextBox" runat="server" Text='<%# Bind("nombre") %>' /></td>
+                    <th class="etiqueta">Nombre:</th>
+                    <td> <asp:TextBox ID="nombreTextBox" CssClass="form-control" runat="server" Text='<%# Bind("nombre") %>' /></td>
                     <td class="error">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorNombre" runat="server" ErrorMessage="Debes ingresar un nombre." ControlToValidate="nombreTextBox"></asp:RequiredFieldValidator></td>
                 </tr>
                 <tr>
-                    <td class="etiqueta">Descripción:</td>
-                    <td><asp:TextBox ID="descripcionTextBox" runat="server" Text='<%# Bind("descripcion") %>' /></td>
+                    <th class="etiqueta">Descripción:</th>
+                    <td><asp:TextBox ID="descripcionTextBox" CssClass="form-control" runat="server" Text='<%# Bind("descripcion") %>' /></td>
                     <td class="error">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorDescripcion" runat="server" ErrorMessage="Debes ingresar una descripción." ControlToValidate="descripcionTextBox"></asp:RequiredFieldValidator></td>
                 </tr>
                 <tr>
-                    <td class="etiqueta">Categoría:</td>
+                    <th class="etiqueta">Categoría:</th>
                     <td>
-                        <asp:DropDownList ID="DropDownListCategoria" runat="server" DataSourceID="SqlDataSourceCategorias" DataTextField="nombre" DataValueField="idCategoria" SelectedValue='<%# Bind("idCategoria") %>'></asp:DropDownList>
+                        <asp:DropDownList ID="DropDownListCategoria" CssClass="form-control"
+                             runat="server" DataSourceID="SqlDataSourceCategorias" DataTextField="nombre" DataValueField="idCategoria" SelectedValue='<%# Bind("idCategoria") %>'></asp:DropDownList>
                         <asp:SqlDataSource ID="SqlDataSourceCategorias" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString %>" SelectCommand="SELECT * FROM [Categoria]"></asp:SqlDataSource>
                     </td>
                     <td></td>
@@ -71,21 +72,21 @@
             &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" OnClick="InsertCancelButton_Click" />
         </InsertItemTemplate>
         <ItemTemplate>
-            <table class="tabla_formulario">
+            <table class="table table-bordered table-striped">
                 <tr>
-                    <td class="etiqueta"> Subcategoria:</td>
+                    <th class="etiqueta"> Subcategoria:</th>
                     <td> <asp:Label ID="idSubcategoriaLabel" runat="server" Text='<%# Eval("idSubcategoria") %>' /></td>
                 </tr>
                 <tr>
-                    <td class="etiqueta"> Nombre:</td>
+                    <th class="etiqueta"> Nombre:</th>
                     <td> <asp:Label ID="nombreLabel" runat="server" Text='<%# Bind("nombre") %>' /></td>
                 </tr>
                 <tr>
-                    <td class="etiqueta">Descripción:</td>
+                    <th class="etiqueta">Descripción:</th>
                     <td> <asp:Label ID="descripcionLabel" runat="server" Text='<%# Bind("descripcion") %>' /></td>
                 </tr>
                 <tr>
-                    <td class="etiqueta">Categoría:</td>
+                    <th class="etiqueta">Categoría:</th>
                     <td><asp:Label ID="idCategoriaLabel" runat="server" Text='<%# Bind("nombreCategoria")%>' /></td>
                 </tr>
             </table>

@@ -5,27 +5,28 @@
     <h3><asp:Label ID="LabelMensaje" runat="server" Text=""></asp:Label></h3>
     <asp:FormView ID="FormViewElementos" runat="server" DataKeyNames="idElemento" DataSourceID="SqlDataSourceElementos">
         <EditItemTemplate>
-            <table class ="tabla_formulario">
+            <table class ="table table-bordered">
                 <tr>
-                    <td class="etiqueta">Elemento:</td>
+                    <th>Elemento:</th>
                     <td><asp:Label ID="idElementoLabel1" runat="server" Text='<%# Eval("idElemento") %>' /></td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td class="etiqueta">Nombre:</td>
-                    <td><asp:TextBox ID="nombreTextBox" runat="server" Text='<%# Bind("nombre") %>' ></asp:TextBox>
+                    <th>Nombre:</th>
+                    <td>
+                        <asp:TextBox ID="nombreTextBox" CssClass="form-control input" runat="server" Text='<%# Bind("nombre") %>' ></asp:TextBox>
                     </td>
-                    <td><asp:RequiredFieldValidator ID="RequiredFieldValidatorNombre" runat="server" ErrorMessage="Debes ingresar un nombre." ControlToValidate="nombreTextBox"></asp:RequiredFieldValidator></td>
+                    <td><asp:RequiredFieldValidator ID="RequiredFieldValidatorNombre" CssClass="table-danger" runat="server" ErrorMessage="Debes ingresar un nombre." ControlToValidate="nombreTextBox"></asp:RequiredFieldValidator></td>
                 </tr>
                 <tr>
-                    <td class="etiqueta">Descripci&oacute;n:</td>
-                    <td><asp:TextBox ID="descripcionTextBox" runat="server" Text='<%# Bind("descripcion")%>'></asp:TextBox></td>
-                    <td><asp:RequiredFieldValidator ID="RequiredFieldValidatorDescripcion" runat="server" ErrorMessage="Debes ingresar una descripci&oacute;n." ControlToValidate="descripcionTextBox"></asp:RequiredFieldValidator></td>
+                    <th>Descripci&oacute;n:</th>
+                    <td><asp:TextBox CssClass="form-control input" ID="descripcionTextBox" runat="server" Text='<%# Bind("descripcion")%>'></asp:TextBox></td>
+                    <td><asp:RequiredFieldValidator CssClass="table-danger" ID="RequiredFieldValidatorDescripcion" runat="server" ErrorMessage="Debes ingresar una descripci&oacute;n." ControlToValidate="descripcionTextBox"></asp:RequiredFieldValidator></td>
                 </tr>
                 <tr>
-                    <td class="etiqueta">Monto:</td>
-                    <td><asp:TextBox ID="montoTextBox" runat="server" Text='<%# Bind("monto") %>' /></td>
-                    <td><asp:RequiredFieldValidator ID="RequiredFieldValidatorMonto" runat="server" ErrorMessage="Debes ingresar un monto." ControlToValidate="montoTextBox"></asp:RequiredFieldValidator></td>
+                    <th class="etiqueta">Monto:</th>
+                    <td><asp:TextBox CssClass="form-control input" ID="montoTextBox" runat="server" Text='<%# Bind("monto") %>' /></td>
+                    <td><asp:RequiredFieldValidator CssClass="table-danger" ID="RequiredFieldValidatorMonto" runat="server" ErrorMessage="Debes ingresar un monto." ControlToValidate="montoTextBox"></asp:RequiredFieldValidator></td>
                 </tr>
             </table>
             
@@ -34,22 +35,22 @@
             &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" OnClick="UpdateCancelButton_Click" />
         </EditItemTemplate>
         <InsertItemTemplate>
-            <table class ="tabla_formulario">
+            <table class ="table table-bordered">
                 <tr>
-                    <td class="etiqueta">Nombre:</td>
-                    <td><asp:TextBox ID="nombreTextBox" runat="server" Text='<%# Bind("nombre") %>' /></td>
-                    <td><asp:RequiredFieldValidator ID="RequiredFieldValidatorNombre" runat="server" ErrorMessage="Debes ingresar un nombre." ControlToValidate="nombreTextBox"></asp:RequiredFieldValidator></td>
+                    <th class="etiqueta">Nombre:</th>
+                    <td><asp:TextBox ID="nombreTextBox" CssClass="form-control input" runat="server" Text='<%# Bind("nombre") %>' /></td>
+                    <td><asp:RequiredFieldValidator CssClass="table-danger" ID="RequiredFieldValidatorNombre" runat="server" ErrorMessage="Debes ingresar un nombre." ControlToValidate="nombreTextBox"></asp:RequiredFieldValidator></td>
                 </tr>
                 <tr>
-                    <td class="etiqueta">Descripci&oacute;n:</td>
-                    <td><asp:TextBox ID="descripcionTextBox" runat="server" Text='<%# Bind("descripcion")%>'></asp:TextBox></td>
+                    <th class="etiqueta">Descripci&oacute;n:</th>
+                    <td><asp:TextBox ID="descripcionTextBox" CssClass="form-control input" runat="server" Text='<%# Bind("descripcion")%>'></asp:TextBox></td>
                     <td>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidatorDescripcion" runat="server" ErrorMessage="Debes ingresar una descripci&oacute;n" ControlToValidate="descripcionTextbox"></asp:RequiredFieldValidator></td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidatorDescripcion" CssClass="table-danger" runat="server" ErrorMessage="Debes ingresar una descripci&oacute;n" ControlToValidate="descripcionTextbox"></asp:RequiredFieldValidator></td>
                 </tr>
                 <tr>
-                    <td class="etiqueta">Monto:</td>
-                    <td><asp:TextBox ID="montoTextBox" runat="server" Text='<%# Bind("monto") %>' /></td>
-                    <td><asp:RequiredFieldValidator ID="RequiredFieldValidatorMonto" runat="server" ErrorMessage="Debes ingresar un monto." ControlToValidate="montoTextBox"></asp:RequiredFieldValidator></td>
+                    <th class="etiqueta">Monto:</th>
+                    <td><asp:TextBox ID="montoTextBox" CssClass="form-control input" runat="server" Text='<%# Bind("monto") %>' /></td>
+                    <td><asp:RequiredFieldValidator CssClass="table-danger" ID="RequiredFieldValidatorMonto" runat="server" ErrorMessage="Debes ingresar un monto." ControlToValidate="montoTextBox"></asp:RequiredFieldValidator></td>
                 </tr>
             </table>
  
@@ -58,21 +59,21 @@
             &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" OnClick="InsertCancelButton_Click" />
         </InsertItemTemplate>
         <ItemTemplate>
-            <table class ="tabla_formulario">
+            <table class ="table table-bordered table-striped">
                 <tr>
-                    <td class="etiqueta" style="width: 168px">#</td>
+                    <th class="etiqueta" style="width: 168px">#</th>
                     <td><asp:Label ID="idElementoLabel" runat="server" Text='<%# Eval("idElemento") %>' /></td>
                 </tr>
                 <tr>
-                    <td class="etiqueta" style="width: 168px">Nombre:</td>
+                    <th class="etiqueta" style="width: 168px">Nombre:</th>
                     <td><asp:Label ID="nombreLabel" runat="server" Text='<%# Bind("nombre") %>' /></td>
                 </tr>
                 <tr>
-                    <td class="etiqueta" style="width: 168px">Descripci&oacute;n</td>
+                    <th class="etiqueta" style="width: 168px">Descripci&oacute;n</th>
                     <td><asp:Label ID="descripcionLabel" runat="server" Text='<%# Bind("descripcion") %>' /></td>
                 </tr>
                 <tr>
-                    <td class="etiqueta" style="width: 168px">Monto</td>
+                    <th class="etiqueta" style="width: 168px">Monto</th>
                     <td><asp:Label ID="montoLabel" runat="server" Text='<%# Bind("monto") %>' /></td>
                 </tr>
             </table>
