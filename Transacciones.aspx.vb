@@ -29,6 +29,8 @@ Partial Class Informes_Transacciones
         GridViewGastos.Visible = True
 
 
+
+
     End Sub
 
     Protected Sub GridViewIngresos_RowDataBound(sender As Object, e As GridViewRowEventArgs) Handles GridViewIngresos.RowDataBound
@@ -51,4 +53,27 @@ Partial Class Informes_Transacciones
             e.Row.Cells(3).Text = String.Format("{0:c0}", suma_total)
         End If
     End Sub
+
+    Protected Sub GridViewGastos_RowDataBound(sender As Object, e As GridViewRowEventArgs) Handles GridViewGastos.RowDataBound
+        If (e.Row.RowType = DataControlRowType.Header) Then
+            'Sumador = 0
+            suma_total = 0
+        ElseIf (e.Row.RowType = DataControlRowType.DataRow) Then
+            'Sumar el total de la fila al total global 
+            Dim total As Integer
+            Try
+                total = e.Row.Cells(3).Text
+                suma_total += total
+            Catch ex As Exception
+                total = 0
+            End Try
+
+        ElseIf (e.Row.RowType = DataControlRowType.Footer) Then
+            'Mostramos el valor de la suma total 
+            e.Row.Cells(2).Text = "TOTAL:"
+            e.Row.Cells(3).Text = String.Format("{0:c0}", suma_total)
+        End If
+    End Sub
+
+
 End Class

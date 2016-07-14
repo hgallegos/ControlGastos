@@ -57,14 +57,16 @@
                 <asp:Label ID="LabelIngresos" runat="server" Text="Ingresos del periodo" Visible="False"></asp:Label></h4>
            
             
-             <asp:GridView ID="GridViewIngresos" runat="server" CellPadding="4" DataKeyNames="idIngreso" DataSourceID="SqlDataSourceIngresos" ForeColor="#333333" GridLines="None" Visible="False" AutoGenerateColumns="False" HorizontalAlign="Center">
+             <asp:GridView ID="GridViewIngresos" runat="server" CellPadding="4" DataKeyNames="idIngreso" 
+                 DataSourceID="SqlDataSourceIngresos" ForeColor="#333333" GridLines="None" Visible="False"
+                  AutoGenerateColumns="False" HorizontalAlign="Center" ShowFooter="True">
                 <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
 
                  <Columns>
-                     <asp:BoundField DataField="cantidad" HeaderText="Monto" SortExpression="cantidad" />
                      <asp:BoundField DataField="descripcion" HeaderText="Descripcion" SortExpression="descripcion" />
                      <asp:BoundField DataField="fecha" HeaderText="Fecha" SortExpression="fecha" />
                      <asp:BoundField DataField="nombre" HeaderText="Responsable" SortExpression="nombre" />
+                     <asp:BoundField DataField="cantidad" HeaderText="Monto" SortExpression="cantidad" />
                  </Columns>
 
                 <EditRowStyle BackColor="#999999" />
@@ -86,6 +88,7 @@
                     <asp:ControlParameter ControlID="CalendarHasta" DbType="Date" DefaultValue="31/12/2040" Name="fecha2" PropertyName="SelectedDate" />
                 </SelectParameters>
             </asp:SqlDataSource>
+
         </div>
 
 
@@ -96,13 +99,13 @@
                 <asp:Label ID="LabelGastos" runat="server" Text="Gastos del periodo" Visible="False"></asp:Label></h4>
            
             
-             <asp:GridView ID="GridViewGastos" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="idGasto" DataSourceID="SqlDataSourceGastos" ForeColor="#333333" GridLines="None" Visible="False" HorizontalAlign="Center">
+             <asp:GridView ID="GridViewGastos" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="idGasto" DataSourceID="SqlDataSourceGastos" ForeColor="#333333" GridLines="None" Visible="False" HorizontalAlign="Center" ShowFooter="True">
                 <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                 <Columns>
-                    <asp:BoundField DataField="monto" HeaderText="Monto" SortExpression="monto" />
-                    <asp:BoundField DataField="idSubcategoria" HeaderText="Categoria" SortExpression="idSubcategoria" />
+                    <asp:BoundField DataField="Expr1" HeaderText="Categoria" SortExpression="Expr1" />
                     <asp:BoundField DataField="fecha" HeaderText="Fecha" SortExpression="fecha" />
                     <asp:BoundField DataField="nombre" HeaderText="Responsable" SortExpression="nombre" />
+                    <asp:BoundField DataField="monto" HeaderText="Monto" SortExpression="monto" />
                 </Columns>
                 <EditRowStyle BackColor="#999999" />
                 <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -117,7 +120,7 @@
             </asp:GridView>
 
 
-            <asp:SqlDataSource ID="SqlDataSourceGastos" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString %>" SelectCommand="SELECT Gasto.idGasto, Gasto.monto, Gasto.fecha, Gasto.idUsuario, Gasto.idSubcategoria, Usuario.nombre FROM Gasto INNER JOIN Usuario ON Gasto.idUsuario = Usuario.idUsuario WHERE (Gasto.fecha &gt;= @fecha) AND (Gasto.fecha &lt;= @fecha2)">
+            <asp:SqlDataSource ID="SqlDataSourceGastos" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString %>" SelectCommand="SELECT Gasto.idGasto, Gasto.monto, Gasto.fecha, Gasto.idUsuario, Gasto.idSubcategoria, Usuario.nombre, Subcategoria.nombre AS Expr1 FROM Gasto INNER JOIN Usuario ON Gasto.idUsuario = Usuario.idUsuario INNER JOIN Subcategoria ON Gasto.idSubcategoria = Subcategoria.idSubcategoria WHERE (Gasto.fecha &gt;= @fecha) AND (Gasto.fecha &lt;= @fecha2)">
                 <SelectParameters>
                     <asp:ControlParameter ControlID="CalendarDesde" DbType="Date" DefaultValue="01/01/2000" Name="fecha" PropertyName="SelectedDate" />
                     <asp:ControlParameter ControlID="CalendarHasta" DbType="Date" DefaultValue="31/12/2040" Name="fecha2" PropertyName="SelectedDate" />
@@ -127,6 +130,10 @@
         </div>
 
 
+    </div>
+
+    <div class="row">
+        <asp:Label ID="LabelPresupuesto" runat="server" Visible="False"></asp:Label>
     </div>
 
 
