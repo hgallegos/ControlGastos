@@ -28,7 +28,7 @@
     </asp:GridView>
     <br />
 
-    <asp:SqlDataSource ID="SqlDataSourceGastos" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString %>" SelectCommand="SELECT * FROM [GastosCategoria]"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSourceGastos" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString %>" SelectCommand="SELECT * FROM [GastosCategoria] ORDER BY [TotalCategoria] DESC"></asp:SqlDataSource>
 
         </div>
         <div class="col-lg-6">
