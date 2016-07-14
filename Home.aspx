@@ -70,8 +70,8 @@
                 <h3 style="text-align: center">Controla tu presuspuesto</h3>
                 <br />
                 <div style="text-align: center">
-                    <a runat="server" href="~/Ingresos/gestionIngresos">
-                        <button type="button" class="btn btn-lg btn-primary" style="margin: 20px; width: 250px;">Ingresos</button>
+                    <a runat="server" href="~/Informes/Transacciones">
+                        <button type="button" class="btn btn-lg btn-primary" style="margin: 20px; width: 250px;">Ver transacciones</button>
                     </a>
                 </div>
                 <div style="text-align: center">
