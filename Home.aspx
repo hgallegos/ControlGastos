@@ -75,8 +75,8 @@
                     </a>
                 </div>
                 <div style="text-align: center">
-                    <a runat="server" href="~/Gastos/gestionGastos">
-                        <button type="button" class="btn btn-lg btn-warning" style="margin: 20px; width: 250px;">Gastos</button>
+                    <a runat="server" href="~/InformeCategorias">
+                        <button type="button" class="btn btn-lg btn-warning" style="margin: 20px; width: 250px;">Gastos por categoria</button>
                         </a>
                 </div>
                 <div style="text-align: center">

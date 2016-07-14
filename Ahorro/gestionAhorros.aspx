@@ -19,7 +19,11 @@
     <h3 style="text-align: center">
         <asp:Label ID="LabelMensaje" runat="server" Text=""></asp:Label></h3>
 
-    <asp:GridView ID="GridViewAhorro" runat="server" CssClass="table table-bordered table-striped table-hover" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" UseAccessibleHeader="true" DataKeyNames="idAhorro" DataSourceID="SqlDataSourceAhorro" ForeColor="#333333" GridLines="None" Width="1000px" HorizontalAlign="Center">
+    <asp:GridView ID="GridViewAhorro" runat="server" CssClass="table table-bordered table-striped table-hover" 
+        AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" 
+        CellPadding="4" UseAccessibleHeader="true" DataKeyNames="idAhorro" 
+        DataSourceID="SqlDataSourceAhorro" ForeColor="#333333" GridLines="None" 
+        Width="1000px" HorizontalAlign="Center">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
             <asp:BoundField DataField="Monto" HeaderText="Monto" SortExpression="Monto" DataFormatString="{0:C0}" />
