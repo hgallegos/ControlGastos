@@ -14,11 +14,8 @@ Partial Class FormGastos
 
 
 
-
-
-
-
         End If
+
     End Sub
 
 
@@ -51,6 +48,7 @@ Partial Class FormGastos
 
  
   
+
 
 
 

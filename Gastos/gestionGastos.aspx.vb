@@ -2,6 +2,17 @@
 Partial Class ingresos
     Inherits System.Web.UI.Page
 
+    Protected Sub Page_Load()
+        If (Request.QueryString("d") Is Nothing) Then
+        Else
+
+            LabelMensaje.Text = "No se guardo el gasto!"
+            LabelMensaje.CssClass = "alert alert-success fade in close"
+        End If
+
+    End Sub
+
+
     Protected Sub GridViewGastos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles GridViewGastos.SelectedIndexChanged
         'Con esto nos movemos al detalle de gastos
         Dim indice As Integer

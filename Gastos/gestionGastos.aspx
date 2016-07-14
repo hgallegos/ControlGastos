@@ -51,12 +51,14 @@
                     
                         <div class="container">  
                             <div class="row">
-                                <div class="col-sm-8">
-                                 
-                        <button class="btn-submit center" type="submit" ><a href="FormGastosDetalle.aspx">Si</a></button>
+                                <div class="col-sm-12">
+                                 <div class="center-block align-center center" >
+                                    
+                        <a class=" btn btn-primary center" href="FormGastosDetalle.aspx">Detallar</a>
                        
-                        <button class="btn-submit center" type="submit" ><a href="FormGastos.aspx">No</a></button>
-                                   
+                        <a class=" btn btn-primary center" href="FormGastos.aspx">No Detallar</a>
+                                        
+                                   </div>
                                 </div>
                             </div>
                         </div>
