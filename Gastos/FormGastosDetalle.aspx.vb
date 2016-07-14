@@ -47,6 +47,7 @@ Partial Class FormGastos
 
         Else
             SqlDataSourceUpdatearGasto.Update()
+            Response.Redirect("DetalleGastos.aspx?idGasto=" & Request.QueryString("idGasto"))
         End If
 
     End Sub
