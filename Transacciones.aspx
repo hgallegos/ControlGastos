@@ -134,8 +134,9 @@
 
     <hr />
 
-    <div class="row">
-        <asp:Label ID="LabelPresupuesto" runat="server" Visible="False"></asp:Label>
+    <div class="row" style="text-align: center">
+        <asp:Label ID="Label1" runat="server" Text="Saldo en el periodo: " Font-Bold="True" Visible="False"></asp:Label>
+        <asp:Label ID="LabelPresupuesto" runat="server" Visible="False" Font-Bold="True"></asp:Label>
     </div>
 
 

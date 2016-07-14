@@ -3,6 +3,8 @@ Partial Class Informes_Transacciones
     Inherits System.Web.UI.Page
 
     Dim suma_total As Integer
+    Dim ingresos, gastos As Integer
+    Dim saldo As String
 
     Protected Sub BotonInforme_Click(sender As Object, e As EventArgs) Handles BotonInforme.Click
 
@@ -54,6 +56,7 @@ Partial Class Informes_Transacciones
             'Mostramos el valor de la suma total 
             e.Row.Cells(2).Text = "TOTAL:"
             e.Row.Cells(3).Text = String.Format("{0:c0}", suma_total)
+            ingresos = suma_total
         End If
     End Sub
 
@@ -75,6 +78,23 @@ Partial Class Informes_Transacciones
             'Mostramos el valor de la suma total 
             e.Row.Cells(2).Text = "TOTAL:"
             e.Row.Cells(3).Text = String.Format("{0:c0}", suma_total)
+            gastos = suma_total
+            calcular_Presupuesto()
+        End If
+    End Sub
+
+    Protected Sub calcular_Presupuesto()
+        Dim presupuesto As Integer
+        saldo = ingresos - gastos
+        presupuesto = ingresos - gastos
+        LabelPresupuesto.Text = String.Format("{0:c0}", presupuesto)
+
+        If (presupuesto > 0) Then
+            LabelPresupuesto.CssClass = "alert alert-success"
+            Label1.Visible = True
+        Else
+            LabelPresupuesto.CssClass = "alert alert-danger"
+            Label1.Visible = True
         End If
     End Sub
 
