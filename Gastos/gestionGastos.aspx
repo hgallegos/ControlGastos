@@ -6,9 +6,9 @@
     <h2 style="text-align: center" >Gestión de gastos</h2>
     <div class="text-center">
         <div class="btn-group" role="group">
-        <a class="btn btn-default" data-toggle="tooltip" title="Agregar gasto" href="FormGastos.aspx">
+        <button class="btn btn-default" data-toggle="modal" title="Agregar gasto"  data-target="#modal-1">
             <span class="glyphicon glyphicon-plus"></span>
-        </a>
+        </button>
         </div>
     </div>
     <script>
@@ -37,6 +37,36 @@
           <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
       </asp:GridView>
       <asp:SqlDataSource ID="SqlDataSourceGastos" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString %>" SelectCommand="SELECT Gasto.idGasto, Gasto.monto, Gasto.fecha, Gasto.idSubcategoria, Subcategoria.nombre, Categoria.nombre AS Expr1 FROM Gasto INNER JOIN Subcategoria ON Gasto.idSubcategoria = Subcategoria.idSubcategoria INNER JOIN Categoria ON Subcategoria.idCategoria = Categoria.idCategoria ORDER BY Gasto.fecha DESC"></asp:SqlDataSource>
+ 
+ 
+    <div class="container">
+    <div class="modal fade" id="modal-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title">¿Desea detallar su gasto?</h3>
+                </div>
+                <div class="modal-body">
+                    
+                        <div class="container">  
+                            <div class="row">
+                                <div class="col-sm-8">
+                                 
+                        <button class="btn-submit center" type="submit" ><a href="FormGastosDetalle.aspx">Si</a></button>
+                       
+                        <button class="btn-submit center" type="submit" ><a href="FormGastos.aspx">No</a></button>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
 
    
    

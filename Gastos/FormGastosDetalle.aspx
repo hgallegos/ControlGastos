@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="VB" MasterPageFile="~/Site.master" AutoEventWireup="false" CodeFile="FormGastos.aspx.vb" Inherits="FormGastos" %>
+﻿<%@ Page Title="" Language="VB" MasterPageFile="~/Site.master" AutoEventWireup="false" CodeFile="FormGastosDetalle.aspx.vb" Inherits="FormGastos" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
     
@@ -142,9 +142,107 @@
     <asp:SqlDataSource ID="SqlDataSourceSubCategorias" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString %>" SelectCommand="SELECT [idSubcategoria], [nombre] FROM [Subcategoria]"></asp:SqlDataSource>
     <asp:SqlDataSource ID="SqlDataSourceUsuarios" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString %>" SelectCommand="SELECT * FROM [Usuario]"></asp:SqlDataSource>
     <br />
+    <h3>
+        <asp:Label ID="LabelAgregarDetalle" runat="server" Text="Agregar Detalle"></asp:Label></h3>
     <br />
+    <asp:FormView ID="FormViewDetalleGasto" runat="server" DataSourceID="SqlDataSourceDetalle" DefaultMode="Insert" Height="54px" Width="445px" DataKeyNames="idDetalle">
+        <EditItemTemplate>
+           
+        </EditItemTemplate>
+        <InsertItemTemplate>
+            <table>
+                <tr>
+                    <td class="etiqueta" style="width: 80px">Elemento:</td>
+                    <td style="width: 250px"> <asp:DropDownList ID="DropDownListElementos" runat="server" DataSourceID="SqlDataSourceElementos" DataTextField="elemento"  DataValueField="idElemento" SelectedValue='<%# Bind("idElemento") %>'></asp:DropDownList>
+                        <asp:SqlDataSource ID="SqlDataSourceElementos" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString %>" SelectCommand="SELECT nombre + '  $' + CAST(monto AS varchar) AS elemento, idElemento FROM Elemento"></asp:SqlDataSource>
+                    </td>
+                    <td></td>
+
+                </tr>
+                <tr>
+                   <td class="etiqueta" style="width: 80px">Cantidad:</td>
+                   <td style="width: 250px"><asp:TextBox ID="cantidadTextBox" runat="server" Text='<%# Bind("Cantidad") %>' /></td>
+                    <td style="width: 250px"><asp:RequiredFieldValidator ID="RequiredFieldValidatorCantidad" runat="server" 
+                            ErrorMessage="Debe Ingresar una cantidad" ControlToValidate="cantidadTextBox"></asp:RequiredFieldValidator> </td>
+                </tr>
+            </table>
+           
+        
+          
+        
+           
+      
+            <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Agregar" />
+            <asp:TextBox ID="idGastoTextBox" runat="server" onload="idGastoTextBox_Load" Text='<%# Bind("idGasto") %>' />
+            <asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" />
+         
+        </InsertItemTemplate>
+        <ItemTemplate>
+            idDetalle:
+            <asp:Label ID="idDetalleLabel" runat="server" Text='<%# Eval("idDetalle") %>' />
+            <br />
+            idGasto:
+            <asp:Label ID="idGastoLabel" runat="server" Text='<%# Bind("idGasto") %>' />
+            <br />
+            idElemento:
+            <asp:Label ID="idElementoLabel" runat="server" Text='<%# Bind("idElemento") %>' />
+            <br />
+            Cantidad:
+            <asp:Label ID="CantidadLabel" runat="server" Text='<%# Bind("Cantidad") %>' />
+            <br />
+            <asp:LinkButton ID="EditButton" runat="server" CausesValidation="False" CommandName="Edit" Text="Editar" />
+            &nbsp;<asp:LinkButton ID="DeleteButton" runat="server" CausesValidation="False" CommandName="Delete" Text="Eliminar" />
+            &nbsp;<asp:LinkButton ID="NewButton" runat="server" CausesValidation="False" CommandName="New" Text="Nuevo" />
+        </ItemTemplate>
+    </asp:FormView>
     <br />
+    <asp:SqlDataSource ID="SqlDataSourceDetalle" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString %>" DeleteCommand="DELETE FROM [DetalleGasto] WHERE [idDetalle] = @idDetalle" InsertCommand="INSERT INTO DetalleGasto(idGasto, idElemento, Cantidad) VALUES (@idGasto, @idElemento, @Cantidad) SELECT @idGastoActual=@idGasto;" SelectCommand="SELECT * FROM [DetalleGasto] WHERE ([idGasto] = @idGasto)" UpdateCommand="UPDATE [DetalleGasto] SET [idGasto] = @idGasto, [idElemento] = @idElemento, [Cantidad] = @Cantidad WHERE [idDetalle] = @idDetalle">
+        <DeleteParameters>
+            <asp:Parameter Name="idDetalle" Type="Int32" />
+        </DeleteParameters>
+        <InsertParameters>
+            <asp:Parameter Name="idGasto" Type="Int32" />
+            <asp:Parameter Name="idElemento" Type="Int32" />
+            <asp:Parameter Name="Cantidad" Type="Int32" />
+          <asp:Parameter  Name="idGastoActual" Direction="Output" Type="Int32" />
+        </InsertParameters>
+        <SelectParameters>
+            <asp:QueryStringParameter DefaultValue="" Name="idGasto" QueryStringField="idGasto" Type="Int32" />
+        </SelectParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="idGasto" Type="Int32" />
+            <asp:Parameter Name="idElemento" Type="Int32" />
+            <asp:Parameter Name="Cantidad" Type="Int32" />
+            <asp:Parameter Name="idDetalle" Type="Int32" />
+       
+        </UpdateParameters>
+    </asp:SqlDataSource>
     <br />
+    <h3><asp:Label ID="LabelVerDetalles" runat="server" Text="Detalle gasto"></asp:Label></h3>
+    <asp:GridView ID="GridViewDetalle" runat="server" AllowPaging="True" CellPadding="4" DataSourceID="SqlDataSourceDetalleGastos" ForeColor="#333333" GridLines="None" Width="322px" AutoGenerateColumns="False">
+        <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+        <Columns>
+            <asp:BoundField DataField="nombre" HeaderText="nombre" SortExpression="nombre" />
+            <asp:BoundField DataField="Cantidad" HeaderText="Cantidad" SortExpression="Cantidad" />
+            <asp:BoundField DataField="monto" DataFormatString="{0:c0}" HeaderText="monto" SortExpression="monto" />
+            <asp:BoundField DataField="total" HeaderText="total" SortExpression="total" />
+        </Columns>
+        <EditRowStyle BackColor="#999999" />
+        <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+        <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+        <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+        <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+        <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+        <SortedAscendingCellStyle BackColor="#E9E7E2" />
+        <SortedAscendingHeaderStyle BackColor="#506C8C" />
+        <SortedDescendingCellStyle BackColor="#FFFDF8" />
+        <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+    </asp:GridView>
+    <asp:SqlDataSource ID="SqlDataSourceDetalleGastos" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString %>" SelectCommand="SELECT Elemento.nombre, DetalleGasto.Cantidad, Elemento.monto, DetalleGasto.Cantidad * Elemento.monto AS total FROM Elemento INNER JOIN DetalleGasto ON Elemento.idElemento = DetalleGasto.idElemento INNER JOIN Gasto ON DetalleGasto.idGasto = Gasto.idGasto INNER JOIN Subcategoria ON Gasto.idSubcategoria = Subcategoria.idSubcategoria INNER JOIN Categoria ON Subcategoria.idCategoria = Categoria.idCategoria WHERE (DetalleGasto.idGasto = @idGasto)">
+        <SelectParameters>
+            <asp:QueryStringParameter DefaultValue="0" Name="idGasto" QueryStringField="idGasto" />
+        </SelectParameters>
+    </asp:SqlDataSource>
     <br />
 </asp:Content>
 
