@@ -132,6 +132,8 @@
 
     </div>
 
+    <hr />
+
     <div class="row">
         <asp:Label ID="LabelPresupuesto" runat="server" Visible="False"></asp:Label>
     </div>

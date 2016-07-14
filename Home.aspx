@@ -14,7 +14,7 @@
                     <h4 class="panel-title" style="text-align: center">Ingresos <i class="fa fa-arrow-circle-o-up" aria-hidden="true"></i></h4>
                 </div>
                 <div class="panel-body">
-                    <h4 class="panel-title" style="text-align: center">$ <asp:Label ID="LabelIngreso" runat="server" Text="Label"></asp:Label></h4>
+                    <h4 class="panel-title" style="text-align: center">$ <asp:Label ID="LabelIngreso" runat="server" Text="Label" Font-Bold="True" Font-Italic="False"></asp:Label></h4>
                 </div>
             </div>
         </div>
@@ -24,7 +24,7 @@
                     <h4 class="panel-title" style="text-align: center">Saldo actual</h4>
                 </div>
                 <div class="panel-body">
-                    <h4 class="panel-title" style="text-align: center">$ <asp:Label ID="LabelSaldo" runat="server" Text="Label"></asp:Label></h4>
+                    <h4 class="panel-title" style="text-align: center">$ <asp:Label ID="LabelSaldo" runat="server" Text="Label" Font-Bold="True"></asp:Label></h4>
                 </div>
             </div>
         </div>
@@ -34,7 +34,7 @@
                     <h4 class="panel-title" style="text-align: center">Gastos <i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></h4>
                 </div>
                 <div class="panel-body">
-                    <h4 class="panel-title" style="text-align: center">$ <asp:Label ID="LabelGastos" runat="server" Text="Label"></asp:Label></h4>
+                    <h4 class="panel-title" style="text-align: center">$ <asp:Label ID="LabelGastos" runat="server" Text="Label" Font-Bold="True"></asp:Label></h4>
                 </div>
             </div>
         </div>
@@ -87,24 +87,47 @@
                     
             </div>
 
-            <div class="col-sm-4">
-                <h3 style="text-align: center">Gastos</h3>
-                <hr />
-                <asp:Chart ID="ChartHome" runat="server" DataSourceID="SqlDataSourceGraficos" BackColor="Transparent" BackImageAlignment="Center" Palette="Bright" BorderlineColor="Transparent" CssClass="text-center">
-                    <Series>
-                        <asp:Series Name="Series1" ChartType="Pie" XValueMember="idSubcategoria" YValueMembers="monto"></asp:Series>
-                    </Series>
-                    <ChartAreas>
-                        <asp:ChartArea Name="ChartArea1"></asp:ChartArea>
-                    </ChartAreas>
-                </asp:Chart>
-                <asp:SqlDataSource ID="SqlDataSourceGraficos" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString %>" SelectCommand="SELECT * FROM [Gasto]"></asp:SqlDataSource>
+            <div class="col-sm-4" style="text-align: center">
+                <h3 style="text-align: center">Ingresos</h3>
+                    <asp:Chart ID="ChartIngresos" runat="server" DataSourceID="SqlDataSourceIngresos">
+                        <Series>
+                            <asp:Series Name="Series1" ChartType="Doughnut" XValueMember="descripcion" YValueMembers="cantidad"></asp:Series>
+                        </Series>
+                        <ChartAreas>
+                            <asp:ChartArea Name="ChartArea1"></asp:ChartArea>
+                        </ChartAreas>
+                    </asp:Chart>
+  
+                
             </div>
         </div>
 
     </div>
 
 
+    <asp:GridView ID="GridViewIngresos" runat="server" AutoGenerateColumns="False" DataKeyNames="idIngreso" DataSourceID="SqlDataSourceIngresos" ShowFooter="True">
+        <Columns>
+            <asp:BoundField DataField="idIngreso" HeaderText="idIngreso" InsertVisible="False" ReadOnly="True" SortExpression="idIngreso" />
+            <asp:BoundField DataField="descripcion" HeaderText="descripcion" SortExpression="descripcion" />
+            <asp:BoundField DataField="fecha" HeaderText="fecha" SortExpression="fecha" />
+            <asp:BoundField DataField="cantidad" HeaderText="cantidad" SortExpression="cantidad" />
+            <asp:BoundField DataField="idUsuario" HeaderText="idUsuario" SortExpression="idUsuario" />
+        </Columns>
+    </asp:GridView>
+    <br />
+    <br />
+    <asp:SqlDataSource ID="SqlDataSourceIngresos" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString %>" SelectCommand="SELECT * FROM [Ingreso]"></asp:SqlDataSource>
 
 
+    <asp:GridView ID="GridViewGastos" runat="server" AutoGenerateColumns="False" DataKeyNames="idGasto" DataSourceID="SqlDataSourceGastos" ShowFooter="True">
+        <Columns>
+            <asp:BoundField DataField="idGasto" HeaderText="idGasto" InsertVisible="False" ReadOnly="True" SortExpression="idGasto" />
+            <asp:BoundField DataField="monto" HeaderText="monto" SortExpression="monto" />
+            <asp:BoundField DataField="fecha" HeaderText="fecha" SortExpression="fecha" />
+            <asp:BoundField DataField="idUsuario" HeaderText="idUsuario" SortExpression="idUsuario" />
+            <asp:BoundField DataField="idSubcategoria" HeaderText="idSubcategoria" SortExpression="idSubcategoria" />
+            <asp:BoundField DataField="nombre" HeaderText="nombre" SortExpression="nombre" />
+        </Columns>
+    </asp:GridView>
+    <asp:SqlDataSource ID="SqlDataSourceGastos" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoConnectionString %>" SelectCommand="SELECT Gasto.idGasto, Gasto.monto, Gasto.fecha, Gasto.idUsuario, Gasto.idSubcategoria, Categoria.nombre FROM Gasto INNER JOIN Subcategoria ON Gasto.idSubcategoria = Subcategoria.idSubcategoria INNER JOIN Categoria ON Subcategoria.idCategoria = Categoria.idCategoria"></asp:SqlDataSource>
 </asp:Content>

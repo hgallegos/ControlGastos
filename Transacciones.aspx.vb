@@ -28,6 +28,9 @@ Partial Class Informes_Transacciones
         LabelGastos.Visible = True
         GridViewGastos.Visible = True
 
+        LabelPresupuesto.Visible = True
+
+
 
 
 
@@ -74,6 +77,8 @@ Partial Class Informes_Transacciones
             e.Row.Cells(3).Text = String.Format("{0:c0}", suma_total)
         End If
     End Sub
+
+
 
 
 End Class

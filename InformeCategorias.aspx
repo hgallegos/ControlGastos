@@ -12,8 +12,8 @@
             <asp:GridView ID="GridViewGastos" runat="server" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSourceGastos" ForeColor="#333333" GridLines="None" HorizontalAlign="Center" Width="400px" >
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
-            <asp:BoundField DataField="nombre" HeaderText="nombre" SortExpression="nombre" />
-            <asp:BoundField DataField="TotalCategoria" HeaderText="TotalCategoria" SortExpression="TotalCategoria" />
+            <asp:BoundField DataField="nombre" HeaderText="Categoria" SortExpression="nombre" />
+            <asp:BoundField DataField="TotalCategoria" HeaderText="Monto" SortExpression="TotalCategoria" />
         </Columns>
         <EditRowStyle BackColor="#999999" />
         <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
