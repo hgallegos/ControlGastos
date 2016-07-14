@@ -5,7 +5,12 @@ Partial Class Home
     Dim suma_total As Integer
     Dim ingresos, gastos As Integer
     Dim saldo As String
-   
+
+    Protected Sub Page_Load()
+        Response.Redirect("InformeCategorias.aspx?home=1")
+    End Sub
+
+
     Protected Sub LabelFechaHoy_Load(sender As Object, e As EventArgs) Handles LabelFechaHoy.Load
         LabelFechaHoy.Text = DateTime.Now.ToString("dd/MM/yyyy")
     End Sub
@@ -64,9 +69,13 @@ Partial Class Home
         LabelSaldo.Text = String.Format("{0:c0}", saldo)
         GridViewGastos.Visible = False
         GridViewIngresos.Visible = False
+        traer_Info()
+    End Sub
 
+    Protected Sub traer_Info()
 
     End Sub
+
 
 
 End Class

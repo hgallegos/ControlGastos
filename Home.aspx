@@ -49,19 +49,11 @@
                 <h3 style="text-align: center">Resumen</h3>
                 <hr />
                 <div class="list-group">
-                    <a runat="server" href="~/Gastos/gestionGastos" class="list-group-item">
+                    <a runat="server" href="#" class="list-group-item">
                         <h4 class="list-group-item-heading">Gastos</h4>
-                        <p class="list-group-item-text">Has gastado mucho en x categoria.</p>
+                        <p class="list-group-item-text">Has gastado mucho en 
+                            <% Response.Write(Session("mayorCategoria"))%>.</p>
 
-                    </a>
-                    <a runat="server" href="~/Aportes/gestionAportes" class="list-group-item">
-                        <h4 class="list-group-item-heading">Aportes</h4>
-                        <p class="list-group-item-text">Matias ha sido quien más ha aportado al hogar. </p>
-
-                    </a>
-                    <a runat="server" href="~/Ahorro/gestionAhorros" class="list-group-item">
-                        <h4 class="list-group-item-heading">Ahorros</h4>
-                        <p class="list-group-item-text">Tienes $50.000 en tu cuenta de ahorros.</p>
                     </a>
                 </div>
             </div>
